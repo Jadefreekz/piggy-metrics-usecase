@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<title>Complaints</title>
+	<link rel="stylesheet" type="text/css" href="css/adminstylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+	<link rel="stylesheet" type="text/css" href="css/pagination.css">
+</head>
+
+<body>
+
+	<!--nav starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="float-start">
+
+					<a class="cab-logo" href="/admin/dashboard"><img
+						src="images/cab-logo.png" class="cabapp-logo" alt="logo"></a>
+				</div>
+				<div class="float-start">
+					<ul class="list-group list-group-horizontal">
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/dashboard">
+								Requests And Cabs</a></li>
+						<li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/history">History of Trips</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link requests requests-tabactive" href="/admin/complaints">Complaints</a>
+
+
+
+						</li>
+
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/blockedusers">Blocked
+								Users</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/routedetails">Route
+								Management</a></li>
+
+						<a href="/user/bookacab" class="btn btn-primary btn-sm button book-a-ride">Book a Ride</a>
+
+					</ul>
+				</div>
+				<div class="float-end">
+					<!-- kumar's code starts -->
+
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<img class="navnotify-icons cursor"
+									src="images/notification.svg" alt="notify-icon"
+									title="notifications" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId">
+									<span class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3">
+												<div class="text-style-title filter-titlenotification">
+													Notification</div>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="notify-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<span id="noRecord" class="noRecordFound"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!-- kumar's code ends -->
+
+
+
+					<!--user profile starts-->
+					<div class="float-end">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<span class="navuserprofile-icons cursor navuserprofile-icon-text" id="userprofile-icon"
+									data-toggle="dropdown" aria-expanded="true"></span>
+
+
+								<div class="dropdown-menu m-0 p-3 user-filter">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<button type="button" class="btn-close float-end close-filter"
+													data-dismiss="user-filter" aria-label="Close">
+												</button>
+											</div>
+
+											<div class="col-md-12">
+
+												<div class="col-md-4 float-start">
+
+													<span class="user-profile-icon  userprofile-icon-text"
+														id="userprofile-icon" data-toggle="dropdown"
+														aria-expanded="true">
+														<span class="user-profile-icon " id="userprofile-icon2">
+														</span> </span>
+												</div>
+												<div class="col-md-4 float-start">
+													<h5 class="userprofile-content pt-2" id="employeeName"></h5>
+													<h5 class="userprofile-content1  pt-2 mailIdContent" id="mailId">
+													</h5>
+													<button type="button" class="btnlogoutbtn mb-3 "
+														id="logout">Logout</button>
+
+
+
+
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user profile ends-->
+	
+	<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor remove-img" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+	<!--nav ends-->
+	<div class="parent-container mt-2 px-lg-3">
+		<!--this is my parent container-->
+		<h2 class="h-size1 float-start">Complaints<span id="countInHead"></span></h2>
+		<!--<div class="header-right1 float-end">
+			<div class="dropdown filt float-start">
+				<img class="cursor" src="images/VectorFilter.svg" alt="filter-icon" title="Advanced Filter"
+					data-toggle="dropdown" aria-expanded="true" id="filterIcon" onclick="filterShow()"/>-->
+					 <div class="header-right" style="display: block;">
+					<div class="dropdown float-start">
+					<img class="cursor vector-image" src="images/VectorFilter.svg" alt="filter-icon" title="Advanced Filter" data-toggle="dropdown" aria-expanded="false" id="filterIcon" >
+					
+				<div class="dropdown-menu m-0 p-3 advanced-filter" id="filterShow">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12 pb-2 border-0 mb-3"><span  class="text-style-title filter-title" >Advanced Filter</span>	<br>	<span id = 'empty-check'></span><button type="button" class="btn-close float-end" id="close-filter"  onclick="filterCloseButton()"
+									data-dismiss="advanced-filter" aria-label="Close">
+								
+
+								</button>
+							</div>
+							<div class="col-md-12">
+								<div class="row mb-3">
+
+									<div class="col-md-6 mb-3">
+										<label class="mb-0 form-label filter-style " for="Source">Source</label>
+										<select class="form-select style-select1 border-filter-style" id="Source"
+											aria-label="Default-example">
+											<option selected value=0>Select Source</option>
+
+										</select>
+									</div>
+									<div class="col-md-6 mb-3">
+										<label class="mb-0 form-label filter-style "
+											for="Destination">Destination</label>
+										<select class="form-select style-select1 border-filter-style" id="Destination" onChange="OnClickOfDestination()"
+											aria-label="Default-example">
+											<option selected value=0>Select Destination</option>
+
+										</select>
+									</div>
+									<div class="col-md-6 mb-3"> 
+										<label class="mb-0 form-label filter-style " for="Droppoint">Drop Point</label>
+										
+										<select class="form-select style-select1 border-filter-style" id="Droppoint" 
+											aria-label="Default-example"> 
+											<option selected>Select Drop Point</option> 
+										</select> 
+									</div> 
+									<div class="col-md-6 mb-3">
+										<label class="mb-0 form-label filter-style " for="Timeslot">Time Slot</label>
+										<select class="form-select style-select1 border-filter-style" id="Timeslot"
+											aria-label="Default-example">
+											<option selected value=0>Select Time Slot</option>
+
+										</select>
+									</div>
+
+								</div>
+								<div class=" float-end" >
+									<button type="button" class="btn btn-primary btn-sm cancel-btn close-filter"
+										id="cancelButton" data-bs-dismiss="modal"
+										aria-label="Close" onclick="filtercancelButtonClicked()">Cancel</button>
+									<button type="button" class="btn btn-primary btn-sm button1 close-filter"
+										id="ApplyButton" data-bs-dismiss="modal" aria-label="Close" onclick="filterCloseButton()">Apply Filter</button>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--filter ends here-->
+			<!--search starts here-->
+			<!--<div class="float-start me-3">
+				<div class="input-group flex-nowrap search-shadow">
+					<input type="text" class="form-control search-align" placeholder="Search" aria-label="Username"
+						id="searchtab" aria-describedby="addon-wrapping">
+					<button class="input-group-text btn btn-search-custom" id="addon-wrapping" onclick="getAdminComplaintsCount()"><img src="images/search.svg" alt="search-icon" ></button>
+				</div>
+			</div>-->
+			<div class="float-start position-search mx-3">
+			<input type="text" class="form-control custom-search-change" id="searchtab" placeholder="Search"><a><img class="search-icon2" src="images/search.svg" alt="search" id="addon-wrapping" onclick="getAdminComplaintsCount()"></a>
+			</div>
+			<!--search ends here-->
+		</div>
+	</div>
+	<!--table starts here-->
+	<div class="col-md-12 flt-lft  my-5 px-lg-3 tab">
+		<div class="tab-content border1 my-3" id="pills-tabContent">
+		<div class="w-100 float-start">
+			<!--total content display starts here-->
+			<div class="header-left py-md-3" id="record">
+				<span class="font-records"></span>
+				<span class="regular" id="count">#Records:</span>
+			</div>
+			<!--total content display ends here-->
+
+		</div>
+			<div class="col-md-12 float-start">
+				<table class="table mb-0">
+					<thead>
+						<tr class="display-shadow">
+							<th class="header-class1">Employee Id</th>
+							<th class="header-class1">Employee Name</th>
+							<th class="header-class1">Employee Number</th>
+							<th class="header-class1">Cab Number</th>
+							<th class="header-class1">Driver Name</th>
+							<th class="header-class1">Source <span class="sorting"><a class="sort-up" href="#" onclick='sortTable(5,"a")'><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick='sortTable(5,"d")'><img class="sort-image"
+											src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+							<th class="header-class1">Destination <span class="sorting"><a class="sort-up" href="#" onclick='sortTable(6,"a")'><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick='sortTable(6,"d")'><img class="sort-image"
+											src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+							<th class="header-class1">DropPoints <span class="sorting"><a class="sort-up" href="#" onclick='sortTable(7,"a")'><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick='sortTable(7,"d")'><img class="sort-image"
+											src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+							<th class="header-class1">Date of Travel <span class="sorting"><a class="sort-up"
+										href="#" onclick='sortTable(8,"a")'><img class="sort-image" src="images/sortup-icon.svg"
+											alt="sort-up" /></a><a class="sort-down" href="#" onclick='sortTable(8,"d")'><img class="sort-image"
+											src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+							<th class="header-class1">Time Slot <span class="sorting"><a class="sort-up" href="#" onclick='sortTable(9,"a")'><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick='sortTable(9,"d")'><img class="sort-image"
+											src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+							<th class="header-class1">Complaints</th>
+							
+							<!--<div class="dropdown-menu m-0 p-3 user-filter" >
+							<div class="container-fluid"><div class="row">
+							<div class="col-md-12 mb-3"><div class="col-md-12 pb-2 border-0 mb-3"><button type="button" class="btn-close float-end close-filter" data-dismiss="user-filter" aria-label="Close"></button></div>
+							<h5 class="h-size1 mb-2">Enter Remarks</h5><input type="text" class="form-control border-filter-style" id="remarks" + i + ""><span id = "remarks0"></span></div>
+							<div class="col-md-12"><button type="button" class="save-btn float-end" onclick="saveRemarks(this)">ave</button><button type="button" class="cancel1-btn float-end " onclick="onClickOfRemarksCanCelButton()" id="cancel">Cancel</button>
+							<div></div></div></div><!-->
+							
+							<th class="header-class1">Actions</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>					
+				</table>
+				<span id="noValueFound" class="noRecordFound"></span>
+			</div>
+		</div>
+		<!--complaints tab ends here-->
+
+		<!--Pagination starts here-->
+		<div class="page py-md-1 me-5" id='complaintPagination'>
+			<!--<nav aria-label="Page navigation">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link pagination-border" href="#" aria-label="Previous">
+							<img src="images/pagination-prev-arrow.svg" alt="page-arrow" />
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link pagination-border page-active" href="#">1</a></li>
+					<li class="page-item"><a class="page-link pagination-border" href="#">2</a></li>
+					<li class="page-item"><a class="page-link pagination-border" href="#">3</a></li>
+					<li class="page-item"><a class="page-link pagination-border" href="#">...</a></li>
+					<li class="page-item"><a class="page-link pagination-border" href="#">9</a></li>
+					<li class="page-item"><a class="page-link pagination-border" href="#">10</a></li>
+					<li class="page-item"><a class="page-link pagination-border" href="#">11</a></li>
+					<li class="page-item">
+						<a class="page-link pagination-border" href="#" aria-label="Next">
+							<img src="images/pagination-next-arrow.svg" alt="page-arrow" />
+						</a>
+					</li>
+				</ul>
+			</nav>-->
+		</div>
+		<!--pagination ends here-->
+
+	</div>
+
+    <script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	<script src="js/fileSaver.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+ 	<script src="js/adminComplaints.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/Notification.js"></script>
+
+	<script>
+	notificationsAdmin();
+	</script>
+	<script>
+    $('.advanced-filter').click(function (event) {
+      event.stopPropagation();
+})
+	</script>
+</html>

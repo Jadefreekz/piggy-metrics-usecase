@@ -1,0 +1,29 @@
+.nav-pills .nav-link.active.outline, .nav-pills .show > .nav-link {
+    color: #947BE5 !important;
+    background-color: unset !important;
+    border: #947BE5 solid 3px;
+    font-family:'nunitosans-semibold';
+    font-size: 16px;
+    padding: 6px;
+}
+.nav-pills .nav-link {
+    background: none;
+    border: 0;
+    border-radius: 0.25rem;
+    color: #A8A8B0;
+    font-family:'nunitosans-semibold';
+    font-size: 16px;
+}
+.search-input
+{
+    width: 38%;
+}
+.btn-prime
+{
+    background-color: #562FD6;
+    color: #ffffff !important;
+    padding: 6px 26px;
+}
+.btn-search{
+    border: #cecece 1px solid;
+}

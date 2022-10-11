@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Avacab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/drivercommontheme.css">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+<link rel="stylesheet" type="text/css" href="css/driverheader.css">
+<link rel="stylesheet" type="text/css" href="css/drivertripdetail.css">
+<link rel="stylesheet" type="text/css" href="css/fontfamily.css">
+<link rel="stylesheet" type="text/css" href="css/drivermytripdetail.css">
+<link rel="stylesheet" type="text/css" href="css/driverpickupcard.css">
+<link rel="stylesheet" type="text/css" href="css/driverendtrippopup.css">
+<link rel="stylesheet" type="text/css" href="css/mytripdetail.css">
+<link rel="stylesheet" type="text/css" href="css/tripdetail.css">
+</head>
+
+<body class="back-colr">
+	<div class="container-fluid back-colr">
+	<!-- static Div -->
+	<div class="row">
+	<div class="fixed-top col-md-12" style="background-color: #EDEDEF;">
+		<div class="row">
+			<nav class="navbar navbar-light top-bar">
+				<a href="/driver/dashboard"><img
+					src="images/cab-application-logo-removebg-preview.svg"
+					alt="avacab_logo"></a>
+				<ul class="ms-auto mb-2 mb-lg-0 list-unstyled d-flex">
+					<li class="nav-item text-center">
+						<!--                     Driver profile --> <!-- 					Admin contact starts -->
+					<li class="nav-item me-3 top-space">
+						<div class="float-start">
+							<div class="header-right">
+
+								<div class="dropdown col-md-12 float-start">
+									<a data-bs-toggle="dropdown" aria-expanded="false" class="">
+										<img src="images/call.svg" class="navphone-icons cursor"
+										alt="filter-icon" title="Admin Contacts"
+										id="adminContactsBtn-mob"
+										style="margin-right: 10px; margin-top: 7px;">
+									</a>
+
+
+									<div
+										class="dropdown-menu m-0 p-3 Admin-contact-popover callProfile"
+										style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(37px, 24px, 0px);">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12 pb-2 border-0 mb-3">
+													<span class="text-style-title filter-title"
+														style='color: #441BC3; font-weight: bold;'>Admin
+														Contacts</span>
+													<button type="button"
+														class="btn-close float-end close-filter"
+														data-dismiss="advanced-filter" aria-label="Close">
+													</button>
+												</div>
+
+												<div class="col-md-12 ">
+													<div class="row mb-3">
+														<div id="adminContacts"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<div class="float-start">
+						<div class="headerx	-right">
+							<div class="dropdown col-md-12 float-start">
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon-mob" data-toggle="dropdown"
+									aria-expanded="true"></span> <span
+									style="width: 35px; height: 35px; margin-top: 5px; text-align: center; padding-top: 6px; font-size: 14px; resize: 16px;"
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="nameicon" data-bs-toggle="dropdown" aria-expanded="true"></span>
+
+
+								<!-- 									here -->
+								<div class="dropdown-menu m-0 p-3 profile-popover driverProfile">
+
+									<div class=" px-0 text-end ">
+										<button type="button" class="btn-close   close-filter"
+											data-dismiss="advanced-filter" aria-label="Close"></button>
+									</div>
+									<div class="row px-3 justify-content-center">
+										<img src="images/user-profile-icon.png"
+											class="user-profile-icon rounded-circle" alt="profileicon">
+										<h6 class="username text-center mt-2" id="employeeName-mob"></h6>
+
+										<p class="userprofile-content text-center mb-1  pt-2"
+											id="driver-profile2"></p>
+										<p class=" userprofile-content text-center  pt-2"
+											id="driver-profile1"></p>
+
+										<button type="button" class="btn logout-button mt-2 " style="width: 100px;"
+											id="driverlogout">Logout</button>
+									</div>
+
+								</div>
+
+								<!-- 					driver profile ends here -->
+								</li>
+				</ul>
+		</div>
+		<div class="row text-center pad-botm top-bar">
+			<div class="col-md-12">
+<!-- 				<a href="/driver/dashboard" class="float-start"><img -->
+			<a onclick="backFunction()" class="float-start"><img
+					src="images/back-arrow.svg" alt="" class=""></a>
+				<h5 class="trip-look font-bold" style="margin-bottom: 60px">My
+					Trips</h5>
+				</nav>
+			</div>
+		</div>
+		<div>
+			<div class="row "  id="TripDetails"></div>
+
+			<div class="row justify-content-between"
+				style="margin-top: 5px; margin-bottom: 20px;">
+				<div class="col-8 mt-4 employeeDetailsTxt">
+					<h5 class="font-20 font-bold text-nowrap" style="margin-left: 5px;">Employees
+						Details</h5>
+				</div>
+				
+				<div class="col-md-4 d-flex justify-content-end mt-3 noShowBtn">
+					<button type="button" id="startButton"
+						class="btn text-nowrap font-semi font-16 driver-trip-static-buttons  btn-primary me-0 text-nowrap "
+						style="margin-left: 55px; display: none"
+						onclick="startTripButtonClicked()">Start Trip</button>
+
+					<button type="button" id="endButton"
+						class="btn text-nowrap font-semi font-16 driver-trip-static-buttons  btn-primary me-0 startButton"
+						style="margin-left: 55px; display: none"
+						onclick="endTripButtonClicked()">End Trip</button>
+					<button type="button" id="noOneShowedButton" style="display: none"
+						class="btn text-nowrap font-semi font-16 driver-trip-static-buttons  btn-primary me-0  "
+						data-bs-toggle="modal" data-bs-target="#noShowPopUp">No
+						One Showed</button>
+				</div>
+				<span id="TripErrorMessage" class="text-end" style="display: none; color: #dc3545;"> Already In a Trip</span>
+			</div>
+			</div>
+			</div><!-- static Div -->
+
+
+			<div style="margin-top: 365px;" id="EmployeeDetails"></div>
+
+			<!-- End Trip Pop starts here -->
+			<div class="modal fade" id="success" tabindex="-1"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class=" modal-body ">
+							<div class="">
+								<div class="card-body">
+									<div class="d-flex justify-content-center">
+										<img class="me-1 mt-0 img-size" src="images/success.gif"
+											alt="success">
+									</div>
+									<h4 class="card-look font-semi font-20 mb-4">Trip Ended
+										Successfully!</h4>
+
+									<div class="d-flex justify-content-center pb-3">
+										<button id="endTripBtnClicked" type="button"
+											class="btn font-semi font-16 btn-primary start-button"
+											data-bs-dismiss="modal" aria-label="Close"
+											onclick="endtripBtn()">OK</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Trip Pop ends here -->
+
+
+			<!-- Modal -->
+			<div class="modal fade" id="noShowPopUp" tabindex="-1"
+				aria-labelledby="noShowPopUpLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered noShowPopUp">
+					<div class="modal-content">
+						<div class=" modal-body ">
+							<div>
+								<div class="card-body">
+									<div class="d-flex justify-content-center">
+										<img class="me-1 mt-0 img-size" src="images/noshow.png"
+											alt="success">
+									</div>
+									<h4 class="card-look font-semi font-20 mb-4">Are you sure
+										No one showed up ?</h4>
+
+									<div class="d-flex justify-content-center pb-3">
+										<button type="button"
+											class="btn font-semi font-16 btn-primary start-button"
+											data-bs-dismiss="modal" aria-label="Close">No</button>
+										<button type="button"
+											class="btn font-semi font-16 btn-primary start-button ms-3"
+											data-bs-dismiss="modal" aria-label="Close"
+											onclick="noOneShowedUpButtonClicked()">Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/driverMyTripsModified.js"></script>
+	
+	<script src="js/driverAssignedTrips.js"></script>
+
+	<script src="js/commonScript.js"></script>
+	<script src="js/logout.js"></script>
+	<script type="text/javascript" src="js/JsExceptionHandler.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script type="text/javascript" src="js/timeFormatter.js"></script>
+</body>
+
+</html>

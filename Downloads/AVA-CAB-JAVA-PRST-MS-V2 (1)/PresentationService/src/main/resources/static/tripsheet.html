@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<title>Trip Sheet</title>
+<link rel="stylesheet" type="text/css" href="css/adminstylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+</head>
+<body>
+	<!--nav starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="float-start">
+					<a class="cab-logo" href="/admin/dashboard"><img src="images/cab-logo.png" class="cabapp-logo" alt="logo"></a>
+				</div>
+				<div class="float-start">
+					<ul class="list-group list-group-horizontal">
+						<li class="list-group-item nav-menu requests"><a
+							class="link requests requests-tabactive " href="/admin/dashboard">
+								Requests And Cabs</a></li>
+						<li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/history">History of Trips</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/complaints">Complaints</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/blockedusers">Blocked
+								Users</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/routedetails">Route
+								Management</a></li>
+						<a href="/user/bookacab" class="btn btn-primary btn-sm button book-a-ride">Book a Ride</a>
+					</ul>
+				</div>
+				<div class="float-end">
+					<!-- kumar's code starts -->
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<img class="navnotify-icons cursor"
+									src="images/notification.svg" alt="notify-icon"
+									title="notifications" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId"> 
+									<span class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3">
+												<div class="text-style-title filter-titlenotification">
+													Notification</div>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="notify-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<span id="noRecord" class="noRecordFound"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!-- kumar's code ends -->
+					<!--user profile starts-->
+					<div class="float-end">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+
+
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon" data-toggle="dropdown"
+									aria-expanded="true"></span>
+
+								<div class="dropdown-menu m-0 p-3 user-filter">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="user-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12">
+
+												<div class="col-md-4 float-start">
+
+													<span class="user-profile-icon  userprofile-icon-text"
+														data-toggle="dropdown" aria-expanded="true"> <span
+														class="user-profile-icon " id="userprofile-icon2">
+													</span>
+													</span>
+
+												</div>
+												<div class="col-md-4 float-start">
+													<h5 class="userprofile-content pt-2" id="employeeName"></h5>
+													<h5 class="userprofile-content1  pt-2 mailIdContent"
+														id="mailId"></h5>
+													<button type="button" class="btnlogoutbtn mb-3 "
+														id="logout">Logout</button>
+
+
+
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user profile ends-->
+<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor remove-img" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+	<!--nav ends-->
+	<div class="col-md-12 flt-lft my-5 px-lg-5 tab">
+
+		<!-- assignedtab starts here-->
+		<a href ="#" id="pills-assignedcabs" role="tab"
+			aria-controls="pills-assignedcabs"  ><img
+			class="float-start img-back-assigned" src="images/backTrip.svg" title="back" onclick="backButton()"
+			alt="back"></a>
+		<h2 class="h-size1-assigned float-start mb-3">Trip Sheet</h2>
+		<div class="tab-content" id="pills-tabContent">
+			<div class="tab-pane fade show active" id="pills-assignedcabs"
+				role="tabpanel" aria-labelledby="pills-assignedcabs-tab">
+				<div class="w-100 float-start mt-4 trip-class" id="maindiv">
+					<div class="float-start width-cab">
+						<div class="trip-space">Cab Number</div>
+						<div class="trip-space1" id="cabnumber"
+							onblur="cabNumberBlurFunction()"
+							onchange="cabNumberBlurFunction()"></div>
+						<p id="errorCabNumber" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Driver Name</div>
+						<div class="trip-space1" id="drivername"
+							onblur="driverNameBlurFunction()"
+							onchange="driverNameBlurFunction()"></div>
+						<p id="errorDriverName" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Driver Number</div>
+						<div class="trip-space1" id="drivernumber"
+							onblur="driverNumberBlurFunction()"
+							onchange="driverNumberBlurFunction()"></div>
+						<p id="errorDriverNumber" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space" id="sourceLabel">Source</div>
+						<div class="trip-space1" id="source" onblur="sourceBlurFunction()"
+							onchange="sourceBlurFunction()"></div>
+						<p id="errorSource" class="dropPointEmptySpacing"></p>
+					</div>
+					
+					<div class="float-start width-cab">
+						<div class="trip-space" id = "destinationLabel">Destination</div>
+						<div class="trip-space1" id="destination"
+							onblur="destinationBlurFunction()"
+							onchange="destinationBlurFunction()"></div>
+						<p id="errorDestination" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Date Of Travel</div>
+						<div class="trip-space1" id="date"
+							onblur="dateOfTravelBlurFunction()"
+							onchange="dateOfTravelBlurFunction()"></div>
+						<p id="errorDateOfTravel" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Time Slot</div>
+						<div class="trip-space1" id="timeslot"
+							onblur="timeSlotBlurFunction()" onchange="timeSlotBlurFunction()"></div>
+						<p id="errorTimeSlot" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Total Seats</div>
+						<div class="trip-space1" id="totalseats"
+							onblur="totalSeatsBlurFunction()"
+							onchange="totalSeatsBlurFunction()"></div>
+						<p id="errorTotalSeats" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Allocated Seats</div>
+						<div class="trip-space1" id="allocatedseats"
+							onblur="allocatedSeatsBlurFunction()"
+							onchange="allocatedSeatsBlurFunction()"></div>
+						<p id="errorAllocatedSeats" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Remaining Seats</div>
+						<div class="trip-space1" id="remainingseats"
+							onblur="remainingSeatsBlurFunction()"
+							onchange="remainingSeatsBlurFunction()"></div>
+						<p id="errorRemainingSeats" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Status</div>
+						<div class="trip-space1" id="status" onblur="statusBlurFunction()"
+							onchange="statusBlurFunction()"></div>
+						<p id="errorStatus" class="dropPointEmptySpacing"></p>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Start Time</div>
+						<div class="trip-space1" id="starttime"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">End Time</div>
+						<div class="trip-space1" id="endtime"
+							onblur="endTimeBlurFunction()" onchange="endTimeBlurFunction()"></div>
+						<p id="errorEndTime" class="dropPointEmptySpacing"></p>
+					</div>
+
+
+
+
+				</div>
+ 				<div class="parent-container mt-4 mb-3">
+					<!--this is my trip container-->
+					<h2 class="h-size1 float-start mb-3 headWidth">Trip Sheet</h2>
+
+					
+
+ 					<div class="float-end mt-3 tripSheetBtn">
+						<!--start trip button starts here-->
+						<button type="button" class="btn btn-primary btn-sm tri1 new-proj btnStyle" id="startTrip"
+							onclick="startTrip()" style="display: none;">Start
+							Trip</button>
+				
+						<!--start trip button ends here-->
+
+						
+						<!-- 						NoOneShowedUp trip button starts here -->
+						<button type="button" class="btn btn-primary btn-sm tri1 new-proj btnStyle" id="noOneShow"
+						 data-target="#noShow-pop" data-toggle='modal'>NoOneShowedUp
+						</button>
+<!-- 						NoOneShowedUp trip button ends here -->
+
+
+						
+						
+						<!--                             cancel trip button start here -->
+						<button type="button" class="btn btn-primary btn-sm tri new-proj btnStyle"
+							 data-target="#cancelTrip-pop" data-toggle='modal'>Cancel Trip</button>
+					<!--                             cancel trip button end here -->
+						
+						<p id="errorStartTrip" class="dropPointEmptySpacing"></p>
+
+					</div>
+						
+ 				</div>
+					<!-- cancel ride popup starts here-->
+					<div class="modal fade" id="cancelTrip-pop" tabindex="-1" role="dialog"
+						aria-labelledby="trip-pop" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered " role="document">
+							<div class="modal-content bor-pop ">
+								<div class="modal-header border-0 pb-0">
+									<div class="col-md-12 col-12">
+										<button type="button" class="close closeicon float-end"
+											data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+								<div class="modal-body pt-2 pb-3 ">
+									<div class="row justify-content-center">
+				
+										<p class="style-label text-center">Are you sure you want to
+											cancel the ride?</p>
+				
+									</div>
+								</div>
+								<div class="row justify-content-center mb-5 mt-2">
+									<div class="col-md-8 text-center">
+										<button type="button" class="cancel-btn2" data-dismiss="modal">No</button>
+										<button type="button" class="button11" data-bs-dismiss="modal"
+											id="cancelTripYes" onclick="cancelTripButton()">Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--cancel ride popup ends here-->
+					
+					<!-- No one showed up popup starts here-->
+					<div class="modal fade" id="noShow-pop" tabindex="-1" role="dialog"
+						aria-labelledby="trip-pop" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered " role="document">
+							<div class="modal-content bor-pop ">
+								<div class="modal-header border-0 pb-0">
+									<div class="col-md-12 col-12">
+										<button type="button" class="close closeicon float-end"
+											data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								</div>
+								<div class="modal-body pt-2 pb-3 ">
+									<div class="row justify-content-center">
+				
+										<p class="style-label text-center">Are you sure all the employees are No Show?</p>
+				
+									</div>
+								</div>
+								<div class="row justify-content-center mb-5 mt-2">
+									<div class="col-md-8 text-center">
+										<button type="button" class="cancel-btn2" data-dismiss="modal">No</button>
+										<button type="button" class="button11" data-dismiss="modal"
+											id="noOneShowYes" onclick="noOneShowedUp()">Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--No one showed up ends here-->
+					
+				<table class="table border mb-0" id="tablename">
+					<thead>
+						<tr class="display-shadow">
+							<th class="header-class">SL.No</th>
+							<th class="header-class">Employee Id</th>
+							<th class="header-class">Employee Name</th>
+							<th class="header-class">Phone Number</th>
+							<th class="header-class" id = "changeDropLabel">Drop Point</th>
+							<th class="header-class" id = "hideLocation">Location</th>
+							<th class="header-class text-center">Actions</th>
+							<th class="header-class">Reached Time</th>
+							<th class="header-class">Status</th>
+						</tr>
+					</thead>
+					<tbody id="tablebody">
+						<tr class="row-bg-style">
+							<td class = "spacing" style = "display: none;" id ="hide-empDetailId"></td> 
+							<td class="spacing1"><br> <br></td>
+							<p class="dropPointEmptySpacing"
+								style="margin-bottom: -68px !important;"></p>
+							<td class="spacing1"><input type="text"
+								class="form-control border-filter-style" id="emp-id"
+								onblur="empIdBlurFunction()" onchange="empIdBlurFunction()">
+								<p id="errorEmpId" class="dropPointEmptySpacing"
+									style="margin-bottom: -68px !important;"></p></td>
+							<td class="spacing1"><input type="text"
+								class="form-control border-filter-style" id="emp-name" onblur="empNameBlurFunction()" onchange="empNameBlurFunction()" onclick="employeeNameTyped()">
+								<p id="errorEmpName" class="dropPointEmptySpacing" style="margin-bottom: -68px !important;" ></p>
+								<div class="suggestStyle" id="suggestDiv"></div></td>
+								
+							<td class="spacing1"><input type="text" class="form-control border-filter-style" id = "emp-phNum" onblur="phoneNumberBlurFunction()" onchange="phoneNumberBlurFunction()">
+							<p id = "errorEmpPhNo" class = "dropPointEmptySpacing" style="margin-bottom: -68px !important;"></p>
+							</td>
+							<td class="spacing1"><select
+								class="form-select style-select removemarginbottom"
+								aria-label="Default select example" id="droppoints"
+								onblur="dropPointOnblurFunction()"
+								onchange="dropPointOnblurFunction()"
+								><br>
+									<option selected>Select</option>
+									<!--option value="1"></option>
+                                    <option value="1"></option>
+                                    <option value="2"></option-->
+							</select> <br> <br> <!-- >a href="#" title= "Add" class="actions3-image"><img class="add-style" src="images/add.svg" alt="add-icon" data-toggle="modal" data-target="#drop-pop22" style="display:none"/></a-->
+								<p id="errorDropPoints" class="dropPointEmptySpacing"
+									style="margin-bottom: -75px !important;"></p></td>
+									
+									<td class="spacing1" id = "hideLocationTd"><input type="text"
+								class="form-control border-filter-style" id = "hideLocationTextBox" onblur="locationBlurFunction()" onchange="locationBlurFunction()" maxlength = "40">
+								<p id="errorLocation" class="dropPointEmptySpacing"
+									style="margin-bottom: -40px !important;"></p>
+									</td>
+							<td class="spacing1 text-center"><a href="#" title="Cancel"
+								class="actions2-image" onclick="clearButtonClicked()"><img class = "move-cancel"
+                      src="images/grid_close.svg" style="margin-bottom: -27px !important; margin-top:-28px; margin-left:-35px!important;"
+									alt="cancel-icon" id="cancel" /></a><a href="#" title="Save"
+								class="actions4-image m-2"><img
+                      src="images/grid_add.svg" style="margin-bottom: -3px !important;margin-right:-33px!important"
+									alt="save-icon" id="savebutton" 
+									onclick="saveButtonClicked()" onblur="saveBlurFunction()" onchange="saveBlurFunction()"></a><br>
+									<p id="errorEmpDetails" class="dropPointEmptySpacing" style="margin-bottom: -91px !important;" ></td>
+							<td class="spacing1"></td>
+
+							<!--<td class="spacing1">
+								 							<select 								class="form-select style-select1 border-filter-style"
+														id="Droppoint0" aria-label="Default-example" onclick="showOnclick()">
+
+								 									<option value="1"  onclick="showOnclick()" >Show</option>
+																	<option value="2" selected  onclick="showOnclick()">No Show</option>
+															</select>
+								<p id="errorDropPoints" class="dropPointEmptySpacing"
+									style="margin-bottom: -91px !important;"></p>
+							</td>-->
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--assigned tab ends-->
+
+	<!--employee request delete popup starts here-->
+	<div class="modal fade" id="trip-pop" tabindex="-1" role="dialog"
+		aria-labelledby="trip-pop" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered " role="document">
+			<div class="modal-content bor-pop ">
+				<div class="modal-header border-0 pb-0">
+					<div class="col-md-12 col-12">
+						<button type="button" class="close closeicon float-end"
+							data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+				<div class="modal-body pt-2 pb-3 ">
+					<div class="row justify-content-center">
+
+						<p class="style-label text-center">Are you sure you want to
+							delete this employee Request?</p>
+
+					</div>
+				</div>
+				<div class="row justify-content-center mb-5 mt-2">
+					<div class="col-md-8 text-center">
+						<button type="button" class="cancel-btn2" data-dismiss="modal">No</button>
+						<button type="button" class="button11" data-bs-dismiss="modal"
+							id="yes">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--employee request delete popup ends here-->
+
+	<!--add model pop up starts here-->
+	<div class="modal fade" id="drop-pop22" tabindex="-1" role="dialog"
+		aria-labelledby="drop-pop22" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content bor-pop ">
+				<div class="col-md-12 col-12">
+					<div class="modal-body">
+						<label class="label style-label">Enter Droppoint</label>
+						<button type="button" class="close closeicon float-end"
+							data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<input type="text" class="form-control border-filter-style"
+							id="model-pop3" />
+					</div>
+				</div>
+				<div class="modal-footer border-0 pb-4">
+					<button type="button" class="btn btn-primary btn-sm cancel-btn1">Cancel</button>
+					<button type="button" class="btn btn-primary btn-sm button2">Add</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--add model pop up ends here-->
+
+
+	<!--Cab save details popup starts here-->
+	<div class="modal fade" id="save-employee-details-popup" tabindex="-1"
+		role="dialog" aria-labelledby="save-employee-details-popup"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered " role="document">
+			<div class="modal-content bor-pop ">
+				<div class="modal-header border-0 pb-0">
+					<!--<div class="col-md-12 col-12">
+						<button type="button" class="close closeicon float-end"
+							data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>-->
+				</div>
+				<div class="modal-body pt-2 pb-3 ">
+					<div class="row justify-content-center">
+
+						<p class="style-label text-center">Employee details saved
+							successfully</p>
+
+					</div>
+				</div>
+				<div class="row justify-content-center mb-5 mt-2">
+					<div class="col-md-8 text-center">
+
+						<button type="button" class="button11" data-bs-dismiss="modal"
+							onclick="window.location.reload()">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Cab save details popup ends here-->
+
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
+
+		});
+		$('#close-filter').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+
+		
+	</script>	
+	<script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	<script src="js/fileSaver.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+ 	<script src="js/tripSheet.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/Notification.js"></script>
+	<script>
+		notificationsAdmin();
+
+	</script>
+
+</body>
+</html>

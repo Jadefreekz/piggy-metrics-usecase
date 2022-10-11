@@ -1,0 +1,77 @@
+.card-lable
+{
+    background: #FFECB9 !important;
+    color: #9B7200 !important;
+    padding:10px 20px 10px 20px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.card-look
+{
+    padding-top: 0px;
+    padding-left: 0px;
+}
+.back-colr
+{
+    background-color: #EDEDEF;
+}
+.bor-rads
+{
+
+     border-radius: 10px !important;
+}
+.colm-border
+{
+    border-right: 0.75px solid #c5c5c5;
+    height: 100px;
+}
+.posi-fix
+{
+    margin-top: 36px;
+}
+.btn-grad-location {
+	background: linear-gradient(to bottom, #92dcfd 0%, #0AACFE 51%, #0AACFE 100%) !important;
+/*     background: linear-gradient(to bottom, #B9BCFB 0%, #835BCD 51%, #835BCD  100%) !important; */
+    text-align: center !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px;
+    display: block !important;
+    border: none;
+    margin-bottom: 0px;
+/*     margin-top: 10px; */
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.btn-grad-location:hover {
+    background-position: right center !important; /* change the direction of the change here */
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.go-back-to-trip-detail
+{
+    padding: 9px 19px;
+    background: linear-gradient(to bottom, #B6B8F9 0%, #8662D0 100%) !important;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: none;
+}
+.driver-trip-static-buttons {
+    padding: 9px 19px;
+    background: linear-gradient(to bottom, #B6B8F9 0%, #8662D0 100%) !important;
+    border: none;
+    font-size: 15px;
+}
+.loadmoreBtn {
+    padding: 9px 19px !important;
+    background-color: #5507FB !important;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+}

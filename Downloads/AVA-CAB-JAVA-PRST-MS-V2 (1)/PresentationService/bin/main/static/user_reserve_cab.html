@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserve a ride</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/commonthemes.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel ="stylesheet" type="text/css" href="css/commontheme.css">
+    <link rel ="stylesheet" type="text/css" href="css/userstylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/reserve_cab.css">
+    <link rel="stylesheet" type="text/css" href="css/custom_grid.css">
+</head>
+<body>
+    <!-- top navigation starts here -->
+     <!--nav starts-->
+                   <nav class="navbar navbar-expand-lg navbar-light bg-light bg-topnav  p-0">
+                    <a class="navbar-brand" href="/user/bookacab"><img src="images/cab-application-logo.png" class="cabapp-logo" alt="cablogo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="list-group list-group-horizontal pt-2">
+                        <li class="list-group-item nav-menu bookacab-tabactive"><a class="link bookacab-tab    " href="/user/bookacab">Reserve a Cab</a></li>
+                        <li class="list-group-item nav-menu"><a class="link myrequest-tab  " href="/user/myrequest">My Reservations</a></li>
+                     </ul>
+                    </div>
+                    <div class="float-end d-none d-sm-block ipad-responsive">
+                      <!--contact starts-->
+     <div class="float-start">
+      <div class="header-right">
+        <div class="dropdown col-md-12 float-start">
+            <img  src="images/phone-call.png" class="navphone-icons cursor" alt="filter-icon" title="Admin Contacts" id="adminContactsBtn" data-toggle="dropdown" aria-expanded="true">
+        <div class="dropdown-menu m-0 p-3 Admin-contact-popover" >
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12 pb-2 border-0 mb-3"><span class="text-style-title filter-title">Admin Contacts</span>
+                    <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                  </button>
+                  </div>
+                
+                   <div class="col-md-12 ">
+                    <div class="row mb-3">
+                        <div id="adminContacts">
+                         </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+     </div>
+      <!--contact ends-->
+	  <!--       kumar's code -->
+      <!--notification starts-->
+                  <div class="float-start" >
+                    <div class="header-right">
+                      <div class="dropdown col-md-12 float-start">
+                        
+                           <img src="images/notification.svg" class="navnotify-icons cursor" alt="filter-icon" title="Notification"  data-toggle="dropdown" aria-expanded="true" id ="notificationId"> <span class="icon-button-badge" id="totalCount"></span></img> 
+                         
+                          
+                         
+                        
+                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification </span>
+                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                </button>
+                                </div>
+                                
+                     <div class="col-md-12" id="parentDiv"><!-- newly added code -->
+                      <span id="noRecord"></span>
+                      	<div class = "scrollStyle" id="notification-wrapper">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--notification here-->
+                 <!--user profile starts-->
+      <div class="float-start">
+        <div class="header-right">
+          <div class="dropdown col-md-12 float-start">
+            
+             <!-- <img src="images/user-profile.png" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-toggle="dropdown" aria-expanded="true"/>-->
+             	   <span class="navuserprofile-icons cursor navuserprofile-icon-text" id="userprofile-icon" data-toggle="dropdown" aria-expanded="true"></span> 
+            
+          <div class="dropdown-menu m-0 p-3 profile-popover" >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md- pb-2 border-0 mb-3">
+                      <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                    </button>
+                    </div>
+                  
+                     <div class="col-md-12">
+                      <div class="row mb-3">
+                          <div>
+                              
+                                <div class="row justify-content-center">
+                                  <img src="images/user-profile-icon.png" class="user-profile-icon text-center" alt="profileicon">
+                                  <h6 class="username text-center mt-2" id="employeeName"></h6>
+                                  <div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content pt-2" id="domainName"></div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="employeeId"></div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="domainLead"></div>
+                                    <!--<div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project: Cab Application</div>
+                                    <div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project lead: Rafi</div>-->
+                                  </div>
+                                </div>
+                              
+                              </div>
+                              <div class="row justify-content-center mb-3 mt-2">
+                                <div class="col-md-12 text-center">
+                                  <button type="button" class="btnlogoutbtn mt-2 " id="logout">Logout</button>
+                                 </div>
+                           </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--user profile ends-->
+                  </div>
+                  </nav>
+                  <div class="container-fluid md-spacing">
+                  <div class="row mx-auto mt-5">
+                  <div class="float-end  d-block d-sm-none responsive-mb ipad-block">
+                    <!--contact starts-->
+                   <div class="float-end">
+                    <div class="float-start">
+                      <div class="header-right">
+
+                        <div class="dropdown col-md-12 float-start">
+                           <a href="#"  data-bs-toggle="dropdown" aria-expanded="true"> <img  src="images/phone-call.png" class="navphone-icons cursor" alt="filter-icon" title="Admin Contacts" id="adminContactsBtn-mob"></a>
+                        <div class="dropdown-menu m-0 p-3 Admin-contact-popover" >
+                          <div class="container-fluid">
+                              <div class="row">
+                                  <div class="col-md-12 pb-2 border-0 mb-3"><span class="text-style-title filter-title">Admin Contacts</span>
+                                    <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                  </button>
+                                  </div>
+                                
+                                   <div class="col-md-12 ">
+                                    <div class="row mb-3">
+                                        <div id="adminContacts-mobile">
+															
+										</div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                      <!--contact ends-->
+                      <!--notification starts-->
+                                  <div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                                
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!--notification here-->
+                                 <!--user profile starts-->
+                      <div class="float-start">
+                        <div class="header-right">
+                          <div class="dropdown col-md-12 float-start">
+                             <!--<span class="navuserprofile-icons cursor navuserprofile-icon-text" id="userprofile-icon-mob" data-toggle="dropdown" aria-expanded="true"></span>-->
+                              <img src="images/user-profile-icon.png" id="userprofile-icon-mob" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-bs-toggle="dropdown" aria-expanded="true"/>
+                            
+                          <div class="dropdown-menu m-0 p-3 profile-popover" >
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md- pb-2 border-0 mb-3">
+                                      <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                    </button>
+                                    </div>
+                                  
+                                     <div class="col-md-12">
+                                      <div class="row mb-3">
+                                          <div>
+                                              
+                                                <div class="row justify-content-center">
+                                                  <img src="images/user-profile-icon.png" class="user-profile-icon text-center" alt="profileicon">
+                                                  <h6 class="username text-center mt-2" id="employeeName-mob"></h6>
+                                                  <div>
+                                                     <div class=" col-md-12 col-12 float-start userprofile-content pt-2" id="domainName-mob"></div>
+                                    				 <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="employeeId-mob"></div>
+                                    				 <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="domainLead-mob"></div>
+                                                  </div>
+                                                </div>
+                                              
+                                              </div>
+                                              <div class="row justify-content-center mb-3 mt-2">
+                                                <div class="col-md-12 text-center">
+                                                  <button type="button" class="btnlogoutbtn mt-2 " id="logoutMobile">Logout</button>
+                                                 </div>
+                                           </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--user profile ends-->
+                  </div>
+                </div>
+                  </div>
+                  </div>
+                  
+                  <!--nav ends-->
+      <!-- top navigation ends here -->
+
+      <!-- body content starts here  -->
+       <div class="container-fluid md-spacing">
+        <div class="row mx-auto mt-5">
+        <div class="col-md-12">
+             <div class="row mx-auto">
+                <div class="col-12 col-md-12 col-lg-6">
+                  <!-- reserve a ride card for starts -->
+                 <div class="card border-0 shadow-sm">
+                 <div class="col-md-12 my-3">
+                <div class="row mx-1">
+                 <h4 class="font-20 font-semibold theme-color mb-4 ">Reserve a Ride for </h4>
+                 <div class="col-12 col-md-12 col-lg-3 mb-2 ">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="radioButtonClicked('Drop')">
+                    <label class="form-check-label font-semibold font-16" for="flexRadioDefault1">Regular Drop</label>
+                  </div>
+                  <div class=" col-12 col-md-12 col-lg-3 mb-2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="radioButtonClicked('Pickup')">
+                    <label class="form-check-label font-semibold font-16" for="flexRadioDefault2">Regular Pickup</label>
+                  </div>
+                  <!--<div class=" col-12 col-md-12 col-lg-3 mb-2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label class="form-check-label font-semibold font-16" for="flexRadioDefault3">Weekend Drop</label>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-3 mb-2 text-nowrap">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                    <label class="form-check-label font-semibold font-16" for="flexRadioDefault4">Weekend Pickup</label>
+                  </div>-->
+                </div>
+                </div>
+                <div class="col-md-12 my-3">
+                    
+                    <div id = "hideDropDowns"></div>
+                    <div id = "hideScreen">
+                    <div class="row mx-1">
+                     <h4 class="font-20 font-semibold theme-color mb-4">Location Details</h4>
+                     <div class="col-12 col-md-12 col-lg-6  mb-4 md-col-tab">
+                            <label for="dropLocation" class="form-label pb-2 font-semibold font-16" id = 'labelDrop'>Office Location</label>
+                            <select class="form-select" id="dropLocation" onblur="sourceBlurFunction()" onchange="onSelectOfSource()">
+                                <option value = 0 selected id = "locationValue">Select Location</option>
+                              </select>
+                              <p id="sourceError" class="dropPointEmptySpacing" ></p>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6 mb-4 md-col-tab">
+                        <label for="route" class="form-label pb-2 font-semibold font-16">Route</label>
+                        <select class="form-select" id="route" onchange="onSelectOfDestination()" onblur="destinationBlurFunction()">
+                            <option value = 0 selected id = "routeValue">Select Route</option>
+                          </select>
+                          <p id="destinationError" class="dropPointEmptySpacing" ></p>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6 mb-4 md-col-tab">
+                        <label for="pickup" class="form-label pb-2 font-semibold font-16" id = "pickupPoint">Drop Point</label>
+                        <select class="form-select" id="routesDisplay" onchange="dropPointBlurFunction()" onblur="dropPointBlurFunction()">
+                            <option value= 0 selected id ="optionChange">Select Drop Point</option>
+                          </select>
+                          <p id="dropPointError" class="dropPointEmptySpacing" ></p>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-6 mb-4 md-col-tab" id = "hideLocationDiv">
+                    <label for="location" class="form-label pb-2 font-semibold font-16">Location</label>
+                    <input type="text" class="form-control border-filter-style" placeholder="Enter Locality" id="location" onblur="locationBlurFunction()" onchange="locationBlurFunction()" maxlength = "40">
+                        
+                      <p id="locationError" class="dropPointEmptySpacing" ></p>
+                  </div>
+                  
+                  <div class="col-12 col-md-12 col-lg-6 mb-4 md-col-tab" id = "hideDateDiv">
+                    <label for="datePicker" class="form-label pb-2 font-semibold font-16">Date Of Travel</label>
+                    <input type="date" class="date-picker form-control border-filter-style" id="datePicker" onblur="dateBlurFunction()" onchange="dateBlurFunction()">
+                        
+                    <p id="dateError" class="dropPointEmptySpacing" ></p>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-6 mb-4 md-col-tab">
+                    <label for="timeSlot" class="form-label pb-2 font-semibold font-16">Time Slot</label>
+                    <select class="form-select" id="timeSlot" onchange="timeSlotBlurFunction()" onblur="timeSlotBlurFunction()">
+                        <option value = 0 selected id = "timeValue">Select Time Slot</option>
+                      </select>
+                      <p id="timeSlotError" class="dropPointEmptySpacing" ></p>
+                  </div>
+                  <!--<div class="col-12 col-md-12 col-lg-12 mb-4">
+                    <div class="form-switch ">
+                        <input class="form-check-input custom-switch" type="checkbox" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Enable automatic reservations</label>
+                      </div>
+                  </div>-->
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end my-4 btn-order">
+                
+                    <button class="btn btn-prime font-semibold font-16" data-toggle="modal" type="button" id = "bookACab-btn" onclick="bookARideButtonClicked()" onblur="bookACabBlurFunction()" onchange="bookACabBlurFunction()">Reserve a Ride</button>
+                     <button class="btn btn-second font-semibold font-16" type="button" id="clear-btn" onclick="reloadOnClear()">Clear</button>
+                  </div>
+                  <div>
+                     <p id="bookACabError" class="fade-out dropPointEmptySpacing" ></p>
+                  </div>
+                   </div>
+                    </div>
+                    </div>
+                    
+                 </div>
+                   <!-- reserve a ride cards for ends -->
+                </div>
+                <!--booking confirmation popup starst-->
+            <div class="modal fade" id="confirmbooking" tabindex="-1" role="dialog" aria-labelledby="confirm-bookinglabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered " role="document">
+                 <div  class="modal-content ">
+                    <div class="modal-header border-0 pb-0" >
+                        <label class="modal-title confirmbooking-color" id="confirm-bookinglabel" >Confirm Booking</label>
+                          <button type="button"   class="close closeicon" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                 <div class="modal-body pt-2 pb-3 ">
+                       <div class="confirm-booking" id="popUp-content">
+                            
+                       </div>
+                    </div>
+                       <div class="mb-3">
+                        <button type="button" class="btnokbtn float-end" id="ok-btn" data-dismiss="modal" onclick="bookingConfirmationOkButtonClicked()">Ok</button>
+                        <button type="button" class="btncancelbtn float-end" data-dismiss="modal">Cancel</button>
+                     </div>
+                  </div>
+                  </div>
+                  </div>    
+            <!--booking conformation popup ends--> 
+                <!-- reservations card  starts -->
+                <div class="col-12 col-md-12 col-lg-6">
+                    <div class="card card-height border-0 shadow-sm md-reservations">
+                    <div class="col-md-12 my-3">
+                   <div class="row mx-1 border-bottom mb-4 pb-4" id = "dataAppend">
+                    <div class="col-12 col-md-12 col-lg-6 mb-4 ">
+                    <label class="font-20 font-semibold theme-color">Regular Drop </label>
+                     </div>
+                     <div class="col-12 col-md-12 col-lg-6 d-flex justify-content-md-end mb-4">
+                        <a href="#" class="font-16 font-regular view-trip-sheet-link" data-toggle="modal" data-target="#cancelride" 
+                        id = "cancelDropBooking"></a>
+                        <a href="#" class="font-16 font-regular view-trip-sheet-link" 
+                        id = "viewTripSheetButton"></a>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-3 mb-2" id = "hideOfficeLocation">
+                       <label class="form-check-label font-semibold font-16" id = "labelOffice"></label>
+                       <label class="form-check-label font-regular d-lg-block font-16" id = "officeLocation"></label>
+                     </div>
+                     <div class="col-12 col-md-12 col-lg-3 mb-2" id = "hideDropRouteLocation">
+                        <label class="form-check-label font-semibold font-16" id = "labelDropRoute"></label>
+                        <label class="form-check-label font-regular d-lg-block font-16" id = "dest"></label>
+                      </div>
+                      <div class="col-12 col-md-12 col-lg-4 mb-2" id = "hideDropLocation">
+                        <label class="form-check-label font-semibold font-16" id="pickup"></label>
+                        <label class="form-check-label font-regular d-lg-block font-16" id = "showDropPoint"></label>
+                      </div>
+                      <div class="col-12 col-md-12 col-lg-2 mb-2" id = "hideDropTimeSlot">
+                        <label class="form-check-label font-semibold font-16" id = "labelTime"></label>
+                        <label class="form-check-label font-regular d-lg-block font-16" id = "dropTime"></label>
+                      </div>
+                      <div class="col-12 col-md-12 col-lg-12 text-center" id = "noDropScheduled">
+                                <label class="font-18 font-regular text-muted" id = "scheduleDrop"></label>
+                            </div>
+                      </div>
+                      <div class="row mx-1 border-bottom mb-4 pb-4">
+                        <div class="col-12 col-md-12 col-lg-6 mb-4 ">
+                        <label class="font-20 font-semibold theme-color">Regular Pickup </label>
+                         </div>
+                        <div class="col-12 col-md-12 col-lg-6 d-flex justify-content-md-end mb-4">
+                            <a href="#" class="font-16 font-regular cancel-link" data-toggle="modal" data-target="#cancelride" id = "cancelPickupBooking"></a>
+                        	<a href="#" class="font-16 font-regular view-trip-sheet-link" 
+                        id = "viewPickupTripSheetButton"></a>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-3 mb-2" id = "hideDropLocation">
+                           <label class="form-check-label font-semibold font-16" id = "labelDropOffice"></label>
+                           <label class="form-check-label font-regular d-lg-block font-16" id = "pickupDropLocation"></label>
+                         </div>
+                         <div class="col-12 col-md-12 col-lg-3 mb-2" id = "hideRouteLocation">
+                            <label class="form-check-label font-semibold font-16" id = "labelPickupRoute"></label>
+                            <label class="form-check-label font-regular d-lg-block font-16" id ="pickupRoute"></label>
+                          </div>
+                          <div class="col-12 col-md-12 col-lg-4 mb-2" id = "hidePickupLocation">
+                            <label class="form-check-label font-semibold font-16" id = "labelPickupPointLocation"></label>
+                            <label class="form-check-label font-regular d-lg-block font-16" id = "showPickupPoint"></label>
+                          </div>
+                          <div class="col-12 col-md-12 col-lg-2 mb-2" id = "hidePickupTimeSlot">
+                            <label class="form-check-label font-semibold font-16" id = "labelPickupTimeSlot"></label>
+                            <label class="form-check-label font-regular d-lg-block font-16" id = "pickupTimeSlot"></label>
+                          </div>
+                          <div class="col-12 col-md-12 col-lg-12 text-center" id = "noPickupScheduled">
+                                <label class="font-18 font-regular text-muted"></label>
+                            </div>
+                          </div>
+                          <!--<div class="row mx-1 pb-4">
+                            <div class="col-12 col-md-12 col-lg-6 mb-4 ">
+                            <label class="font-20 font-semibold theme-color">Scheduled Weekend Pickup</label>
+                            </div>
+                             <div class="col-12 col-md-12 col-lg-12 text-center">
+                                <label class="font-18 font-regular text-muted">No regular drop has been scheduled</label>
+                            </div>
+                        </div>-->
+                   </div>
+                 </div>
+            </div>
+            <!-- reservations card  ends -->
+             </div>
+           </div>
+        </div>
+       </div>
+       
+       <!--cancel confirmation popup ends--> 
+             <div class="modal fade" id="cancelride" tabindex="-1" role="dialog"  aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                   <div  class="modal-content ">
+                    <div class="modal-header border-0 pb-0" >
+                       <div class="col-md-12 col-12">
+                        <button type="button"   class="close closeicon float-end" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       </div>
+                    </div>
+                    <div class="modal-body pt-2 pb-3 ">
+                      <div class="row justify-content-center">
+                        
+                        <p class="cancel-content text-center">Are you sure you want to cancel the ride?</p>
+                        
+                      </div>
+                    </div>
+                    <div class="row justify-content-center mb-3 ">
+                        <div class="col-md-8 text-center">
+                         <button type="button" class="btnnobtn" data-dismiss="modal" onclick="window.location.reload()">No</button>
+                         <button type="button" class="btnyesbtn" onclick="cancelTheRideButtonClicked()" data-dismiss="modal">Yes</button>
+                      </div>
+                   </div>
+                    </div>
+                    </div>
+                    </div>
+                <!--cancel conformation popup ends-->
+       
+      <!-- body content starts here  -->
+         <script src="js/jquerys.min.js"></script>
+         <script src="js/jquery.min.js"></script>
+         <script src="js/popper.js"></script>
+         <script src="js/poppers.js"></script>
+        <script src="js/bootstrap.min.js"></script> 
+         <script src="js/bootstraps.min.js"></script>   
+		 <script type="text/javascript" src = "js/JsExceptionHandler.js" ></script>
+		 <script src="js/commonScript.js"></script>
+		 <script src="js/Notification.js"></script>
+		 <script src="js/logout.js"></script>
+		 <!--<script src="js/disableInspect.js"></script>-->
+         <script>
+          $('.advanced-filter').click(function (event) {
+          event.stopPropagation();
+          
+        });
+            $('.close-filter').click(function(){
+        $('.advanced-filter').removeClass('show');
+        })
+        </script>
+
+	<script>
+		notificationsUser();
+	</script>
+	
+	
+
+<!-- 	    <script src="js/disableInspect.js"></script> -->
+        <script src="js/timeFormatter.js"></script>
+        <script src="js/bookACab.js"></script>
+       
+
+</body>
+</html>

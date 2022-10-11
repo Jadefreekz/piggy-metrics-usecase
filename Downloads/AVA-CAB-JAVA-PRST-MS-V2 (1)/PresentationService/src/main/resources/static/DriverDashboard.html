@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Avacab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/fontfamily.css">
+<link rel="stylesheet" type="text/css" href="css/driverheader.css">
+
+<link rel="stylesheet" type="text/css" href="css/mytripdetail.css">
+<link rel="stylesheet" type="text/css" href="css/tripdetail.css">
+<link rel="stylesheet" type="text/css" href="css/drivercommontheme.css">
+</head>
+<body class="back-colr">
+	<div class="container-fluid ">
+	<div class="row">
+	<div class="fixed-top col-md-12" style="background-color: #EDEDEF;">
+		<div class="row">
+			<nav class="navbar navbar-light top-bar">
+				<a href="/driver/dashboard"><img
+					src="images/cab-application-logo-removebg-preview.svg"
+					alt="avacab_logo"></a>
+				<ul class="ms-auto mb-2 mb-lg-0 list-unstyled d-flex">
+					<li class="nav-item text-center">
+						<!-- 					Admin contact starts -->
+					<li class="nav-item me-3 top-space">
+						<div class="float-start">
+							<div class="header-right">
+
+								<div class="dropdown col-md-12 float-start">
+									<a data-bs-toggle="dropdown" aria-expanded="false" class="">
+										<img src="images/call.svg" class="navphone-icons cursor"
+										alt="filter-icon" title="Admin Contacts"
+										id="adminContactsBtn-mob"
+										style="margin-right: 10px; margin-top: 7px;">
+									</a>
+
+
+									<div
+										class="dropdown-menu m-0 p-3 Admin-contact-popover callProfile"
+										style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(37px, 24px, 0px);">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12 pb-2 border-0 mb-3">
+													<span class="text-style-title filter-title"
+														style='color: #441BC3; font-weight: bold;'>Admin
+														Contacts</span>
+													<button type="button"
+														class="btn-close float-end close-filter"
+														data-dismiss="advanced-filter" aria-label="Close">
+													</button>
+												</div>
+
+												<div class="col-md-12 ">
+													<div class="row mb-3">
+														<div id="adminContacts"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<div class="float-start">
+						<div class="headerx	-right">
+							<div class="dropdown col-md-12 float-start">
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon-mob" data-toggle="dropdown"
+									aria-expanded="true"></span> <span
+									style="width: 35px; height: 35px; margin-top: 5px; text-align: center; padding-top: 6px; font-size: 14px; resize: 16px;"
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="nameicon" data-bs-toggle="dropdown" aria-expanded="true">J</span>
+
+								<!-- 									here -->
+								<div class="dropdown-menu m-0 p-3 profile-popover driverProfile">
+
+									<div class=" px-0 text-end ">
+										<button type="button" class="btn-close   close-filter"
+											data-dismiss="advanced-filter" aria-label="Close"></button>
+									</div>
+									<div class="row px-3 justify-content-center">
+										<img src="images/user-profile-icon.png"
+											class="user-profile-icon rounded-circle" alt="profileicon">
+										<h6 class="username text-center mt-2" id="employeeName-mob"></h6>
+
+										<p class="userprofile-content text-center mb-1  pt-2"
+											id="driver-profile1"></p>
+										<p class=" userprofile-content text-center  pt-2"
+											id="driver-profile2"></p>
+
+										<button type="button" class="btn logout-button mt-2 " style="width: 100px;"
+											id="driverlogout">Logout</button>
+									</div>
+
+								</div>
+
+
+
+							</div>
+						</div>
+					</div>
+		</div>
+
+		<!-- 					driver profile ends here -->
+		</li>
+		</ul>
+
+		<div class="row text-center top-bar">
+			<div class="col-md-12">
+				<h5 class="trip-look mb-3 font-bold">My Trips</h5>
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 d-flex justify-content-center tabs-look px-3">
+				<ul class="nav nav-tabs">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link font-bold font-16 tabs active"
+							id="pills-home-tab" data-bs-toggle="tab" href="#pills-home" data-bs-target="#assigned"
+							type="button" role="tab" aria-controls="home"
+							aria-selected="true" onclick="assignedTab(1)" >Assigned</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link font-bold font-16 tabs" id="pills-inprogress-tab"
+							data-bs-toggle="tab" data-bs-target="#inprogress" type="button"
+							role="tab" aria-controls="profile" aria-selected="false"
+							onclick="inProgressTab()" href= "#pills-inprogress">Inprogress</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link font-bold font-16 tabs" id="pills-completed-tab"
+							data-bs-toggle="tab" data-bs-target="#completed" type="button"
+							role="tab" aria-controls="profile" aria-selected="false"
+							onclick="completedTab()" >Completed</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!--     TripDetails starts here -->
+		<div class="col-8">
+
+			<div class="mt-4" id='tripCount'>
+				<!-- 				<h5 class="font-20 side-heading">Assigned Trips(1)</h5> -->
+			</div>
+			<select name="DropDown" id="daterange"
+				onchange="filterButtonClicked()"
+				class="form-select form-select-sm DropDown filter-dropdown">
+				<option value="Today">Today</option>
+				<option value="This Week">This Week</option>
+				<option value="This Month">This Month</option>
+			</select>
+		</div>
+
+
+			</div>
+        </div>
+
+		<div id="assignedTripDetails" class="container-fluid back-colr mt-5" style="margin-top: 15rem !important;">
+
+		</div>
+
+		<div class="tab-content custom-tab-content ">
+			<div class="tab-pane fade show active" id="home" role="tabpanel"
+				aria-labelledby="home-tab">
+
+				<div class="text-center mt-5 no-trip" id="noTripCard"></div>
+			</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel"
+				aria-labelledby="profile-tab">
+				<h5 class="text-center ">Completed Trip</h5>
+			</div>
+
+			<div class="page py-md-3">
+				<button type="button"
+					class="btn font-semi font-16 driver-trip-static-buttons loadmoreBtn  btn-primary me-0 "
+					style="margin-left: 125px;display:none;" id="loadmore"
+					onclick="loadmoreButtonClicked()">Load More</button>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/commonScript.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/driverAssignedTrips.js"></script>
+	<script type="text/javascript" src="js/JsExceptionHandler.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script type="text/javascript" src="js/timeFormatter.js"></script>
+	
+</body>
+</html>

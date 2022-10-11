@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>On Going Trip</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+<link rel="stylesheet" type="text/css" href="css/userstylesheet.css">
+</head>
+<body>
+	<div class="container-fluid">
+             <div class="row">
+                     <!--nav starts-->
+                     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-topnav topnav-border p-0">
+                      <a class="navbar-brand" href=""/user/bookacab""><img src="images/cab-application-logo.png" class="cabapp-logo" alt="cablogo"></a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="list-group list-group-horizontal">
+                          <li class="list-group-item nav-menu bookacab-tabactive"><a class="link bookacab-tab " href="/user/bookacab" onclick="getTripSheet()">Ongoing Trip</a></li>
+                          <li class="list-group-item nav-menu"><a class="link myrequest-tab " href="/user/myrequest">My Reservations</a></li>
+                       </ul>
+                      </div>
+                      <div class="float-end d-none d-sm-block ipad-responsive">
+					<!--contact starts-->
+					<div class="float-start">
+        <div class="header-right">
+          <div class="dropdown col-md-12 float-start">
+              <img  src="images/phone-call.png" class="navphone-icons cursor" alt="filter-icon" title="Admin Contacts" id="adminContactsBtn" data-toggle="dropdown" aria-expanded="true">
+          <div class="dropdown-menu m-0 p-3 Admin-contact-popover" >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 pb-2 border-0 mb-3"><span class="text-style-title filter-title">Admin Contacts</span>
+                      <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                    </button>
+                    </div>
+                  
+                     <div class="col-md-12 ">
+                      <div class="row mb-3">
+                          <div id="adminContacts">
+                           </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+       </div>
+					<!--contact ends-->
+					<!--       kumar's code -->
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+
+								<img src="images/notification.svg"
+									class="navnotify-icons cursor" alt="filter-icon"
+									title="Notification" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId" /><span
+									class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3 ">
+												<span class="text-style-title filter-titlenotification">Notification
+												</span>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="advanced-filter" aria-label="Close">
+												</button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<!-- newly added code -->
+												<span id="noRecord"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!--user profile starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+
+								<!--<img src="images/user-profile.png" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-toggle="dropdown" aria-expanded="true"/>-->
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon" data-toggle="dropdown"
+									aria-expanded="true"></span>
+
+								<div class="dropdown-menu m-0 p-3 profile-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md- pb-2 border-0 mb-3">
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="advanced-filter" aria-label="Close">
+												</button>
+											</div>
+
+											<div class="col-md-12">
+												<div class="row mb-3">
+													<div>
+
+														<div class="row justify-content-center">
+															<img src="images/user-profile-icon.png"
+																class="user-profile-icon text-center" alt="profileicon">
+															<h6 class="username text-center mt-2" id="employeeName"></h6>
+															<div>
+																<div
+																	class=" col-md-12 col-12 float-start userprofile-content pt-2"
+																	id="domainName"></div>
+																<div
+																	class=" col-md-12 col-12 float-start userprofile-content  pt-2"
+																	id="employeeId"></div>
+																<div
+																	class=" col-md-12 col-12 float-start userprofile-content  pt-2"
+																	id="domainLead"></div>
+																<!--<div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project: Cab Application</div>
+                                      <div class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project lead: Rafi</div>-->
+															</div>
+														</div>
+
+													</div>
+													<div class="row justify-content-center mb-3 mt-2">
+														<div class="col-md-12 text-center">
+															<button type="button" class="btnlogoutbtn mt-2 "
+																id="logout">Logout</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--user profile ends-->
+				</div>
+			</nav>
+			<div class="float-end  d-block d-sm-none responsive-mb ipad-block">
+				<!--contact starts-->
+				<div class="float-end">
+					<div class="float-start">
+						<div class="header-right">
+
+							<div class="dropdown col-md-12 float-start">
+								<a data-toggle="dropdown" aria-expanded="true"> <img
+									src="images/phone-call.png" class="navphone-icons cursor"
+									alt="filter-icon" title="Admin Contacts"
+									id="adminContactsBtn-mob"></a>
+								<div class="dropdown-menu m-0 p-3 Admin-contact-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<span class="text-style-title filter-title">Admin
+													Contacts</span>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="advanced-filter" aria-label="Close">
+												</button>
+											</div>
+
+											<div class="col-md-12 ">
+												<div class="row mb-3">
+													<div id="adminContacts-mob"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--contact ends-->
+					<!--notification starts-->
+					<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+					<!--notification here-->
+					<!--user profile starts-->
+					<div class="float-start">
+                          <div class="header-right">
+                            <div class="dropdown col-md-12 float-start">
+                              
+                                <img src="images/user-profile-icon.png" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-toggle="dropdown" aria-expanded="true"/>
+                              
+                            <div class="dropdown-menu m-0 p-3 profile-popover" >
+                              <div class="container-fluid">
+                                  <div class="row">
+                                      <div class="col-md- pb-2 border-0 mb-3">
+                                        <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                      </button>
+                                      </div>
+                                    
+                                       <div class="col-md-12">
+                                        <div class="row mb-3">
+                                            <div>
+                                                
+                                                  <div class="row justify-content-center">
+                                                    <img src="images/user-profile-icon.png" class="user-profile-icon text-center" alt="profileicon">
+                                                    <h6 class="username text-center mt-2"
+																id="employeeName-mob"></h6>
+															<div>
+																<div
+																	class=" col-md-12 col-12 float-start userprofile-content pt-2"
+																	id="domainName-mob"></div>
+																<div
+																	class=" col-md-12 col-12 float-start userprofile-content  pt-2"
+																	id="employeeId-mob"></div>
+																<div
+																	class=" col-md-12 col-12 float-start userprofile-content  pt-2"
+																	id="domainLead-mob"></div>
+															</div>
+														</div>
+                                                
+                                                </div>
+                                                <div class="row justify-content-center mb-3 mt-2">
+                                                  <div class="col-md-12 text-center">
+                                                    <button type="button" class="btnlogoutbtn mt-2 " id="logoutMobile">Logout</button>
+                                                   </div>
+                                             </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+					<!--user profile ends-->
+				</div>
+			</div>
+
+			<!--nav ends-->
+
+			<div>
+				<h3 class="ongoing-trip-title">Ongoing Trip</h3>
+				<div class="col-md-12 ">
+					<div class="col-md-2 col-12 width-responsive pt-2 float-start">
+						<div class="detail">Cab Number:</div>
+						<div class="detail-answer pb-4" id="cabnumber"></div>
+					</div>
+					<div class="col-md-2 col-12 width-responsive pt-2 float-start">
+						<div class="detail">Driver Name:</div>
+						<div class="detail-answer pb-4" id="drivername"></div>
+					</div>
+					<div class="col-md-2 col-12 pt-2 width-responsive float-start">
+						<div class="detail">Driver Contact Number:</div>
+						<div class="detail-answer pb-4" id="drivernumber"></div>
+					</div>
+					<div class="col-md-2 col-12 pt-2 width-responsive float-start">
+						<div class="detail">Destination:</div>
+						<div class="detail-answer pb-4" id="destination"></div>
+					</div>
+					<div class="col-md-2 col-12 pt-2 width-responsive float-start">
+						<div class="detail">Date:</div>
+						<div class="detail-answer pb-4" id="date"></div>
+					</div>
+					<div class="col-md-2 col-12 pt-2 width-responsive float-start">
+						<div class="detail">Time Slot:</div>
+						<div class="detail-answer pb-4" id="timeslot"></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="responsive-customise">
+				<table class="table mt-2 mb-0 caps-grid">
+					<thead>
+						<tr class="display-shadow">
+							<th class=" header-class">S.No</th>
+							<th class="col header-class">Employee Name</th>
+							<th class="col header-class">Employee ID</th>
+							<th class="col header-class">Phone Number</th>
+							<th class="col header-class">Drop Point</th>
+						</tr>
+					</thead>
+					<tbody id="tablebody">
+						<!--tr  class="row-bg-style" >
+							
+                        <td class=" number-spacing">1</td>
+                        <td class="spacing">Maniyarasi</td>
+                        <td class="spacing">2345</td>
+                        <td class="spacing">Shollinganallur</td>
+                      </tr>
+                      <tr class="row-bg-style">
+                        <td class=" number-spacing">2</td>
+                        <td class="spacing">Saravanan</td>
+                        <td class="spacing">4567</td>
+                        <td class="spacing">Shollinganallur</td>
+                      </tr>
+                      <tr class="row-bg-style">
+                        <td class=" number-spacing">3</td>
+                        <td class="spacing">Anthea</td>
+                        <td class="spacing">6738</td>
+                        <td class="spacing">Shollinganallur</td>
+
+                      </tr>
+                      <tr class="row-bg-style">
+                        <td class=" number-spacing">4</td>
+                        <td class="spacing">Jeyasree</td>
+                        <td class="spacing">0979</td>
+                        <td class="spacing">Shollinganallur</td>
+                      </tr>
+                      <tr class="row-bg-style">
+                        <td class=" number-spacing">5</td>
+                        <td class="spacing">Soumi</td>
+                        <td class="spacing">4536</td>
+                        <td class="spacing">Navalur</td>
+                      </tr>
+                      <tr class="row-bg-style">
+                        <td class=" number-spacing">6</td>
+                        <td class="spacing" >Soundarya</td>
+                        <td class="spacing">3458</td>
+                        <td class="spacing">Navalur</td>
+
+                      </tr>
+                      <tr class="row-bg-style">
+                        <td class=" number-spacing">7</td>
+                        <td class="spacing">Ruben</td>
+                        <td class="spacing">2829</td>
+                        <td class="spacing">Navalur</td>
+
+                      </tr-->
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-12 col-12 float-start mt-3">
+				<h6 class="total-records" id="passengers"></h6>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/JsExceptionHandler.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/commonScript.js"></script>
+	<script src="js/Notification.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+
+	<script src="js/commonScript.js"></script>
+	<!--             <script src="js/disableInspect.js"></script> -->
+
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
+
+		});
+		$('#close-filter').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+	</script>
+
+
+	<script src="js/ongoingTrip.js"></script>
+	<script>
+		notificationsUser();
+	</script>
+
+</body>
+</html>

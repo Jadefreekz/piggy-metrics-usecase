@@ -1,0 +1,1149 @@
+@font-face {
+	font-family: 'nunitosans-Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('nunitosans-Regular'), url('../Fonts/nunitosans-regular-webfont.woff') format('woff');
+	}
+@font-face {
+	font-family: 'nunitosans-light';
+	font-style: normal;
+	font-weight: normal;
+	src: local('nunitosans-light'), url('../Fonts/nunitosans-light-webfont.woff') format('woff');
+	}	
+
+@font-face {
+   font-family: 'nunitosans-SemiBold';
+   font-style: normal;
+   font-weight: normal;
+   src: local('nunitosans-SemiBold'), url('../Fonts/nunitosans-semibold-webfont.woff') format('woff');
+}	
+@font-face {
+	font-family: 'nunitosans-Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('nunitosans-Bold'), url('../Fonts/nunitosans-bold-webfont.woff') format('woff');
+}
+body {
+    font-family:'nunitosans-Regular';
+    font-size: 14px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width:767px) and (min-width:320px) {
+    
+    .ipad-block{
+        position: relative;
+    }
+    .ipad-block .dropdown{
+        position: inherit;
+    }
+    .cab-illustration{
+        display: none;
+    }
+    .Admin-contact-popover,.notification-popover,.profile-popover{
+        width:100%!important;
+        right:0!important;
+    }
+    .login-cred{
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+    .customise-width{
+        width: 100%!important;
+    }
+    
+    .responsive-customise{
+        overflow: auto;
+    }
+    .empty-state-image{
+        width: 100%;
+    }
+    .list-group-horizontal {
+        flex-direction:column!important;
+    }
+    .nav-menu{
+        margin-left:0px!important;
+    }
+    .bookacab-tabactive{
+        border-bottom:0px!important;
+    }
+    .responsive-mb{
+        margin-bottom:20px;
+    }
+    .cabapp-logo-responsive{
+        width:80px!important;
+    }
+    .navphone-icons-responsive{
+        width: 16px!important;
+    }
+    .cablogo-responsive{
+        width:50px!important;
+        margin-top:5px
+    }
+    .nav-custimise-login{
+        flex-direction:unset!important;
+    }
+    .avasoftlogo-responsive{
+        width:90px!important;
+        margin-top: 5px;
+    }
+    .menu-responsive{
+        padding: 8px 5px!important;
+    }
+    .button-responsive{
+        margin-bottom: 0px!important;
+        width:154px;
+        padding: 5px !important;
+    }	
+    .mob-trip{
+		font-size: 14px;
+	}
+	.mov-mob-structure{
+		margin-top: 45px;
+	}
+    /*.advanced-filter{
+        width: 21rem!important;
+    }*/
+}
+
+@media only screen and (max-width:1200px) and (min-width:768px) {
+    .cab-illustration{
+        display: none;
+    }
+    .login-cred{
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+    .responsive-customise{
+        overflow: auto;
+    }
+    .empty-state-image{
+        width: 100%;
+    }
+    .list-group-horizontal {
+        flex-direction:column!important;
+    }
+    .nav-menu{
+        margin-left:0px!important;
+    }
+    .responsive-mb{
+        margin-bottom:20px;
+    }
+    .ipad-responsive{
+        display:none!important;
+    }
+    .ipad-block{
+        display:block!important;
+    }
+    .bookacab-tabactive{
+        border-bottom:0px!important;
+    }
+    .nav-custimise-login{
+        flex-direction:unset!important;
+    }
+    .menu-responsive{
+        padding: 8px 8px!important;
+    }
+    .avasoftlogo-responsive{
+        margin-top: 5px;
+    }
+    .cablogo-responsive{
+        margin-top: 5px;
+    }
+    .customise-width{
+        width: 33%!important;
+    }
+    .width-responsive{
+        width: 33%;
+    }
+}
+
+/**login starts**/
+.admincontact{
+    width: 20px;
+    height: 20px;
+    margin-top: 9px;
+}
+.menu{
+    border: none;
+    color: #1B2074;
+    font-size: 14px;
+    padding:8px 8px!important;
+}
+.illustration{
+    width: 100%;
+    height: 100%;
+}
+.cab-illustration{
+    height:450px;
+}
+.login-cred{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.welcome{
+    color:#1B2074;
+    font-family: 'nunitosans-Bold'!important;
+    margin-right: 5px;
+    
+}
+.login-title{
+    color:#1B2074;
+    font-family:'nunitosans-regular';
+}
+.login-id{
+    color:#1B2074;
+    font-size: 16px;  
+}
+
+.login-password{
+    color:#1B2074;
+    font-size: 16px;  
+}
+
+.login{
+    border:none;
+    border-radius: 5px;
+    background-color: #F8BB10;
+    color:white;
+    margin-top: 70px;
+    padding: 10px 10px;
+    width: 100%;
+    font-family: 'nunitosans-semibold';
+}
+.remembermelabel{
+    padding-left: 10px;
+}
+.closeicon{
+	background: none;
+	border: none;
+	font-size: 35px;
+	color: grey;
+}
+.admincontacts-color{
+    color:#1B2074;
+}
+.action-blocked-title{
+    color:#1B2074;
+    font-family: 'nunitosans-bold';
+    
+}
+.navphone-icons-admin{
+    width:20px!important;
+    margin-top:4px
+}
+
+/**login endss**/
+
+/**masterpage starts**/
+.bg-topnav{
+    background-color: white!important;
+}
+.nav-menu{
+    color:#1B2074 ;
+    padding-top: 19px;
+    padding-bottom: 18px!important;
+    border: none;
+    margin-right: 5px;
+    margin-left: 20px;
+}
+.nav-icons{
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+}
+
+
+
+.navphone-icons{
+    width:26px;
+    height: 26px;
+    margin-top: 9px;
+    margin-right: 15px;
+}
+.navnotify-icons{
+    width:29px;
+    height: 29px;
+    margin-top: 7px;
+    margin-right: 15px;
+    
+}
+.navnotify-icons-mob{
+    width:29px;
+    height: 29px;
+    margin-top: 7px;
+    margin-right: 32px;
+    
+}
+.navuserprofile-icons{
+    width:29px;
+    height: 29px;
+    margin-top: 7px; 
+    margin-right:5px;  
+    line-height:29px;
+}
+
+/*.navuserprofile-icons-mob{
+    width:29px;
+    height: 29px;
+    margin-top: -51px; 
+    margin-right:5px;
+    margin-left: 310px;  
+    line-height:29px;
+}*/
+.customise-space{
+    padding:0px 10px;
+}
+.title-main{
+    color:#370CC1 ;
+    padding-left: 8px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+    font-family: 'nunitosans-bold';
+}
+.customise-label{
+    padding: 10px 0px;
+    color:black ;
+    font-size: 16px;
+}
+.clear{
+    color: #545454;
+    font-size: 15px;
+    background-color: #ebebeb;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom:10px;
+    margin-top: 60px;
+    font-family: 'nunitosans-semibold';
+}
+.book-a-ride{
+    color: white;
+    font-size: 15px;
+    background-color: #370CC1;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right:10px;
+    margin-bottom:10px;
+    margin-top: 60px;
+    font-family: 'nunitosans-semibold';
+}
+
+.ride-disabled
+{
+	 background-color: rgb(159, 179, 244);
+}
+
+.bookacab-tab{
+	    padding-top: 4px;
+    text-decoration: none;
+    color:black !important;
+    font-size:17px;
+    font-family:'nunitosans-semibold'!important;
+}
+
+.bookacab-tab:hover{
+    color: #ffffff;
+}
+.myrequest-tab{
+   
+    font-size: 17px;
+    font-family: 'nunitosans-SemiBold';
+    text-decoration: none;
+  color: black;
+    
+}
+
+.myrequest-tab:hover{
+    color: #034683 ;
+}
+.bookacab-tabactive{
+    border-bottom: 4px solid #F8BB10 ;
+    padding-bottom: 13px;
+    font-family: 'nunitosans-semibold';
+    
+}
+.btnokbtn{
+ color: white;
+    font-size: 15px;
+    background-color: #370CC1;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right:30px;
+    margin-bottom:10px;
+    padding:10px 30px;
+    font-family: 'nunitosans-bold';
+}
+.btncancelbtn{
+    color: #545454;
+    font-size: 15px;
+    background-color: #ebebeb;
+    padding: 10px 32px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom:10px;
+    font-family: 'nunitosans-bold';
+}
+.confirm-booking-content{
+    padding: 5px 20px;
+
+}
+.notification-content{
+    padding: 0px 5px;
+}
+.notification-icon{
+    padding-right: 5px;
+    
+    
+    
+}
+.notification-title{
+    color:#1B2074 ;
+    font-family: 'nunitosans-bold';
+}
+.btnlogoutbtn{
+	
+    color: white;
+    background-color:#370CC1 ;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'nunitosans-semibold';
+}
+.user-profile-icon{
+    width: 75px;
+}
+.userprofile-content{
+    padding: 0px 5px;
+    
+}
+.cursor{
+cursor: pointer;
+}
+.confirmbooking-color{
+   color:#441BC3 ;
+    font-family: 'nunitosans-bold';
+    padding-left: 20px;
+    font-size: 18px;
+}
+/**.cabapp-logo{
+    margin-left: 5px;
+}**/
+.clearbtn-link{
+    text-decoration: none;
+    color:#1B2074 ;
+}
+.clearbtn-link:hover{
+    color:#1B2074;
+}
+.ok-link{
+    text-decoration: none;
+    color: black;
+}
+.ok-link:hover{
+    color: black;
+}
+/**masterpage ends**/
+/**ongoing trip starts**/
+.ongoing-trip-title{
+    color:black;
+    padding: 35px 10px;
+    font-family: 'nunitosans-bold';
+}
+.table-heading{
+ padding: 10px 30px;
+}
+/**ongoing trip ends**/
+/**completed  trip starts**/
+.register-complaint{
+   color: white;
+    font-size: 15px;
+    background-color: #E90000;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    /*margin-top:30px*/
+}
+
+.compalin-title{
+    color:#370CC1;
+    font-family: 'nunitosans-bold';
+}
+.btncomplainbtn{
+    color: white;
+    font-size: 15px;
+    background-color:#370CC1;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 16px;
+    margin-top:20px;
+    
+    
+}
+.cancelbtn{
+     color: #545454;
+    font-size: 15px;
+    background-color: #ebebeb;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom:10px;
+    margin-top:20px;
+  
+}
+.request-tabactive{
+    padding-bottom: 10px;
+    border-bottom: 4px solid #F8BB10 ;
+    text-decoration: none;
+    color: #1B2074;
+    font-family: 'nunitosans-semibold';
+}
+.customise-width{
+    width: 14%;
+}
+.detail{
+    padding: 5px 10px;
+    font-family: 'nunitosans-semibold';
+}
+.detail-answer{
+    padding: 5px 10px;
+}
+
+
+/**completed trip ends**/
+/**empty state starts**/
+.bookacab-color{
+    color:#1B2074;
+}
+.btnbookacabbtn{
+    color: black;
+    background-color:#F8BB10 ;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top:20px;
+}
+.norecord-content{
+    
+    height: 100%;
+}
+.book-a-cab-link{
+    text-decoration: none;
+    color: black;
+}
+.book-a-cab-link:hover{
+    color: black;
+}
+/**empty state ends**/
+/**  my request starts**/
+.my-request-title{
+    color: #370CC1;
+    padding: 15px 10px;
+    font-family: 'nunitosans-bold';
+   
+}
+.filter-icon{
+    padding: 15px 10px;
+}
+/* .sorting */
+/* { */
+/* 	position: relative; */
+/* 	margin-left: 6px!important; */
+/* } */
+/* .sort-up */
+/* { */
+/* 	position:absolute; */
+/* 	top: -8px!important; */
+/* 	left:0!important; */
+    
+/* } */
+/* .sort-down */
+/* { */
+/* 	position:absolute; */
+/* 	bottom: -8px!important; */
+/* 	left:0!important; */
+    
+/* } */
+.sort-image
+{
+	width:8px;
+}
+.pagination-border
+{
+	border:none!important;
+	color: #717171!important;
+	padding: 5px 19px!important;
+}
+.page-active
+{
+	font-family: 'nunitoSans-Bold';
+	color:#555555;
+}
+.row-bg-style:nth-child(even)
+{
+	background-color: #F3F9FF;
+}
+
+.spacing
+{
+	padding:25px 15px 25px 15px  !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	vertical-align: middle;
+	font-size: 14px;
+    font-family: 'nunitosans-regular';
+
+}
+.button-spacing{
+    margin-right:1px;
+    border-top: none !important;
+	border-bottom: none !important;
+	vertical-align: middle;
+}
+.header-class
+{
+	border-bottom: none!important;
+	padding:15px 15px!important;
+	font-size:16px;
+    font-family: 'nunitosans-bold';
+    color:#282626
+    
+	
+}
+
+.header-classTrip
+{
+	border-bottom: none!important;
+	padding:15px 13px!important;
+	font-size:16px;
+    font-family: 'nunitosans-bold';
+    color:#282626
+    
+	
+}
+.number-spacing{
+    font-family: 'nunitosans-regular';
+    padding:15px 25px !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	vertical-align: middle;
+}
+.display-shadow
+{
+	box-shadow: 0px 9px 28px #8888880d;
+	white-space: nowrap;
+	background-color:#F8F8F9 ;
+    
+}
+.viewicon{
+   height: 26px;
+    cursor: pointer;
+    
+}
+.caps-grid{
+    border: 1px solid rgb(196, 196, 196);
+}
+.previous-page{
+    border: none;
+    text-decoration: none;
+    color:#979797;
+}
+.current-page{
+    border: none;
+    text-decoration: none;
+    color:#979797;
+}
+.next-page{
+    border: none;
+    text-decoration: none;
+    color:#979797;
+}
+.total-records{
+    color:#979797;
+}
+.style-select1
+{
+	border:1px solid #D8D8D8!important;
+}
+.advanced-filter
+{
+	/*width: 30rem;*/
+    transform: none !important;
+   /* right: 7px !important;*/
+   /* top: 100% !important;*/
+    left: auto!important;
+    border: none !important;
+    /*box-shadow: 0px 3px 6px 0px #c9c7c7;*/
+    border-radius: 7px;
+}
+.filter-title
+{
+    color:#441BC3;
+    font-family: 'nunitosans-bold';
+
+}
+.filter-titlenotification{
+     font-family: 'nunitosans-bold';
+    color:#441BC3;
+}
+
+.contact-number{
+    text-decoration: none;
+    color: black;
+}
+.username{
+    font-family: 'nunitosans-bold';
+}
+.clear-btn-style
+{
+	color:#A0A0A0;
+	margin-right:12px;
+	text-decoration: none;
+}
+.btnfilterbtn{
+    background-color:#370CC1 ;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+}
+.notification-content{
+    margin-top: 15px;
+}
+.topnav-border{
+    border-bottom: 2px solid #e0e0e0!important;
+}
+
+
+.round
+{
+    background: #D41E21;
+    border: none;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-right:6px;
+    margin-top: 5px;
+    float: left;
+}
+
+.Admin-contact-popover{
+     width: 22rem;
+    transform: none !important;
+    right: 7px;
+    top: 100% !important;
+    left: auto!important;
+    border: none !important;
+    box-shadow: 0px 3px 6px 0px #c9c7c7;
+    border-radius: 7px;
+}
+.notification-popover{
+    width: 23rem;
+    transform: none !important;
+    right: 7px;
+    top: 100% !important;
+    left: auto!important;
+    border: none !important;
+    box-shadow: 0px 3px 6px 0px #c9c7c7;
+    border-radius: 7px;
+}
+.profile-popover{
+    width: 17rem;
+    transform: none !important;
+    right: 7px;
+    top: 100% !important;
+    left: auto!important;
+    border: none !important;
+    box-shadow: 0px 3px 6px 0px #c9c7c7;
+    border-radius: 7px;
+}
+/**my request ends**/
+/**ongoingride starts**/
+.cancel-ride{
+   color: white;
+    font-size: 15px;
+    background-color: #ff716b;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 16px;
+    margin-top:20px;
+    font-family: 'nunitosans-semibold';
+    font-size: 15px;
+    
+}
+.btnnobtn{
+   color: #545454;
+    font-size: 15px;
+    background-color: #ebebeb;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom:10px;
+    margin-top:20px;
+    font-family: 'nunitosans-semibold';
+}
+.btnyesbtn{
+    color: white;
+    font-size: 15px;
+    background-color: #370CC1;
+    padding: 12px 22px 9px 22px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-top:20px;
+    font-family: 'nunitosans-semibold';
+}
+.cancel-content{
+    font-family: 'nunitosans-bold';
+    color:#370CC1;
+    font-size: 20px;
+}
+/**ongoingride ends**/
+
+/**login will be in middle**/
+.mt-9-5 {
+	margin-top: 9.5rem !important;
+}
+
+@keyframes rotate{
+	0%{
+		transform: rotate(360deg);
+	}
+}
+/**page loading progress bar ends**/ 
+
+
+/**Fadeout on cancelled actions in myRequest page starts**/
+.fade-out {
+  animation: fadeOut ease 8s;
+  -webkit-animation: fadeOut ease 8s;
+  -moz-animation: fadeOut ease 8s;
+  -o-animation: fadeOut ease 8s;
+  -ms-animation: fadeOut ease 8s;
+  padding: 0px 10px;
+  
+  
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+ 
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+ 
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+ 
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+}
+}
+/**Fadeout on cancelled actions in myRequest page ends**/
+
+/*Abi's code'*/
+.markAsRead{
+    cursor:pointer;
+}
+
+.navuserprofile-icon-text{
+   background-color: #1B2074;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0.9;
+    font-size: 13px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+}
+/*Abi's code ends'*/
+
+/* kumar code */
+.color
+{
+    color:#006400;
+}
+.markAsRead{
+margin-left: 145px;
+color: brown;
+font-size: small;
+}
+
+.notification-num{
+	display: none;
+}
+.notification-time
+{
+    color: #C4C3C3;
+    font-family: 'nunitosans-regular';
+    font-size: 12px;
+    margin-top: -4px;
+    margin-left: 11px;
+    padding-right: 26px;
+}
+.noRecords{
+	 text-align: center;
+    color: #8080808c;
+    font-family: inherit;
+}
+
+/*pagination*/
+.ul-tag{
+	float: right;
+}
+
+/*no record found */
+.noRecordsFound{
+	text-align: center;
+	font-size: medium;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+/* number of records */
+.countDisplay{
+	text-align: left;
+	font-size: 16px;
+	font-family: 'nunitosans-light';
+	margin-top: 6%;
+	color: #747474;
+}
+
+/* sorting */
+.sorting {
+float: right;
+position: absolute;
+}
+.sort-down {
+top: 12px;
+line-height: 0;
+}
+.sort-up {
+top: 4px;
+
+}
+.sort-up, .sort-down {
+line-height: 0;
+position: absolute;
+display: block;
+left: 5px;
+}
+
+/**new css for user side**/
+.vid-container{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+  }
+  .bgvid{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100vw;
+  }
+  .color-changing-text
+  {
+/*         animation: color-change 1s infinite; */
+        color:white;
+  }
+      
+/*       @keyframes color-change { */
+/*         0% { color: #ffffff; } */
+/*         50% { color: #ffc400; } */
+/*         100% { color: #35ebeb; } */
+/*       } */
+.info-text-login
+{
+     background-color: white;
+    color: #565656;
+    font-family: 'nunitosans-SemiBold';
+}
+.font-size
+{
+    font-size: 16px;
+    line-height: 28px;
+    margin-left: 70px;
+    margin-right: 54px;
+}
+.font-size-bold
+{
+    font-size: 16px;
+    font-family: 'nunitosans-Bold';
+    color: #525252;
+    text-align: center;
+}
+  .inner-container{
+    width:510px;
+    height:405px;
+    position:absolute;
+    top:calc(50vh - 200px);
+    left: calc(50vw - 255px);
+    overflow:hidden;
+  }
+  .bgvid.inner{
+    top:calc(-50vh + 200px);
+    left:calc(-50vw + 200px);
+    filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+    -webkit-filter:blur(10px);
+    -ms-filter: blur(10px);
+    -o-filter: blur(10px);
+    filter:blur(10px);
+  }
+  .avasoft-logo
+  {
+    height: 45px;
+  }
+  .box{
+    position:absolute;
+    height:100%;
+    width:100%;
+    font-family:Helvetica;
+    color:#fff;
+    background:rgba(0,0,0,0.13);
+    padding:30px 0px;
+  }
+  .box h1{
+    text-align:center;
+    margin:30px 0;
+    font-family: 'nunitosans-SemiBold';
+    font-size:28px;
+  }
+  
+  .box button{
+    background: #370CC1;
+    border-radius: 4px;
+    border:none;
+    font-family: 'nunitosans-SemiBold';
+    color:#fff;
+    padding:10px;
+    font-size:20px;
+    width:330px;
+    margin:20px auto;
+    display:block;
+    cursor:pointer;
+  }
+  .box button:active{
+   background: #531FFB;
+    border-radius: 4px;
+    font-family: 'nunitosans-SemiBold';
+  }
+
+  .cabapp-logo{
+        margin-left: 12px;
+   		 height: 50px;
+}
+
+.move-back{
+	margin-top: 42px;
+	margin-right: 7px;
+}
+
+.vector-image{
+	width : 39px;
+	margin-top: 45px;
+	margin-left: 90%;
+	
+}
+
+.booked{
+	font-size: 18px;
+	text-align: center;
+	margin-top: 25%;
+	margin-bottom: 25%;
+	color:#6c757d;
+}
+
+.align-img {
+	/*margin-left: 15px;*/
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.span-color{
+	color:#947BE5 !important;
+}
+
+.position-sort{
+	position: relative;
+}
+
+.locationTooltip{
+	text-overflow: ellipsis;
+	max-width: 2px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.locationTooltipPopup{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.border-filter-style1 {
+	border-bottom: 1px solid #D6D6D6 !important;
+	color: grey !important;
+	font-family: 'nunitosans-Regular';
+}
+
+@media only screen and (max-width: 420px) 
+{
+	.date-picker{
+		display: block;
+		background-image: url('../images/calendar.svg') !important;
+		background-color: #fff !important;
+	    background-repeat: no-repeat;
+	    background-position: 95%;
+	    padding: 0.375rem 0.75rem;
+	    border-radius: 0.25rem;
+	    height: 38px;
+	    width: 100%;
+	    border: 1px solid #ced4da;
+	}
+}

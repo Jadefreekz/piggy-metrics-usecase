@@ -1,0 +1,62 @@
+.card-lable
+{
+    background: #FFECB9 !important;
+    color: #9B7200 !important;
+    padding:10px 20px 10px 20px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-left-radius: 9px !important;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.card-look
+{
+    padding-top: 0px;
+    padding-left: 0px;
+}
+.back-colr
+{
+    background-color: #EDEDEF;
+}
+.bor-rads
+{
+
+     border-radius: 10px !important;
+}
+.colm-border
+{
+    border-right: 0.75px solid #c5c5c5;
+}
+.posi-fix
+{
+    margin-top: 40px;
+}
+/* .btn-grad-location { */
+/*     background: linear-gradient(to bottom, #B9BCFB 0%, #835BCD 51%, #835BCD  100%) !important; */
+/*     text-align: center !important; */
+/*     transition: 0.5s !important; */
+/*     background-size: 200% auto !important; */
+/*     color: white !important;             */
+/*     box-shadow: 0 0 20px #eee !important; */
+/*     border-radius: 10px; */
+/*     display: block !important; */
+/*     border: none; */
+/*     margin-bottom: 0px; */
+/* /*     margin-top: 10px; */ */
+/*     border-top-left-radius: 0px; */
+/*     border-top-right-radius: 0px; */
+/* } */
+.btn-grad-location:hover {
+    background-position: right center !important; /* change the direction of the change here */
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.go-back-to-trip-detail
+{
+    padding: 9px 19px;
+    background-color: #5507FB;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: none;
+}

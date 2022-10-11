@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.38" height="131.687" viewBox="0 0 32.38 131.687">
+  <g id="Group_6" data-name="Group 6" transform="translate(-468 -683)">
+    <g id="Group_5" data-name="Group 5" transform="translate(468 683)">
+      <line id="Line_1" data-name="Line 1" y2="73.004" transform="translate(16.058 27.496)" fill="none" stroke="#d6d6d6" stroke-width="1" stroke-dasharray="4"/>
+      <g id="图层_x0020_1" transform="translate(0 0)">
+        <circle id="Ellipse_2" data-name="Ellipse 2" cx="16.19" cy="16.19" r="16.19" transform="translate(0 0)" fill="#0cf"/>
+        <path id="Path_36" data-name="Path 36" d="M10.232,4.263l6.333,6.466h0v7.1H12.706V13.258a2.334,2.334,0,0,0-2.474-2.145,2.334,2.334,0,0,0-2.474,2.145v4.569H3.9v-7.1h0ZM.967,10.98a1,1,0,0,0,1.419.005l7.78-7.763,7.72,7.7a1,1,0,0,0,1.419-.005A1.017,1.017,0,0,0,19.3,9.493L10.888,1.1a1.035,1.035,0,0,0-1.44,0L.973,9.554A1.016,1.016,0,0,0,.967,10.98Z" transform="translate(5.922 6.674)" fill="#fff" fill-rule="evenodd"/>
+      </g>
+      <g id="Group_3" data-name="Group 3" transform="translate(0 99.308)">
+        <circle id="Ellipse_3" data-name="Ellipse 3" cx="16.19" cy="16.19" r="16.19" transform="translate(0)" fill="#ea7b7b"/>
+        <g id="briefcase_1_" data-name="briefcase (1)" transform="translate(6.599 7.919)">
+          <path id="Path_1" data-name="Path 1" d="M16.151,140.686a10.483,10.483,0,0,1-4.3,1.852,2.375,2.375,0,0,1-4.7,0,10.483,10.483,0,0,1-4.3-1.852A6.5,6.5,0,0,1,0,135.5v10.108a2.743,2.743,0,0,0,2.74,2.74H16.252a2.743,2.743,0,0,0,2.74-2.74V135.5A6.5,6.5,0,0,1,16.151,140.686Z" transform="translate(0 -131.591)" fill="#fff"/>
+          <path id="Path_2" data-name="Path 2" d="M36.008,39.931V38.92a.556.556,0,0,1,.556-.556H40.2a.556.556,0,0,1,.556.556v1.011c3.469-.753,6.008-3.111,6.008-5.9v-.556H42.292V32.372a2.249,2.249,0,0,0-2.247-2.247H36.721a2.249,2.249,0,0,0-2.247,2.247v1.106H30v.556C30,36.819,32.539,39.177,36.008,39.931Zm-.421-7.559a1.135,1.135,0,0,1,1.134-1.134h3.324a1.135,1.135,0,0,1,1.134,1.134v1.106H35.587V32.372Z" transform="translate(-28.887 -30.125)" fill="#fff"/>
+          <path id="Path_3" data-name="Path 3" d="M224.49,282.215h-2.525v1.263a1.263,1.263,0,0,0,2.525,0Z" transform="translate(-213.731 -272.864)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="1.32" height="0.88" transform="translate(483.618 741.864)" fill="#fff"/>
+    <g id="Polygon_1" data-name="Polygon 1" transform="translate(479.3 741)" fill="#b9b9b9">
+      <path d="M 8.145074844360352 7.5 L 0.8549256324768066 7.5 L 4.5 1.019867777824402 L 8.145074844360352 7.5 Z" stroke="none"/>
+      <path d="M 4.5 2.039735317230225 L 1.709851264953613 7 L 7.290148735046387 7 L 4.5 2.039735317230225 M 4.5 0 L 9 8 L 0 8 L 4.5 0 Z" stroke="none" fill="#b9b9b9"/>
+    </g>
+  </g>
+</svg>

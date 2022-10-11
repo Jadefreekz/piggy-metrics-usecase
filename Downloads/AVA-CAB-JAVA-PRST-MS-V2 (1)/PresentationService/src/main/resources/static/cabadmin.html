@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset='utf-8'>
+<title>Manage Requests and Cabs</title>
+<link rel="stylesheet" type="text/css" href="css/adminstylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+<link rel="stylesheet" type="text/css" href="css/pagination.css">
+<link rel="stylesheet" type="text/css" href="css/commonthemes.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/advanced_filter.css">
+<link rel="stylesheet" type="text/css" href="css/admin_request.css">
+<link rel="stylesheet" type="text/css" href="css/custom_grid.css">
+<link rel="stylesheet" type="text/css" href="css/manage_cab.css">
+</head>
+
+<body>
+
+<!--nav starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="float-start">
+        <a class="cab-logo" href="/admin/dashboard"><img src="images/cab-logo.png" class="cabapp-logo" alt="logo"></a>
+      </div>
+      <div class="float-start">
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item nav-menu requests"><a class="link requests border-line-new requests-tabactive " href="/admin/dashboard">
+            Requests and Cabs</a></li>
+          <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/history">History of Trips</a></li>
+          <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/complaints">Complaints</a></li>
+          <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/blockedusers">Blocked Users</a></li>
+          <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/routedetails">Route Management</a></li>
+         <a href="/user/bookacab" class="btn btn-primary btn-sm button book-a-ride">Book a Ride</a>
+        </ul>
+      </div>
+     <div class="float-end">
+					<!-- kumar's code starts -->
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<img class="navnotify-icons cursor"
+									src="images/notification.svg" alt="notify-icon"
+									title="notifications" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId"> 
+									<span class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3">
+												<div class="text-style-title filter-titlenotification">
+													Notification</div>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="notify-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<span id="noRecord" class="noRecordFound"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!-- kumar's code ends -->
+					<!--user profile starts-->
+					<div class="float-end">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon" data-toggle="dropdown"
+									aria-expanded="true"></span>
+									<!--<img class="navuserprofile-icons cursor" src="images/profile-image.png" alt="profile" id="userprofile-icon" data-toggle="dropdown" aria-expanded="true">-->
+
+								<div class="dropdown-menu m-0 p-3 user-filter">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="user-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12">
+
+												<div class="col-md-4 float-start">
+													<span class="user-profile-icon  userprofile-icon-text"
+														data-toggle="dropdown" aria-expanded="true"> <span
+														class="user-profile-icon " id="userprofile-icon2">
+													</span>
+													</span>
+												</div>
+												<div class="col-md-4 float-start">
+													<h5 class="userprofile-content pt-2" id="employeeName"></h5>
+													<h5 class="userprofile-content1  pt-2 mailIdContent"
+														id="mailId"></h5>
+													<button type="button" class="btnlogoutbtn mb-3 "
+														id="logout">Logout</button>
+
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user profile ends-->
+<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor remove-img" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+	<!--nav ends-->
+	<!--tab starts-->
+	<span id="topScrollButton" class="absolute-btn"><img
+		src="images/Scrollup.svg" id="ScrollUp"></span>
+	<span class="float-end date-top" id="todayDate"></span>
+	<div class="col-md-12 float-start  px-lg-5 tab">
+		<ul class="nav nav-pills mb-3" id="pills-tab" style="float: left;" role="tablist">
+                    <li class="nav-item px-2" role="presentation">
+                      <button class="nav-link active outline" id="pills-request-tab" data-bs-toggle="pill" href="#pills-request" data-bs-target="#pills-request" type="button"
+                       role="tab" aria-controls="pills-request" aria-selected="true">Today's Request <span id="topCount"></span></button>
+                    </li>
+                    <li class="nav-item px-2" role="presentation">
+                      <button class="nav-link outline" id="pills-assigned-tab" data-bs-toggle="pill" href="#pills-assigned" data-bs-target="#pills-assigned" type="button" 
+                      role="tab" aria-controls="pills-assigned" aria-selected="false">Assigned cabs <span id="topCountAssignedCabs"></span></button>
+                    </li>
+                    <li class="nav-item px-2" role="presentation">
+                      <button class="nav-link outline" id="pills-managecab-tab" data-bs-toggle="pill" href="#pills-managecab" data-bs-target="#pills-managecab" type="button" 
+                      role="tab" aria-controls="pills-managecab" aria-selected="false">Manage Cab</button>
+                    </li>
+                    <li class="nav-item px-2" role="presentation">
+                        <button class="nav-link outline" id="pills-managedriver-tab" href="#pills-managedriver" data-bs-toggle="pill" data-bs-target="#pills-managedriver" 
+                        type="button" role="tab" aria-controls="pills-managedriver" aria-selected="false">Manage Drivers</button>
+                      </li>
+                  </ul>
+		<!--tab ends here-->
+
+<!--filter starts here-->
+
+ <div class="header-right" id="filter-search-assignToCab">
+<div class="dropdown float-start" id = 'filterModal'>
+<img class="cursor vector-image" src="images/VectorFilter.svg" alt="filter-icon" title="Advanced Filter" data-toggle="dropdown" aria-expanded="true" id="filterbtn">
+
+
+
+<div class="dropdown-menu m-0 p-3 advanced-filter" id="FilterDiv">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 pb-2 border-0 mb-3"><span class="text-style-title filter-title">Advanced
+Filter</span><br><span id="filter-empty-check" ></span><button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close" onclick="filterCloseButtonClicked()">
+
+
+
+</button>
+</div>
+<div class="col-md-12">
+<div class="row mb-3">
+<div class="col-md-6 mb-3">
+<label class="mb-0 form-label filter-style " for="Source" id="sourceFilter">Source</label>
+<select class="form-select style-select1 border-filter-style" id="Source" aria-label="Default-example">
+<option selected="" id="sourcePlaceHolder">Select Source</option>
+
+</select>
+</div>
+<div class="col-md-6 mb-3">
+<label class="mb-0 form-label filter-style " for="Destination" id="destinationFilter">Destination</label>
+<select class="form-select style-select1 border-filter-style" id="Destination" onchange="onSelectOfDestination()" aria-label="Default-example">
+<option selected="" id = "destinationPlaceHolder">Select Destination</option>
+
+</select>
+</div>
+<div class="col-md-6 mb-3" id="dropDiv">
+<label class="mb-0 form-label filter-style " for="Droppoint" id = "dropPointFilter">Drop
+Point</label> <select class="form-select style-select1 border-filter-style" id="droppoint" aria-label="Default-example">
+<option selected="" id ="dropPlaceHolder">Select Drop Point</option>
+</select>
+</div>
+<div class="col-md-6 mb-3">
+<label class="mb-0 form-label filter-style " for="timeslot">Time
+Slot</label>
+<!-- <input type="text" class="form-control border-filter-style" id="timeslot" placeholder="Time Slot"> -->
+<select class="form-select style-select1 border-filter-style" id="timeslot" aria-label="Default-example">
+<option selected="">Select Time Slot</option>
+
+
+
+
+
+</select>
+</div>
+</div>
+<div class=" float-end for-overall">
+
+<div class="for-applybtn"> <button type="button" class="btn btn-primary btn-sm button1" id="ApplyButton" onclick="applyFilterButtonClicked()" data-dismiss="advanced-filter">Apply Filter</button>
+<button type="button" class="btn btn-primary btn-sm button1 close-filter" id="ApplyButtonAssignedCabs" data-dismiss="advanced-filter" style="display:none">Apply Filter</button> </div>
+<div class="for-cancelbtn"> <button type="button" class="btn btn-primary btn-sm cancel-btn close-filter" data-dismiss="advanced-filter" id="cancelAssignButton">Cancel</button> </div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--filter ends here-->
+<!--search starts here-->
+<div class="float-start position-search mx-3" id="TodaysRequestSearch">
+<input type="text" class="form-control custom-search-change" id="searchTab-TodaysRequestSearch" placeholder="Search"><a><img class="search-icon2" src="images/search.svg" alt="search" id="addon-wrapping-TodaysRequestSearch" onclick="searchTextEmptyCheck()" onchange="searchTextEmptyCheck()"></a>
+</div>
+<!--search ends here-->
+
+<!--Assigned cabs search starts here-->
+
+<div class="float-start position-search mx-3" id="AssignedCabsSearch" style="display: none;">
+<input type="text" class="form-control custom-search-change" id="searchTab-AssignedCabsSearch" placeholder="Search"><a><img class="search-icon2" src="images/search.svg" alt="search" id="addon-wrapping-AssignedCabsSearch" onclick="getBySearch()"></a>
+</div>
+<!--Assigned cab search ends here-->
+
+<!--button starts here-->
+<!--data-bs-toggle="modal" data-bs-target="#assign-to-cab"-->
+<button type="button" class="btn btn-primary btn-sm button new-proj" data-toggle="modal"  id="assign-to-cab-button" onblur="assignedToCabBlurFunction()" onchange="assignedToCabBlurFunction()" onclick="assignToCabButtonClicked()">Assign To Cab</button>
+
+<p id="assignedToCabError"></p>
+
+</div>
+
+		<!--button ends here-->
+
+		 <!--today's request starts here-->
+  <!--today's request starts here-->
+  <div class="tab-content" id="pills-tabContent">
+  
+    <div class="tab-pane fade show active" id="pills-request" role="tabpanel"
+         aria-labelledby="pills-request-tab">
+         <div class="w-100 float-start">
+			<div class="col-md-9 mt-3">
+                  <div class="row mx-auto">
+                    <div class="col-md-2 custom-col mb-1">
+                      <label class="form-check-label font-semibold font-16" for = "flexRadioDefault1">View By</label>
+                      </div>
+                    <div class="col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="getTodaysRequests('Drop')"checked>
+                        <label class="form-check-label font-semibold font-16" for="flexRadioDefault1">Regular Drop</label>
+                      </div>
+                      <div class=" col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="getTodaysRequests('Pickup')">
+                        <label class="form-check-label font-semibold font-16" for="flexRadioDefault2">Regular Pickup</label>
+                      </div>
+                      <!--<div class=" col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label font-semibold font-16" for="flexRadioDefault3">Weekend Drop</label>
+                      </div>
+                      <div class="col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                        <label class="form-check-label font-semibold font-16" for="flexRadioDefault4">Weekend Pickup</label>
+                      </div>-->
+                  </div>
+                 </div>
+          <div class="header-left">
+          <span class="font-records"># No.of.selected records:</span>
+          <span class="regular" id="selector"></span>
+
+        </div>
+         </div>
+         
+         
+      <!--  <div class="w-100 float-start border fixTableHead table-scroll" id="scrollTable">  -->
+      <div class="w-100 float-start border " id="scrollTable">
+      
+        <table class="table mb-0 caps-grid" >
+          <thead>
+          <tr class="display-shadow">
+            <th class="header-class">
+              <input class="form-check-input check" type="checkbox" value="" id="flexCheckChecked">
+              <label class="form-check-label" for="flexCheckChecked"></label>
+            </th>
+            <th class="header-class">Employee Id</th>
+            <th class="header-class">Employee Name</th>
+            <th class="header-class">Phone Number</th>
+            <th class="header-class" id= "todaysRequestSource">Source <span class="sorting"><a class="sort-up" href="#" onclick='sortTableTodaysRequest(5,"a")'><img
+                    class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a>
+                     <a class="sort-down" href="#" onclick='sortTableTodaysRequest(5,"d")'><img  class="sort-image" src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+            <th class="header-class" id = "todaysRequestDestination">Destination<span class="sorting"><a class="sort-up" href="#" onclick='sortTableTodaysRequest(7,"a")'><img
+                    class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a class="sort-down"
+                                                                                           href="#" onclick='sortTableTodaysRequest(7,"d")'><img class="sort-image" src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+            <th class="header-class" id = "todaysDropPoint">Drop Point <span class="sorting"><a class="sort-up" href="#" onclick='sortTableTodaysRequest(8,"a")'><img
+                    class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a class="sort-down"
+                                                                                           href="#" onclick='sortTableTodaysRequest(8,"d")'><img class="sort-image" src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+            <th class = "header-class" id = "locationThead">Location</th>
+            <th class="header-class">Booking Time</th>
+            <th class="header-class">Time Slot <span class="sorting"><a class="sort-up" href="#" onclick='sortTableTodaysRequest(11,"a")'><img
+                    class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a class="sort-down"
+              href="#" onclick='sortTableTodaysRequest(11,"d")'><img class="sort-image" src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+            <th class="header-class">Date Of Travel</th>
+          </tr>
+          </thead>
+          <tbody id="tableBody">
+
+
+          </tbody>
+        </table>
+        <span id="noRecordTodaysRequest" class="noRecordFound"></span>
+      </div>
+      <!--inprogress tab ends here-->
+
+
+
+
+      <div class="w-100 float-start">
+      <div class="page py-md-3">
+       <button type="button" class="btn btn-primary btn-sm button new-proj loadmore" id = "loadMore">Load More</button>
+
+         </div>
+        <!--total content display starts here-->
+          <div class="header-left py-md-3">
+           <!--<span class="font-records"># Records:</span> -->
+           <span class="regular" id="counter"></span> 
+
+        </div> 
+
+        <!--total content display ends here-->
+
+
+
+      </div>
+
+    </div>
+    <!--today;s request ends here-->
+    <!--today;s request ends here-->
+			<!--Assigned cabs starts here-->
+			<div class="tab-pane fade" id="pills-assigned" role="tabpanel"
+				aria-labelledby="pills-assigned-tab">
+				<div class="w-100 float-start">
+				<div class="col-md-9 mt-3">
+                  <div class="row mx-auto">
+                    <div class="col-md-2 custom-col mb-2">
+                      <label class="form-check-label font-semibold font-16">View By</label>
+                      </div>
+                    <div class="col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="assignCabsDrop" onclick="getTotalCountAssigned('Drop')">
+                        <label class="form-check-label font-semibold font-16" for="assignCabsDrop">Regular Drop</label>
+                      </div>
+                      <div class=" col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="assignCabsPickup" onclick="getTotalCountAssigned('Pickup')">
+                        <label class="form-check-label font-semibold font-16" for="assignCabsPickup">Regular Pickup</label>
+                      </div>
+                      <!--<div class=" col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label font-semibold font-16" for="flexRadioDefault3">Weekend Drop</label>
+                      </div>
+                      <div class="col-md-2 mb-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                        <label class="form-check-label font-semibold font-16" for="flexRadioDefault4">Weekend Pickup</label>
+                      </div>-->
+                  </div>
+                 </div>
+					<!--total content display starts here-->
+					<div class="header-left" id="record">
+						<span class="font-records"># Records:</span> <span class="regular"
+							id="count"></span>
+					</div>
+				<div class="w-100 float-start border  " id="scroll">
+					<table class="table mb-0 caps-grid" id="mytable">
+						<thead>
+							<tr class="display-shadow">
+								<th class="header-class">Cab Number</th>
+								<th class="header-class">Driver Name</th>
+								<th class="header-class">Driver Number</th>
+								<th class="header-class" id = "assignedCabSource">Source <span class="sorting"><a
+										class="sort-up" href="#" onclick='sortTable(3,"a")'><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick='sortTable(3,"d")'><img
+											class="sort-image" src="images/sortdown-icon.svg"
+											alt="sort-down" /></a></span></th>
+								<th class="header-class" id = "assignedCabDestination">Destination<span class="sorting"><a
+										class="sort-up" href="#" onclick="sortTable(4,'a')"><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick="sortTable(4,'d')"><img
+											class="sort-image" src="images/sortdown-icon.svg"
+											alt="sort-down" /></a></span></th>
+								<th class="header-class">Date of Travel <span
+									class="sorting"><a class="sort-up" href="#"
+										onclick="sortTable(5,'a')"><img class="sort-image"
+											src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick="sortTable(5,'d')"><img
+											class="sort-image" src="images/sortdown-icon.svg"
+											alt="sort-down" /></a></span></th>
+								<th class="header-class">Time Slot <span class="sorting"><a
+										class="sort-up" href="#" onclick="sortTable(6,'a')"><img
+											class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a
+										class="sort-down" href="#" onclick="sortTable(6,'d')"><img
+											class="sort-image" src="images/sortdown-icon.svg"
+											alt="sort-down" /></a></span></th>
+								<th class="header-class" href="#">Actions</th>
+							</tr>
+						</thead>
+						<tbody id="cab-body">
+
+
+
+
+						</tbody>
+					</table>
+					<span id="noRecordAssignedCab" class="noRecordFound"></span>
+					
+				</div>
+				
+					<!--total content display ends here-->
+
+					<div class="page py-md-3">
+      				 <button type="button" class="btn btn-primary btn-sm button new-proj loadmore" id = "loadMoreAssigned">Load More</button>
+
+        		 </div>
+				</div>
+
+			</div>
+			<!--Assigned tab ends here-->
+
+
+
+    <!--manage cabs starts here-->
+    <!--manage cabs starts here-->
+    <div class="tab-pane fade" id="pills-managecab" role="tabpanel" aria-labelledby="pills-managecabs-tab">
+    <!--         total content display starts here -->
+        <div class="header-left countalignment" id="displayCount">
+          <span class="font-records"># Records:</span>
+          <span class="regular"></span>
+
+        </div>
+<!--         total content display ends here -->
+      <div class="w-100 float-start border">
+        <table class=" mb-0 caps-grid tab-bord" >
+          <thead>
+          <tr class="display-shadow">
+            <th class="header-class">Cab Model<span class="sorting"><a class="sort-up" href="#" onclick='sortCabNumber(0,"a")'><img
+                    class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a class="sort-down"
+                                                                                           href="#" onclick='sortCabNumber(0,"d")'><img class="sort-image" src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+            <th class="header-class">Cab Number</th>
+            <th class="header-class">Total Seats</th>
+            <th class="header-class">Insurance Number</th>
+            <th class="header-class">Expiry Date</th>
+            <th class="header-class">Driver Name</th>
+<th class="header-class">Status </th>
+
+
+            <th class="header-class text-center">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="row-bg-style" >
+            <td class="spacing"><select class="form-select style-select" aria-label="Default select example" id="cab-Model-Dropdown" style="margin-top: 25px !important;" onblur="cabModelBlurFunction()" onchange="cabModelBlurFunction()"  >
+              <option selected >Select</option>
+
+
+
+            </select>
+            <a href="#" title="Add" class="actions3-image"><img class="add-style" src="images/add.svg"
+                                                                         alt="add-icon" data-toggle="modal" data-target="#model-pop1" style="margin-top: 30px !important;" ></a> <br>
+                                                                        <br>  <br><p id="modelDropdownError" style="margin-bottom: -51px !important;" ></p></td>
+
+            <td class="spacing"><input type="text" class="form-control border-filter-style" id="cab-num"  onblur="cabNumberBlurFunction()" onchange="cabNumberBlurFunction()">
+             <p  id="errorCabNum" style="margin-bottom: -94px !important;"></p></td>
+            <td class="spacing"> <input type="number" class="form-control border-filter-style" id="no-seats" onblur="availableSeatsBlurFunction()" onchange="availableSeatsBlurFunction()" min="0" max="99">
+            <p id="noSeatsEmpty" style="margin-bottom: -81px !important;" ></p></td>
+            <td class="spacing"> <input type="text" class="form-control border-filter-style" id="insurance-num" onblur="insuranceNoBlurFunction()" onchange="insuranceNoBlurFunction()">
+            <p id="InsNumError" style="margin-bottom: -94px !important;"  ></p></td>
+            <td class="spacing"> <input type="date" class="form-control border-filter-style" id="ins-exp-date" onblur="insExpiryDateBlurFunction()" onchange="insExpiryDateBlurFunction()">
+            <p id="InsExpDateError" style="margin-bottom: -81px !important;" ></p></td>
+            <td class="spacing posRelative"> <input type="text" class="form-control border-filter-style" id="driv-name">
+              <div class="suggestStyle" id="suggestDiv"></div>
+               <p id="DrivNameError" style="margin-bottom: -94px !important;"></p>
+            </td>
+<!--<td class="spacing"><div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+</div></td>-->
+			<td class="spacing text-center">
+			<!--<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+</div>-->
+			</td>
+            <td class="spacing pt-5">
+              <a href="#" title="Save" class="actions4-image"><img
+                      src="images/grid_check.svg" alt="save-icon"  id="saveCab" onclick="saveCabDetails()"/></a>
+              <a href="#" title="Cancel" class="actions2-image"><img class = "cancel-data-new"
+                      src="images/grid_close.svg" alt="cancel-icon"  id="cancelCab" onclick="funClear()"/></a></td>
+          </tr>
+          </tbody>
+          <tbody id="cab-info"></tbody>
+        </table>
+       <span id = "noRecordCab" class = "noRecords"></span>
+      </div>
+       <div class="w-100 float-start"> 
+
+
+        <!--Pagination starts here-->
+         <div class="page py-md-3" id = "cabPagination"> 
+<!--           <nav aria-label="Page navigation"> -->
+<!--             <ul class="pagination"> -->
+<!--               <li class="page-item"> -->
+<!--                 <a class="page-link pagination-border" href="#" aria-label="Previous"> -->
+<!--                   <img src="images/pagination-prev-arrow.svg" alt="page-arrow" /> -->
+<!--                 </a> -->
+<!--               </li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border page-active" href="#">1</a></li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border" href="#">2</a></li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border" href="#">3</a></li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border" href="#">...</a></li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border" href="#">9</a></li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border" href="#">10</a></li> -->
+<!--               <li class="page-item"><a class="page-link pagination-border" href="#">11</a></li> -->
+<!--               <li class="page-item"> -->
+<!--                 <a class="page-link pagination-border" href="#" aria-label="Next"> -->
+<!--                   <img src="images/pagination-next-arrow.svg" alt="page-arrow" /> -->
+
+
+<!--                 </a> -->
+<!--               </li> -->
+
+<!--             </ul> -->
+<!--           </nav> -->
+         </div> 
+        <!--pagination ends here-->
+      </div>
+    </div>
+
+    <!--manage drivers starts here-->
+    <div class="tab-pane fade" id="pills-managedriver" role="tabpanel" aria-labelledby="pills-managedrivers-tab">
+     <!--         total content display starts here -->
+        <div class="header-left countalignment" id="driverDisplayCount">
+          <span class="font-records"># Records:</span>
+          <span class="regular"></span>
+
+        </div>
+<!--         total content display ends here -->
+      <div class="w-100 float-start border">
+        <table class="table mb-0 caps-grid tab-bord">
+          <thead>
+
+
+          <tr class="display-shadow">
+            <th class="header-class">Driver Name</th>
+            <th class="header-class">Driver Number</th>
+            <th class="header-class">License Number</th>
+            <th class="header-class">Expiry Date</th>
+
+            <th class="header-class text-center">Actions</th>
+
+
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="row-bg-style">
+            <td class="spacing"><input type="text" class="form-control border-filter-style" id="dri-name" onblur="nameBlurFunction()" onchange="nameBlurFunction()" style="margin-bottom: 2%;">
+            <p id="errorDriverName" style="margin-bottom: -81px !important;"  ></p></td>
+            <td class="spacing"> <input type="text" class="form-control border-filter-style" id="dri-num" onblur="numberBlurFunction()" onchange="numberBlurFunction()">
+           <p id="errorDriverNumber" style="margin-bottom: -81px !important;"  ></p> </td>
+            <td class="spacing"> <input type="text" class="form-control border-filter-style" id="lic-num" onblur="licBlurFunction()" onchange="licBlurFunction()">
+           <p id="errorLicNum" style="margin-bottom: -81px !important;"  ></p> </td>
+
+            <td class="spacing"> <input type="date" class="form-control border-filter-style" id="lic-exp-date" onblur="licExpBlurFunction()" onchange="licExpBlurFunction()">
+            <p id="errorLicExpDate" style="margin-bottom: -81px !important;"></p></td>
+            <td class="spacing text-center"><a href="#" title="Save" class="actions4-image"><img
+                      src="images/grid_check.svg" alt="save-icon" id = "save" style="margin-bottom: -41px !important;" onclick = "saveDriverDetails()" /></a>
+              <a href="#" title="Cancel" class="actions2-image" id = "cancel" onclick = "functionClear()"><img class = "cancel-data-new"
+                      src="images/grid_close.svg" alt="cancel-icon" style="margin-bottom: -41px !important;" /></a></td>
+          </tr>
+          <tbody id = "driver-info" >
+         
+          </tbody>
+
+
+          </tbody>
+        </table>
+       <span id = "noRecordDriver" class = "noRecords"></span>
+      </div>
+       
+      <div class="w-100 float-start" >
+
+
+        <!--Pagination starts here-->
+         <div class="page py-md-3" id = "pagination" > 
+           <!--<nav aria-label="Page navigation">  
+         </div> 
+        <!--pagination ends here-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--add model pop up starts here-->
+<div class="modal fade" id="model-pop1" tabindex="-1" role="dialog" aria-labelledby="model-pop1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" id = "opacityDiv" role="document">
+    <div class="modal-content bor-pop" id = "opacityPop">
+      <div class="col-md-12 col-12">
+        <div class="modal-body">
+          <label class="label style-label">Enter Model</label>
+          <button type="button" class="close closeicon float-end" data-dismiss="modal" aria-label="Close" onclick="hidePreviousAlertOnChange()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <input type="text" class="form-control border-filter-style" id="model-pop2" placeholder="Please enter the cab model" />
+           <p id="addCabModelError" ></p>
+        </div>
+      </div>
+      <div class="modal-footer border-0 pb-4">
+        <button type="button" class="btn btn-primary btn-sm cancel-btn1" data-dismiss="modal" id="cancelButton" onclick="hidePreviousAlertOnChange()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm button2 "  id="addCabModel" >Add</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!--add model pop up ends here-->
+
+<!--add model pop up ends here-->
+<!--assign to cab popup starts-->
+<div class="modal fade" id="assign-to-cab" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title theme-color font-20 font-semibold" id="assign-to-cablabel">Assign To Cab</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-md-12">
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                <label class="font-16 font-semibold pb-2" for="carModel">Car Model</label>
+                <select class="form-select form-select-sm popup-form" id="cab-model" onchange="cabModelDropdownBlurFunction()">
+                    <option value=0 selected>Select</option>
+                  </select>
+                  <p  id="cabModelDropdownError"></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="font-16 font-semibold pb-2" for="carNumber" onclick="cabNumberOnBlurFunction()" onchange="cabNumberOnBlurFunction()">Car Number</label>
+                    <select class="form-select form-select-sm popup-form" id="cab-number" onchange="cabNumberOnBlurFunction()" >
+                        <option value=0 selected>Select</option>
+                      </select>
+                      <p id="cabNumberDropdownError"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="font-16 font-semibold pb-2" for="driverName">Driver Name</label>
+                        <input class="form-control form-control-sm popup-form" type="text" id="cab-driver-name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="font-16 font-semibold pb-2" for="driverNumber">Driver Number</label>
+                        <input class="form-control form-control-sm popup-form" type="text" id="cab-driver-number">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="font-16 font-semibold pb-2" for="pickupTime" id = "pickup-label">Pickup Time</label>
+                       <input class="form-control form-control-sm popup-form" type="time" id="pickup-time">
+                        </div>
+
+                    </div>  
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="font-16 font-semibold pb-2" id="total-seats">Available No. Of Seats : </label>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label class="font-16 font-semibold pb-2" id="allocated-seats">Allocated No. Of Seats: </label>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label class="font-16 font-semibold pb-2" id="remaining-seats">Remaining No. Of Seats: </label>
+                 </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer border-0 d-grid gap-2 d-md-flex justify-content-md-end btn-order">
+           <button class="btn btn-second font-semibold font-16" type="button" onclick="cancel()" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-prime font-semibold font-16" type="button" id="assign-btn" onclick="assignButtonClicked()" data-dismiss="modal">Assign</button>
+            <button class="btn btn-prime font-semibold font-16" type="button" id="assign-btn-pickup" onclick="assignPickupButtonClicked()" data-dismiss="modal">Assign</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!--assign to cab popup ends-->
+
+
+<!--delete popup starts here-->
+<div class="modal fade" id="manage-pop" tabindex="-1" role="dialog" aria-labelledby="manage-pop"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center">Are you sure you want to delete this cab details?</p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          <button type="button" class="cancel-btn2" data-dismiss="modal">No</button>
+          <button type="button" class="button11" data-dismiss="modal" id="delete" onclick="deleteCabDetails()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--delete users popup ends here-->
+
+<!--driver delete popup starts here-->
+<div class="modal fade" id="manage-driver-pop" tabindex="-1" role="dialog" aria-labelledby="manage-pop"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center">Are you sure you want to delete this driver details?</p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          <button type="button" class="cancel-btn2" data-dismiss="modal">No</button>
+          <button type="button" class="button11" data-dismiss="modal" id="deleteDriver" onclick="deleteDriverDetails()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--delete users popup ends here-->
+
+
+<!--driver delete popup starts here-->
+<div class="modal fade" id="save-manage-drivers-popup" tabindex="-1" role="dialog" aria-labelledby="save-manage-drivers-popup"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center">Driver details saved successfully</p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          
+          <button type="button" class="button11" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--delete users popup ends here-->
+
+
+<!--save cab details popup starts here-->
+<div class="modal fade" id="save-manage-cabs-popup" tabindex="-1" role="dialog" aria-labelledby="save-manage-cabs-popup"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center">Cab details saved successfully</p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          
+          <button type="button" class="button11" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--save users popup ends here-->
+
+
+
+
+<!--Todays request details popup starts here-->
+<div class="modal fade" id="todays-request-popup" tabindex="-1" role="dialog" aria-labelledby="todays-request-popup"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <!--<div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>-->
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center">Trip added successfully</p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          
+          <button type="button" class="button11" data-bs-dismiss="modal" onclick="window.location.reload()">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Todays request popup ends here-->
+
+<!--save cab details popup starts here-->
+<div class="modal fade" id="delete-manage-cabs-popup" tabindex="-1" role="dialog" aria-labelledby="save-manage-cabs-popup"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center">Unable to delete. Driver already assigned to a cab</p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          
+          <button type="button" class="button11" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--save users popup ends here-->
+
+
+<!--Todays request assigned after cancelled  details popup starts here-->
+<div class="modal fade" id="todays-request-cancelled-popup" tabindex="-1" role="dialog" aria-labelledby="todays-request-cancelled-popup"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content bor-pop ">
+      <div class="modal-header border-0 pb-0">
+        <div class="col-md-12 col-12">
+          <button type="button" class="close closeicon float-end" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body pt-2 pb-3 ">
+        <div class="row justify-content-center">
+
+          <p class="style-label text-center" id="alreadyCancelled"></p>
+
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5 mt-2">
+        <div class="col-md-8 text-center">
+          
+          <button type="button" class="button11" data-bs-dismiss="modal" onclick="window.location.reload()" >Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Todays request  assigned after cancelled popup ends here-->
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+  $('.advanced-filter').click(function (event) {
+    event.stopPropagation();
+
+  });
+
+  $('.close-filter').click(function () {
+    $('.advanced-filter').removeClass('show');
+  })
+
+</script>
+	<script>
+    var assignedcab = document.getElementById("pills-assigned-tab");
+
+    assignedcab.addEventListener('click',function(){
+
+        document.getElementById("assign-to-cab-button").style.display = "none";
+        document.getElementById("filter-search-assignToCab").style.display = "block";
+        document.getElementById("TodaysRequestSearch").style.display = "none";
+        document.getElementById("AssignedCabsSearch").style.display = "block";
+        document.getElementById("ApplyButtonAssignedCabs").style.display = "block";
+        document.getElementById("ApplyButton").style.display = "none";
+        document.getElementById("dropDiv").style.display="none";
+        document.getElementById("assignedToCabError").style.display="none";
+        
+        
+    });
+
+    var todaysRequest= document.getElementById("pills-request-tab");
+
+    todaysRequest.addEventListener('click',function(){
+
+        document.getElementById("assign-to-cab-button").style.display = "block";
+        document.getElementById("filter-search-assignToCab").style.display = "block";
+        document.getElementById("TodaysRequestSearch").style.display = "block";
+        document.getElementById("AssignedCabsSearch").style.display = "none";
+        document.getElementById("ApplyButtonAssignedCabs").style.display = "none";
+        document.getElementById("ApplyButton").style.display = "block";
+        document.getElementById("dropDiv").style.display="block";
+        document.getElementById("assignedToCabError").style.display="block";
+         document.getElementById("assignedToCabError").style.display="block";
+        
+        
+    });
+
+    var manageCabs = document.getElementById("pills-managecab-tab");
+
+    manageCabs .addEventListener('click',function(){
+
+        document.getElementById("filter-search-assignToCab").style.display = "none";
+    });
+
+
+
+    var manageDrivers = document.getElementById("pills-managedriver-tab");
+
+    manageDrivers .addEventListener('click',function(){
+
+        document.getElementById("filter-search-assignToCab").style.display = "none";
+    });
+
+
+</script>
+
+
+	<script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	<script src="js/manageCabs.js"></script>
+	<script src="js/manageDrivers.js"></script>
+	<script src="js/assignedCab.js"></script>
+	<script src="js/todaysRequest.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/Notification.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		notificationsAdmin();
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Avacab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/drivercommontheme.css">
+    <link rel="stylesheet" type="text/css" href="css/driverlogin.css">
+    <link rel="stylesheet" type="text/css" href="css/fontfamily.css">
+    <link rel="stylesheet" type="text/css" href="css/driverCard.css">
+    <link rel="stylesheet" type="text/css" href="css/driverendtrippopup.css">
+    <link rel="stylesheet" type="text/css" href="css/driverheader.css">
+    <link rel="stylesheet" type="text/css" href="css/drivermytripdetail.css">
+    <link rel="stylesheet" type="text/css" href="css/driverpickupcard.css">
+    <link rel="stylesheet" type="text/css" href="css/driverstylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/drivertripdetail.css">
+</head>
+<body class="back-colr">
+    <div class="container-fluid back-colr">
+        <div class="row ">
+            
+            <div class="col-md-12 text-center ">
+                <img src="images/cab-application-logo-removebg-preview.svg" class="mt-5 logo-size" alt="">
+                <h5 class="posi-fix font-voilet mb-3 LoginText">Log In</h5>
+          
+            </div>
+        </div>
+        <div class="row justify-content-center mb-2 ms-1 me-1">
+            <div class="col-md-12 mt-5">
+                <div>
+                    <label for="User Name" class="up-text font-regular">User Name</label>
+                    <input type="text" maxlength ="10" class="input-box box-top form-control w-100 font-regular"
+						id="driverLoginId" placeholder="Enter your vehicle number" onblur="this.value=removeSpaces(this.value);" >
+                </div>
+            </div>
+            <div><span id="invalidLoginId" class="loginError" style="display: block;"></span></div>
+            <div class="col-md-12 mt-4 position-relative">
+                <div>
+                    <label for="Password" class="up-text font-regular">Password</label>
+                    <input type="password" class="input-box box-top form-control w-100 font-regular" placeholder="Enter your password" maxlength ="10"  id="driverPassword"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+                    <div><span id="invalidPassword" class="loginError" style="display: block;"></span></div>
+                    
+                    <input type="checkbox" class="me-2 mt-3" id="showPassword" onclick="showPasswordFunction()"><span class="font-regular">Show Password</span>
+                </div>
+
+            </div>
+
+
+			<div>
+				<span id="badCreds" class="loginError" style="display: none;font-weight: normal;"></span>
+			</div>
+
+			<div class="col-md-12 mt-3 mb-5">
+                <button type="button" class="btn font-semi font-18 w-100 btn-grad-login btn-primary" id="loginBtn" value="Click" style="font-weight: bold;">Log In</button>
+            </div>
+            <div class="col-md-12 mt-3 mb-3 text-color place-fix bottom-0 end-0 ">
+                <p class="font-regular text-wrap mb-0" style="width: 341px;">If you are experiencing technical difficulties,</p><p> please contact the Operations</p>
+                <p> <a href="tel:9150029798" class="text-deco-none">91500-29798</a></p>
+            </div>
+        </div>
+    </div>
+    
+    
+     <script type="text/javascript" src="js/commonScript.js"></script>
+    <script type="text/javascript" src="js/LoginDriver.js"></script>
+	<script type="text/javascript" src="js/JsExceptionHandler.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+</body>
+</html>

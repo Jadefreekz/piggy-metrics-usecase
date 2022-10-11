@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<title>Ongoing Trip Sheet</title>
+<link rel="stylesheet" type="text/css" href="css/adminstylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+</head>
+<body>
+	<!--nav starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="float-start">
+					<a class="cab-logo" href="/admin/dashboard"><img
+						src="images/cab-logo.png" class="cabapp-logo" alt="logo"></a>
+				</div>
+				<div class="float-start">
+					<ul class="list-group list-group-horizontal">
+						<li class="list-group-item nav-menu requests"><a
+							class="link requests requests-tabactive " href="/admin/dashboard">
+								Requests And Cabs</a></li>
+						<li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/history">History of Trips</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/complaints">Complaints</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/blockedusers">Blocked
+								Users</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/routedetails">Route
+								Management</a></li>
+						<a href="/user/bookacab" class="btn btn-primary btn-sm button book-a-ride">Book a Ride</a>
+					</ul>
+				</div>
+				<div class="float-end">
+					<!-- kumar's code starts -->
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<img class="navnotify-icons cursor"
+									src="images/notification.svg" alt="notify-icon"
+									title="notifications" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId">
+										<span class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3">
+												<div class="text-style-title filter-titlenotification">
+													Notification</div>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="notify-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<span id="noRecord" class="noRecordFound"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!-- kumar's code ends -->
+
+					<!--user profile starts-->
+					<div class="float-end">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon" data-toggle="dropdown"
+									aria-expanded="true"></span>
+
+								<div class="dropdown-menu m-0 p-3 user-filter">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="user-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12">
+
+												<div class="col-md-4 float-start">
+
+													<span class="user-profile-icon  userprofile-icon-text"
+														data-toggle="dropdown" aria-expanded="true"> <span
+														class="user-profile-icon " id="userprofile-icon2">
+													</span>
+													</span>
+												</div>
+												<div class="col-md-4 float-start">
+													<h5 class="userprofile-content pt-2" id="employeeName"></h5>
+													<h5 class="userprofile-content1  pt-2 mailIdContent"
+														id="mailId"></h5>
+													<button type="button" class="btnlogoutbtn mb-3 "
+														id="logout">Logout</button>
+
+
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user profile ends-->
+<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true" style="display:none;"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+	<!--nav ends-->
+	<div class="col-md-12 flt-lft my-5 px-lg-5 tab">
+		<!--tab starts here-->
+		<!-- <ul class="nav nav-pills mb-4" style="float:left" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link bord tab-color" id="pills-todaysrequest-tab" data-toggle="pill" href="#pills-todaysrequest" role="tab" aria-controls="pills-todaysrequest" aria-selected="">Today's Request</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link bord tab-color active" id="pills-assignedcabs-tab" data-toggle="pill" href="#pills-assignedcabs" role="tab" aria-controls="pills-assignedcabs" aria-selected="true">Assigned cabs</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link bord tab-color" id="pills-managecabs-tab" data-toggle="pill" href="#pills-managecabs" role="tab" aria-controls="pills-managecabs" aria-selected="false">Manage Cabs</a>
+                  </li>
+                </ul> -->
+		<!--tab ends here-->
+		<a href="/admin/dashboard#pills-assignedcabs" id="pills-assignedcabs"
+			role="tab" aria-controls="pills-assignedcabs"><img
+			class="float-start img-back" src="images/back.svg" title="back"
+			alt="back"></a>
+		<h2 class="h-size1 float-start mb-3">Trip Sheet</h2>
+		<div class="tab-content" id="pills-tabContent">
+			<div class="tab-pane fade show active" id="pills-assignedcabs"
+				role="tabpanel" aria-labelledby="pills-assignedcabs-tab">
+				<div class="w-100 float-start mt-4 trip-class">
+					<div class="float-start width-cab">
+						<div class="trip-space">Cab Number</div>
+						<div class="trip-space1" id="cabnumber"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Driver Name</div>
+						<div class="trip-space1" id="drivername"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Driver Number</div>
+						<div class="trip-space1" id="drivernumber"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space" id = "sourceLabel">Source</div>
+						<div class="trip-space1" id="source"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space" id = "destinationLabel">Destination</div>
+						<div class="trip-space1" id="destination"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Date Of Travel</div>
+						<div class="trip-space1" id="date"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Time Slot</div>
+						<div class="trip-space1" id="timeslot"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Total Seats</div>
+						<div class="trip-space1" id="totalseats"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Allocated Seats</div>
+						<div class="trip-space1" id="allocatedseats"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Remaining Seats</div>
+						<div class="trip-space1" id="remainingseats"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Status</div>
+						<div class="trip-space1" id="status"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">Start Time</div>
+						<div class="trip-space1" id="starttime"></div>
+					</div>
+					<div class="float-start width-cab">
+						<div class="trip-space">End Time</div>
+						<div class="trip-space1" id="endtime"></div>
+					</div>
+				</div>
+				<div class="parent-container mt-4 mb-3"></div>
+			</div>
+			<table class="table border mb-0">
+				<thead>
+					<tr class="display-shadow">
+						<th class="header-class">SL.No</th>
+						<th class="header-class">Employee Id</th>
+						<th class="header-class">Employee Name</th>
+						<th class ="header-class">Phone Number</th>
+						<th class="header-class" id = "changeDropPoint">Drop Point</th>
+						<th class ="header-class" id = "hideLocationThead">Location</th>
+						<th class="header-class">Reached Time</th>
+						<th class="header-class">Status</th>
+					</tr>
+				</thead>
+				<tbody id="tablebody">
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+
+    <script src="js/commonScript.js"></script>
+    <script src="js/adminOnGoingTrip.js"></script>
+    <script src="js/timeFormatter.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/Notification.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script>
+			notificationsAdmin();
+	</script>
+
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
+
+		});
+		$('#close-filter').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+	</script>
+
+</body>
+</html>

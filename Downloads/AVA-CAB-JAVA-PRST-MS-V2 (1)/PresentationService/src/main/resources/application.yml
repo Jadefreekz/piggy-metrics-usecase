@@ -1,0 +1,27 @@
+url:
+  gateway: ${GATEWAY_URL}
+
+server:
+  forward-headers-strategy: native
+  error:
+    whitelabel:
+      enabled: false
+  
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          azure-ad:
+            authorization-uri: https://login.microsoftonline.com/common/oauth2/v2.0/authorize?prompt=select_account
+            token-uri: https://login.microsoftonline.com/common/oauth2/v2.0/token
+            jwk-set-uri: https://login.microsoftonline.com/common/discovery/v2.0/keys
+        registration:
+          azure-client:
+            provider: azure-ad
+            client-id: ${CLIENT_ID}
+            #secret expires on 12-aug-2023
+            client-secret: ${CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: ${REDIRECT_URI}
+            scope: User.Read

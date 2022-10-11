@@ -1,0 +1,73 @@
+
+@font-face {
+	font-family: 'proximanova-regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('proximanova-regular'), url('../font/proximanova-regular.woff') format('woff');
+	}
+@font-face {
+	font-family: 'proximanova-medium';
+	font-style: normal;
+	font-weight: normal;
+	src: local('proximanova-medium'), url('../font/proximanova-medium.woff') format('woff');
+	}	
+
+@font-face {
+   font-family: 'proximanova-semibold';
+   font-style: normal;
+   font-weight: normal;
+   src: local('proximanova-semibold'), url('../font/proximanova-semibold.woff') format('woff');
+}	
+@font-face {
+	font-family: 'proximanova-bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('proximanova-bold'), url('../font/proximanova-bold.woff') format('woff');
+}
+
+  
+ 
+.font-semi
+{
+    font-family:'proximanova-semibold';
+}
+.font-bold
+{
+    font-family: 'proximanova-bold';
+}
+.font-regular
+{
+    font-family:'proximanova-regular';
+}
+.font-16
+{
+    font-size: 16px;
+}
+.font-14
+{
+    font-size: 14px;
+}
+.font-18
+{
+    font-size: 18px;
+}
+.font-20
+{
+    font-size: 20px;
+}
+.font-32
+{
+    font-size: 32px;
+}
+.font-gray
+{
+    color: #8E9198;
+}
+.font-green
+{
+    color: #4CB71B;
+}
+.font-voilet
+{
+    color:#370CC1;
+}

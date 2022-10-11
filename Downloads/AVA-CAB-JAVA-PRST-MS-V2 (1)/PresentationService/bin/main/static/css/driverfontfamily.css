@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url('../font/ProximaNova-Regular.woff2') format('woff2'),
+         url('../font/ProximaNova-Regular.woff') format('woff'),
+         url('../font/ProximaNova-Regular.ttf')  format('truetype');
+  }
+  
+
+  @font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('../font/Proxima Nova Bold.woff2') format('woff2'),
+         url('../font/Proxima Nova Bold.woff') format('woff'),
+         url('../font/Proxima Nova Bold.ttf')  format('truetype');
+  }
+  @font-face {
+    font-family: 'FontsFree-Net-Proxima-Nova-Sbold';
+    src: url('../font/FontsFree-Net-Proxima-Nova-Sbold.woff2') format('woff2'),
+         url('../font/FontsFree-Net-Proxima-Nova-Sbold.woff') format('woff'),
+         url('../font/FontsFree-Net-Proxima-Nova-Sbold.ttf')  format('truetype');
+  }
+  @font-face {
+    font-family: 'Proxima Nova Extrabold';
+    src: url('../font/Proxima Nova Extrabold.woff2') format('woff2'),
+         url('../font/ Nova Extrabold.woff') format('woff'),
+         url('../font/Proxima Nova Extrabold.ttf')  format('truetype');
+  }
+  
+  body {
+    font-family: 'FontsFree-Net-Proxima-Nova-Sbold';
+  }
+.font-semi
+{
+    font-family:'FontsFree-Net-Proxima-Nova-Sbold';
+}
+.font-bold
+{
+    font-family: 'Proxima Nova Bold'!important;
+}
+.font-regular
+{
+    font-family:'ProximaNova-Regular'!important;
+}
+.font-ebold
+{
+    font-family: 'Proxima Nova Extrabold'!important;
+}
+.font-16
+{
+    font-size: 16px;
+}
+.font-14
+{
+    font-size: 14px;
+}
+.font-18
+{
+    font-size: 18px;
+}
+.font-20
+{
+    font-size: 20px;
+}
+.font-32
+{
+    font-size: 32px;
+}
+.font-gray
+{
+    color: #8E9198;
+}
+.font-green
+{
+    color: #4CB71B;
+}
+.font-voilet
+{
+    color:#370CC1;
+}

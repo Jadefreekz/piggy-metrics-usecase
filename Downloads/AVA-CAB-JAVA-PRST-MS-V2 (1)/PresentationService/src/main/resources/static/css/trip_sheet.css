@@ -1,0 +1,6 @@
+@media only screen and (max-width: 420px) {
+   .md-spacing
+   {
+       padding: 0px !important;
+   }
+  }

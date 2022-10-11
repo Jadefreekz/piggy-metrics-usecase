@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CompletedTrip</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+<link rel="stylesheet" type="text/css" href="css/commonthemes.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/userstylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/custom_grid.css">
+<link rel="stylesheet" type="text/css" href="css/trip_sheet.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<!--nav starts-->
+			<div class="col-md-12 float-start p-0">
+				<nav
+					class="navbar navbar-expand-lg navbar-light bg-light bg-topnav p-0">
+					<a class="navbar-brand" href="/user/bookacab"><img
+						src="images/cab-application-logo.png" class="cabapp-logo"
+						alt="cablogo"></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="list-group list-group-horizontal pt-2">
+						<li class="list-group-item nav-menu "><a
+							class="link bookacab-tab " href="/user/bookacab">Reserve a Cab</a></li>
+						<li class="list-group-item nav-menu bookacab-tabactive"><a
+							class="link myrequest-tab" href="/user/myrequest" id="myRequest">My Reservations</a></li>
+					</ul>
+				</div>
+					<div class="float-end d-none d-sm-block ipad-responsive">
+						<!--contact starts-->
+						<div class="float-start">
+							<div class="header-right">
+								<div class="dropdown col-md-12 float-start">
+									<img src="images/phone-call.png" class="navphone-icons cursor"
+										alt="filter-icon" title="Admin Contacts"
+										data-toggle="dropdown" aria-expanded="true" id="adminContactsBtn">
+									<div class="dropdown-menu m-0 p-3 Admin-contact-popover">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12 pb-2 border-0 mb-3">
+													<span class="text-style-title filter-title">Admin
+														Contacts</span>
+													<button type="button"
+														class="btn-close float-end close-filter"
+														data-dismiss="advanced-filter" aria-label="Close">
+													</button>
+												</div>
+
+												<div class="col-md-12 ">
+													<div class="row mb-3">
+														<div id="adminContacts">
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--contact ends-->
+						<!--notification starts-->
+						<!--Kumar's code-->
+<div class="float-start">
+							<div class="header-right">
+								<div class="dropdown col-md-12 float-start">
+
+									<img src="images/notification.svg"
+										class="navnotify-icons cursor" alt="filter-icon"
+										title="Notification" data-toggle="dropdown"
+										aria-expanded="true" id="notificationId" /><span
+										class="icon-button-badge" id="totalCount"></span>
+
+									<div class="dropdown-menu m-0 py-3 notification-popover">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12 pb-2 topnav-border w-100 mb-3 ">
+													<span class="text-style-title filter-titlenotification">Notification
+													</span>
+													<button type="button"
+														class="btn-close float-end close-filter"
+														data-dismiss="advanced-filter" aria-label="Close">
+													</button>
+												</div>
+
+												<div class="col-md-12" id="parentDiv">
+													<!-- newly added code -->
+													<span id="noRecord"></span>
+													<div id="notification-wrapper"></div>
+
+
+													<div>
+														<div class=" col-md-12 mt-3 ">
+															<div class="col-md-6 float-start notify-space">
+																<p id="notification-count"></p>
+															</div>
+															<div class="col-md-6 float-end notify-space1"
+																id="js-markasread"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--notification here-->
+						<!--user profile starts-->
+						<div class="float-start">
+							<div class="header-right">
+								<div class="dropdown col-md-12 float-start">
+
+<!-- 									<img src="images/user-profile.png" -->
+<!-- 										class="navuserprofile-icons cursor" alt="filter-icon" -->
+<!-- 										title="user-profile" data-toggle="dropdown" -->
+<!-- 										aria-expanded="true" /> -->
+	
+										<span class="navuserprofile-icons cursor navuserprofile-icon-text" id="userprofile-icon" data-toggle="dropdown" aria-expanded="true"></span>
+
+									<div class="dropdown-menu m-0 p-3 profile-popover">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md- pb-2 border-0 mb-3">
+													<button type="button"
+														class="btn-close float-end close-filter"
+														data-dismiss="advanced-filter" aria-label="Close">
+													</button>
+												</div>
+
+												<div class="col-md-12">
+													<div class="row mb-3 justify-content-center">
+														<div class="col-md-12">
+
+															<div class="row justify-content-center">
+																<img src="images/user-profile-icon.png"
+																	class="user-profile-icon text-center" alt="profileicon">
+																<h6 class="username text-center mt-2" id="employeeName"></h6>
+																<div>
+																	<div
+																		class=" col-md-12 col-12 float-start userprofile-content pt-2"
+																		id="domainName"></div>
+																	<div
+																		class=" col-md-12 col-12 float-start userprofile-content  pt-2"
+																		id="employeeId"></div>
+																	<div
+																		class=" col-md-12 col-12 float-start userprofile-content  pt-2"
+																		id="domainLead"></div>
+																	<!--<div
+																		class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project:
+																		Cab Application</div>
+																	<div
+																		class=" col-md-12 col-12 float-start userprofile-content  pt-2">Project
+																		lead: Rafi</div>-->
+																</div>
+															</div>
+															<div class="row justify-content-center mb-3 mt-2">
+																<div class="col-md-12 text-center">
+																	<button type="button" class="btnlogoutbtn mt-2 " id="logout">Logout</button>
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--user profile ends-->
+					</div>
+				</nav>
+				<div
+					class="float-end w-100  d-block d-sm-none responsive-mb ipad-block">
+					<!--contact starts-->
+					<div class="float-end">
+						<div class="d-flex">
+							<!--contact starts-->
+							<div class="float-start">
+                      <div class="header-right">
+
+                        <div class="dropdown col-md-12 float-start">
+                           <a href="#"  data-bs-toggle="dropdown" aria-expanded="true"> <img  src="images/phone-call.png" class="navphone-icons cursor" alt="filter-icon" title="Admin Contacts" id="adminContactsBtn-mob"></a>
+                        <div class="dropdown-menu m-0 p-3 Admin-contact-popover" >
+                          <div class="container-fluid">
+                              <div class="row">
+                                  <div class="col-md-12 pb-2 border-0 mb-3"><span class="text-style-title filter-title">Admin Contacts</span>
+                                    <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                  </button>
+                                  </div>
+                                
+                                   <div class="col-md-12 ">
+                                    <div class="row mb-3">
+                                        <div id="adminContacts-mobile">
+															
+										</div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+
+							<!--contact ends-->
+							<!--       kumar's code -->
+							<!--notification starts-->
+                                  <div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip-completed" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!--notification here-->
+
+							<!--user profile starts-->
+							<div class="float-start">
+                        <div class="header-right">
+                          <div class="dropdown col-md-12 float-start">
+                             <!--<span class="navuserprofile-icons cursor navuserprofile-icon-text" id="userprofile-icon-mob" data-toggle="dropdown" aria-expanded="true"></span>-->
+                              <img src="images/user-profile-icon.png" id="userprofile-icon-mob" class="navuserprofile-icons cursor"  alt="filter-icon" title="user-profile"  data-bs-toggle="dropdown" aria-expanded="true"/>
+                            
+                          <div class="dropdown-menu m-0 p-3 profile-popover" >
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md- pb-2 border-0 mb-3">
+                                      <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                    </button>
+                                    </div>
+                                  
+                                     <div class="col-md-12">
+                                      <div class="row mb-3">
+                                          <div>
+                                              
+                                                <div class="row justify-content-center">
+                                                  <img src="images/user-profile-icon.png" class="user-profile-icon text-center" alt="profileicon">
+                                                  <h6 class="username text-center mt-2" id="employeeName-mob"></h6>
+                                                  <div>
+                                                     <div class=" col-md-12 col-12 float-start userprofile-content pt-2" id="domainName-mob"></div>
+                                    				 <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="employeeId-mob"></div>
+                                    				 <div class=" col-md-12 col-12 float-start userprofile-content  pt-2" id="domainLead-mob"></div>
+                                                  </div>
+                                                </div>
+                                              
+                                              </div>
+                                              <div class="row justify-content-center mb-3 mt-2">
+                                                <div class="col-md-12 text-center">
+                                                  <button type="button" class="btnlogoutbtn mt-2 " id="logoutMobile">Logout</button>
+                                                 </div>
+                                           </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+							<!--user profile ends-->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--nav ends-->
+
+			<div class="container-fluid md-spacing">
+        <div class="row mx-auto mt-5">
+        <div class="col-md-12">
+             <div class="row mx-auto">
+                    <!-- tripsheet details Information starts here -->
+                    <div class="col-12 col-md-12 col-lg-12 mb-5">
+                    <button type="button"
+							class="register-complaint  button-responsive  float-end"
+							id="raiseBtn" data-toggle="modal" data-target="#raise-complaint" onclick="raisebtnclicked()">Raise Complaint</button>
+                        <h4 class="font-24 font-semibold mob-trip mb-4"><span class="me-2"> <a href="/user/myrequest"><img src="images/backTrip.svg" alt="back" title="Back"></a></span>Trip Sheet Details</h4>
+                        
+                        <div class="row mov-mob-structure">
+                            <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font">Cab Number:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" " id="cabNumber"></label>
+                            </div>
+                          <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font">Date:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" id="date"></label>
+                            </div> 
+                            <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font">Time Slot:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" id="timeSlot"></label>
+                            </div> 
+                            <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font" id = "destinationLabel">Destination:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" id="destination"></label>
+                            </div> 
+                            <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font">Reached Time:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" id="reachedTime"></label>
+                            </div> 
+                           
+                        </div>
+                         <!-- driver Information starts here -->
+                    <div class="col-12 col-md-12 col-lg-12 mt-4 ">
+                        <h5 class="font-20 font-semibold theme-color mb-4">Driver Information </h5>
+                        <div class="row theme-color-bg py-3">
+                           
+                            <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font">Driver Name:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" id="driverName"></label>
+                            </div> 
+                            <div class="col-12 col-md-12 col-lg-2">
+                                <label class=" font-semibold font-16 md-font">Driver Contact Number:</label>
+                                <label class=" font-regular d-lg-block font-16 md-font" id="driverContact"></label>
+                            </div> 
+                         </div>
+                       </div>
+                        <!-- driver Information ends here -->
+                       </div>
+                        <!-- tripsheet details Information ends here -->
+
+                         <!-- tripsheet grid Information starts here -->
+                        <h5 class="font-20 font-semibold theme-color mb-4">TripSheet </h5>
+                        <div class="table-responsive-md mb-3 w-100">
+                        <table class="table table-borderless cab-grid bg-white rounded-3 shadow-sm">
+                            <thead>
+                                <tr>
+                                    <th class="py-3 ps-4 text-nowrap header-classTrip">Order #</th>
+                                    <th class="py-3 text-nowrap header-classTrip">Employee ID</th>
+                                    <th class="py-3 text-nowrap header-classTrip">Employee Name</th>
+                                    <th class="py-3 text-nowrap header-classTrip">Phone Number</th>
+                                    <th class="py-3 text-nowrap header-classTrip" id = "dropPoint">Drop Point</th>
+                                    <th class="py-3 text-nowrap header-classTrip" id = "locationThead">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                               <!-- <tr>
+                                    <td class="py-3 ps-4 text-nowrap">1</th>
+                                    <td class="py-3 text-nowrap">Chris</th>
+                                    <td class="py-3 text-nowrap">AVASEZ123</th>
+                                    <td class="py-3 text-nowrap"> Thalambur Side</th>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 ps-4 text-nowrap">2</th>
+                                    <td class="py-3 text-nowrap">Deva </th>
+                                    <td class="py-3 text-nowrap">AVASEZ123</th>
+                                    <td class="py-3 text-nowrap">Navalur</th>
+                                </tr>-->
+                            </tbody>
+                        </table>
+                        </div>
+                          <!-- tripsheet grid Information ends here -->
+                       <label class="font-16 font-regular text-muted mb-4" id="passenger"></label>
+                      
+             </div>
+             
+        </div>
+       </div>
+       </div>
+
+	<!--raisecomplaint popup starts-->
+
+	<div class="modal fade" id="raise-complaint" tabindex="-1"
+		role="dialog" aria-labelledby="raise-complaintlabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-customise-width"
+			role="document">
+			<div class="modal-content ">
+				<div class="modal-header border-0 pb-0">
+					<h5 class="modal-title compalin-title" id="raise-complaintlabel">Raise
+						Complaint</h5>
+					<button type="button" class="close closeicon" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body  pt-2 pb-3 ">
+					<div class="raise--complaint">
+						<div class=" col-md-12 col-12 float-start complaint-content">
+							<div class="col-md-6 col-12 float-start pt-2" id="PopupDate"></div>
+							<div class="col-md-6 col-12 float-end pt-2" id="PopupTimeslot"></div>
+						</div>
+						<div class=" col-md-12 col-12 float-start complaint-content">
+							<div class="col-md-6 col-12 float-start pt-2" id="PopupCabNo">
+							</div>
+							<div class="col-md-6 col-12 float-end pt-2" id="PopDriverName"></div>
+						</div>
+						<div class=" col-md-12 col-12 float-start complaint-content">
+							<div class="col-md-6 col-12 float-start pt-2" id="PopupDriverNo">
+							</div>
+							<div class="col-md-6 col-12 float-end pt-2" id="PopupDestination"></div>
+						</div>
+					</div>
+					<div class="form-group ">
+						<label class="label pt-5 pb-2">Select a Reason</label> <select
+							class="form-select" id="dropdown">
+							<option hidden="" value=0>Select</option>
+
+
+						</select>
+						<p id="raiseComplaintError" class="dropPointEmptySpacing"></p>
+					</div>
+				</div>
+				<div class="mb-3">
+					<button type="button" data-dismiss="modal" class="btncomplainbtn float-end" id="raiseComPopUp" onclick="CloseEvent" style="margin-bottom: 81px !important; margin-top:40px">Raise
+						a Complaint</button><br>
+						 
+
+					<button type="button" class="cancelbtn float-end"
+						data-dismiss="modal">Cancel</button>
+						
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--raisecomplaint popup ends-->
+	
+<!-- 	<!-- complaint suucessful popup starts -->
+<div class="modal fade" id="raise-complaint-success" tabindex="-1" role="dialog" aria-labelledby="actionblocklabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-customise-width" role="document">
+			<div class="modal-content ">
+				<div class="modal-header border-0 pb-0">
+					<h4 class=" action-blocked-title text-center "
+						id="actionblocklabel"></h4>
+					<button type="button" class="close closeicon" data-bs-dismiss="modal" aria-label="Close">
+						
+					</button>
+
+				</div>
+				<div class="modal-body pt-4 ">
+					<div class="actionblocked-content text-center">
+						<h6>Complaints Registered Successfully</h6>
+					</div>
+				</div>
+				<div class="row justify-content-center mb-3 mt-2">
+					<div class="col-md-12 text-center">
+						<button type="button" class="btnokbtn" data-bs-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- complaint suucessful popup ends -->
+	
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+
+<!-- 	<script src="js/disableInspect.js"></script> -->
+
+
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
+
+		});
+		$('#close-filter').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+	</script>
+	<script type="text/javascript" src="js/JsExceptionHandler.js"></script>
+	<script type="text/javascript" src="js/timeFormatter.js"></script>
+	<script type="text/javascript" src="js/completedTrip.js"></script>
+	<script type="text/javascript" src="js/logout.js"></script>
+	<script type="text/javascript" src="js/commonScript.js"></script>
+	<script src="js/Notification.js"></script>
+	<script src="js/disableInspect.js"></script>
+
+	<!--<script type="text/javascript" src = "js/userComplaints.js" ></script>-->
+
+	<script>
+		notificationsUser();
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.cab-grid th{
+    font-family:'proximanova-semibold';
+    font-size: 16px;
+    color: #3A3A3D;
+    background-color:#F8F8F9;
+}
+.cab-grid td{
+    font-family:'proximanova-regular';
+    font-size: 16px;
+    color: #3A3A3D;
+    vertical-align: middle !important;
+}
+.cab-grid tbody tr:nth-child(even){
+    background-color: #F3F9FF;  
+}
+.cab-grid-bg-red{
+    background-color: #FFECF0 !important;
+    border-left: 3px solid #CE1700;   
+}
+.table-radius{
+    border-radius: 10px !important;
+}

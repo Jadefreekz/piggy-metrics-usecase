@@ -1,0 +1,83 @@
+/* pagination css */
+
+* {
+	padding: 0%;
+	margin: 0%;
+}
+.ul-tag{
+	display: flex;
+	list-style: none;
+}
+
+a-tag:hover {
+	cursor: pointer;
+}
+
+.paginationClass{
+	float: right;
+	padding: 10px;
+}
+#pagination {
+	
+	position: relative;
+	bottom: 0px;
+	margin-left: 35%;
+}
+
+/**ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+}**/
+
+.li {
+	color: #fff;
+	display: flex;
+}
+	
+a-tag {
+	background-color: #000000a9;
+	padding: 5px 10px;
+	border: 1px solid #f8f7fa;
+	border-right: 0;
+}
+
+li.previous, li.next {
+	animation: fadein .5s;
+}
+
+li.active a {
+background-color: lightgray;
+}
+
+/*li:first-child a {
+	border-radius: 5px 0 0 5px;
+}
+
+li:last-child a {
+
+	border-radius: 0 5px 5px 0;
+}*/
+	/* border-right: 2px solid #3D315B; */
+
+
+.page-item .previous,
+.page-item.next {
+animation: fadein .5s;
+}
+.page-item.active a {
+background-color: #9AB87A;
+}
+.page-item :first-child a {
+border-radius: 5px 0 0 5px;
+}
+.page-item :last-child a {
+border-radius: 0 5px 5px 0;
+border-right: 2px solid #3D315B;
+}
+.dropPoints{
+	/**display: list-item;**/
+	list-style: square;
+}
+

@@ -1,0 +1,29 @@
+.add-btn{
+    background-color: #947BE5;
+}
+.custom-form
+{
+    height: 44px;
+    border-color: #dbdbdb;
+}
+.grid-form
+{
+    height: 44px;
+    border-color: #dbdbdb;
+}
+.custom-switch:checked {
+    background-color: #7CC46F;
+    border-color: #7CC46F;
+}
+.status-reached
+{
+    background-color: #E0FFDB;
+    color: #31A011;
+    padding: 8px 16px;
+    border-radius: 20px;
+    
+}
+.add-group-form
+{
+    width: 200px !important;
+}

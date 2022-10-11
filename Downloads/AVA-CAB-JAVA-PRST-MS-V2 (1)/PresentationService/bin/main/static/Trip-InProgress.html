@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip InProgress</title>
+<link rel="stylesheet" href="css/commontheme.css">
+<link rel="stylesheet" href="css/driverstylesheet.css">
+<link rel="shortcut icon" href="#">
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Tablet Navigation Part Starts Here -->
+			<div class="col-md-12">
+				<div class="col-md-4 float-start">
+					<img src="images/cab-logo.png" alt="icon" class="logo">
+				</div>
+				<div
+					class="col-md-4 float-start text-center p-1 status-bar justify-content-center in-progress">
+					<p class="status">In Progress</p>
+				</div>
+				<div class="col-md-4 float-start icon-part ">
+
+					<!-- Admin Contact Part Starts Here -->
+					<div class="dropdown float-start">
+						<a href="#" data-toggle="dropdown" aria-expanded="false"
+							id="adminContactsBtn"> <img class="cursor mt-1 navphone-icons"
+							src="images/phone-call.png" alt="filter-icon"
+							title="Advanced Filter" /></a>
+						<div class="dropdown-menu m-0 admin-contact">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 pb-2 border-0 mt-2 close-filter">
+										<span class="text-style-title filter-title">Admin
+											Contacts</span>
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12">
+										<div class="row mb-3">
+
+											<div id="adminContacts"></div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Admin Contact Part Ends Here -->
+
+
+
+					<!-- Notifications Part Starts Here -->
+					<div class="dropdown float-start">
+<!-- 						 <img -->
+<!-- 							class="cursor ms-4" src="images/Bell-icon.svg" alt="filter-icon" -->
+<!-- 							title="Advanced Filter" /> -->
+
+
+
+
+					</div>
+					<!-- Notifications Part Ends Here -->
+
+
+
+
+					<!-- Log Out Starts Here -->
+
+					<div class="dropdown float-start">
+						<a href="#" data-toggle="dropdown" aria-expanded="false"> <span
+							class="dot11 ms-4" onclick="driverProfile()" id="nameicon"></span></a>
+						<div class="dropdown-menu m-0 sign-out">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 border-0 mt-2 close-filter">
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12 mx-2 log-content">
+										<div class="row mb-3">
+											<div>
+												<img src="images/user-profile-icon.png" class="ps-4 user-profile-icon" alt="user-icon">
+												<h6 id="driver-profile1"></h6>
+												<h6 id="driver-profile2"></h6>
+																								<button type="button" class="btn btn-primary btn-lg pe-4" id="driverlogout">Log
+																									Out</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Log Out Ends Here -->
+
+				</div>
+			</div>
+			<!-- Tablet Navigation Part Ends Here -->
+
+			<!-- Trip Details and Start-Trip Button Starts Here-->
+			<div class="col-md-12 p-4">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="col-md-6 float-start">
+							<ul class="trip-settings p-0" id="trip">
+								<li class="trip-settings"><a class="footer-link"><img
+										src="images/Line-Icon.svg" alt="icon" class="line-icon p-0 "><span
+										class="Head">Trip Details</span></a></li>
+
+							</ul>
+						</div>
+						<div class="col-md-6 float-start trip-div" id="triptime">
+							<p class="trip-started"></p>
+						</div>
+
+
+
+					</div>
+
+
+
+
+				</div>
+			</div>
+			<!-- Trip Details and Start-Trip Button Ends Here-->
+
+
+
+			<!--Table Starts Here-->
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-4 mx-1 left-col float-start">
+						<h5 class="fw-bold">Employee Details</h5>
+					</div>
+					<div class="col-md-6 reached-header">
+						<h5 class="float-start no-show fw-bold">
+							<span class="footer-link1"><img
+								src="images/not-reached icon.svg" alt="icon" class="map-icon">Not
+								Reached</span>
+						</h5>
+						<h5 class="table-head float-start fw-bold">
+							<span class="footer-link2"><img
+								src="images/reached icon.svg" alt="icon" class="map-icon"
+								id="ReachedBtn">Reached</span>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div id="divid"></div>
+
+
+			<div class="modal fade" id="completed" tabindex="-1"
+				aria-labelledby="completed" data-backdrop="static">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header pop-content">
+							<a class="status-name text-center"><img
+								src="images/Tick-Icon.svg" alt="tick-icon" class="mx-2">The
+								trip ended successfully!</a>
+							<button type="button" class="btn-close pop-close"
+								data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body2">
+
+							<button type="button" class="btn btn-secondary Go pe-4"
+								data-bs-dismiss="modal" onclick="updateEndTime()">Ok</button>
+						</div>
+						<div class="modal-footer"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal fade" id="reached-confirm" tabindex="-1"
+				aria-labelledby="reached-confirm" data-backdrop="static">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header text-center ms-5">
+							<a><img src="images/Map-table.svg" alt="tick-icon"
+								class="mx-2">Do you want to mark this employee as reached?</a>
+							<button type="button" class="btn-close pe-4 pt-3"
+								data-bs-dismiss="modal" aria-label="Close" onclick="notreached()">
+							</button>
+						</div>
+
+						<div class="modal-footer mb-3 pe-5">
+							<button type="button" class="btn btn-secondary Close-button pe-4"
+								data-bs-dismiss="modal" onclick="notReached()">No</button>
+							<button type="button" class="btn btn-secondary Ok-button"
+								data-toggle="modal" data-bs-dismiss="modal" onclick="updateReachedTimeAndStatus()">Yes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/tripInProgressDriver.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/commonScript.js"></script>
+     <script src="js/timeFormatter.js"></script>
+     <script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
+
+		});
+		$('.btn-close').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+		$('.nav-1').click(function(event) {
+			$('.nav-1-toggle').show();
+			$('.nav-2-toggle').hide();
+
+		});
+		$('.nav-2').click(function(event) {
+			$('.nav-2-toggle').show();
+			$('.nav-1-toggle').hide();
+
+		});
+		$('.nav-link1').addClass('active');
+		$('.nav-link1').click(function() {
+			$('.nav-link1').addClass('active');
+			$('.nav-link2').removeClass('active');
+
+		})
+		$('.nav-link2').click(function() {
+			$('.nav-link2').addClass('active');
+			$('.nav-link1').removeClass('active');
+
+		})
+	</script>
+
+
+</body>
+
+</html>

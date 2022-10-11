@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>BlockedUsers</title>
+  <link rel="stylesheet" type="text/css" href="css/adminstylesheet.css">
+  <link rel="stylesheet" type="text/css" href="css/commontheme.css">
+  <link rel="stylesheet" type="text/css" href="css/pagination.css">
+</head>
+
+<body>
+  <!--nav starts-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="float-start">
+          <a class="cab-logo" href="/admin/dashboard"><img src="images/cab-logo.png" class="cabapp-logo" alt="logo"></a>
+        </div>
+        <div class="float-start">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item nav-menu"><a class="link nav-align-tabs " href="/admin/dashboard">Requests And Cabs</a>
+            </li>
+            <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/history">History of Trips</a></li>
+            <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/complaints">Complaints</a></li>
+            <li id = "blockedUsers" class="list-group-item nav-menu "><a class="link requests  requests-tabactive " href="/admin/blockedusers">Blocked
+                Users</a></li>
+            <li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/routedetails">Route Management</a></li>
+            <a href="/user/bookacab" class="btn btn-primary btn-sm button book-a-ride">Book a Ride</a>
+          </ul>
+        </div>
+        <div class="float-end">
+         <!-- kumar's code starts -->
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<img class="navnotify-icons cursor"
+									src="images/notification.svg" alt="notify-icon"
+									title="notifications" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId"/> <span class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3">
+												<div class="text-style-title filter-titlenotification">
+													Notification</div>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="notify-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<span id="noRecord" class="noRecordFound"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!-- kumar's code ends -->
+					<!--user profile starts-->
+					<div class="float-end">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon" data-toggle="dropdown"
+									aria-expanded="true"></span>
+
+								<div class="dropdown-menu m-0 p-3 user-filter">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="user-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12">
+
+												<div class="col-md-4 float-start">
+													<span class="user-profile-icon  userprofile-icon-text"
+														data-toggle="dropdown" aria-expanded="true"> <span
+														class="user-profile-icon " id="userprofile-icon2">
+													</span>
+													</span>
+												</div>
+												<div class="col-md-4 float-start">
+													<h5 class="userprofile-content pt-2" id="employeeName"></h5>
+													<h5 class="userprofile-content1  pt-2 mailIdContent"
+														id="mailId"></h5>
+													<button type="button" class="btnlogoutbtn mb-3 "
+														id="logout">Logout</button>
+
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user profile ends--> 
+	
+	<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor remove-img" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div> 
+  <!--nav ends-->
+  <div class="parent-container my-2 mb-3 px-lg-5">
+
+    <!--this is my parent container-->
+    <h2 class="h-size1 float-start mb-3 mt-4">Blocked Users</br><span class = 'countDisplay' id="countForBlocked"></span></h2>
+    
+    <!--<div class="header-right mt-3">
+      <div class="dropdown filt float-start">
+        <img class="cursor" src="images/VectorFilter.svg" alt="filter-icon" title="Advanced Filter" data-toggle="dropdown"
+        aria-expanded="true" id = 'filterImg'/>-->
+        <div class="header-right" style="display: block;">
+		<div class="dropdown float-start">
+		<img class="cursor vector-image" src="images/VectorFilter.svg" alt="filter-icon" title="Advanced Filter" data-toggle="dropdown" aria-expanded="true" id="filterImg">
+        <!--total content display starts here-->
+      <div class="header-left py-md-3" id="showPage">
+
+      </div>
+      <!--total content display ends here-->
+
+      <div class="dropdown-menu m-0 p-3 advanced-filter" id="filterModal">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 pb-2 border-0 mb-3"><span class="text-style-title filter-title">Advanced
+                Filter</span><button type="button" class="btn-close float-end" id="close-filter"
+                data-dismiss="advanced-filter" aria-label="Close">
+
+              </button>
+              <span id = 'empty-check'></span>
+            </div>
+            <div class="col-md-12">
+              <div class="row mb-3">
+                <div class="col-md-12 mb-3">
+                  <label class="mb-0 form-label filter-style" for="domain">Domain</label>
+                  <input type="text" class="form-control border-filter-style1" id="domain">
+                </div>
+                <div class="col-md-6 mt-3 mb-3">
+                  <label class="mb-0 form-label filter-style fil-style" for="source">From</label>
+                  <input type="date" class="form-control border-filter-style bord-style" id="from">
+                </div>
+                <div class="col-md-6 mt-3 mb-3">
+                  <label class="mb-0 form-label filter-style fil-style" for="to">To</label>
+                  <input type="date" class="form-control border-filter-style bord-style" id="to">
+
+                </div>
+              </div>
+              <div class=" float-end">
+                <button type="button" class="btn btn-primary btn-sm cancel-btn text-center" id="cancelButton" aria-label="Close" data-dismiss="advanced-filter" onchange="hideAlertOnChange()">Cancel</button>
+                <button type="button" class="btn btn-primary btn-sm button1 text-center" id="apply-filter">Apply Filter</button>
+                </br>  <span class = 'emptyCheck' id = 'emptySearch'></span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--filter ends here-->
+    
+      <!--search starts here-->
+      <!--<div class="float-start me-3">
+        <div class="input-group flex-nowrap">
+          <input type="text" class="form-control search-align" placeholder="Search" aria-label="Username" id="searchTab"
+            aria-describedby="addon-wrapping">
+          <button class="input-group-text btn btn-search-custom" id="addon-wrapping" onclick ="getBlockedUsersCountByFilterAndSearch()"><img class = "search-icon2" src="Images/search.svg"
+              alt="search-icon" id="searchImage"></button>
+        </div>
+      </div>-->
+      <div class="float-start position-search mx-3">
+			<input type="text" class="form-control custom-search-change" id="searchTab" placeholder="Search"><a><img class="search-icon2" src="images/search.svg" alt="search" id="addon-wrapping" onclick="getBlockedUsersCountByFilterAndSearch()"></a>
+			</div>
+    </div>
+    <!--search ends here-->
+    
+    <!--table starts here-->
+    <div class="w-100 float-start border" id = "blocked-users-tab">
+   
+      <table class="table mb-0 caps-grid">
+      
+        <thead>
+          <tr class="display-shadow">
+            <th class="header-class">Employee Id</th>
+            <th class="header-class">Employee Name</th>
+            <th class="header-class">Domain</th>
+            <th class="header-class">Blocked Date<span class="sorting"><a class="sort-up" href="#" onclick='sortBlockedTable(3,"a")'><img
+                    class="sort-image" src="images/sortup-icon.svg" alt="sort-up" /></a><a class="sort-down"
+                  href="#" onclick='sortBlockedTable(3,"d")'><img class="sort-image" src="images/sortdown-icon.svg" alt="sort-down" /></a></span></th>
+            <th class="header-class text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+         
+        </tbody>
+      </table>
+      <span id = "noRecordUsers" class = "noRecords"></span>
+    </div>
+    <div class="w-100 float-start">
+      
+      <!--Pagination starts here-->
+      <!--<div class="pageNavPosition" id="pageNavPosition" style="float:right">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+          </ul>
+        </nav>
+      </div>-->
+      <!--pagination ends here-->
+      
+      <div class="page py-md-3" id = "blockedPagination">
+      </div>
+    </div>
+
+ 
+
+
+  </div>
+
+ 
+
+   <!--blocked users popup starts here-->
+   <div class="modal fade" id="block-pop" tabindex="-1" role="dialog" aria-labelledby="block-pop"
+   aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered " role="document">
+     <div class="modal-content bor-pop ">
+       <div class="modal-header border-0 pb-0">
+         <div class="col-md-12 col-12">
+           <button type="button" class="close closeicon float-end" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+       </div>
+       <div class="modal-body pt-2 pb-3 ">
+         <div class="row justify-content-center">
+
+ 
+
+           <p class="style-label text-center">Are you sure you want to unblock this employee?</p>
+
+ 
+
+         </div>
+       </div>
+       <div class="row justify-content-center mb-5 mt-2">
+         <div class="col-md-8 text-center">
+           <button type="button" class="cancel-btn2" data-dismiss="modal">No</button>
+           <button type="button" class="button11" onclick="unblockUser()">Yes</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+<!--blocked users popup ends here-->
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/commonScript.js"></script>
+ <script>
+    $('.advanced-filter').click(function (event) {
+      event.stopPropagation();
+
+    });
+    $('#close-filter').click(function () {
+      $('.advanced-filter').removeClass('show');
+    })
+  </script>
+
+	<script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	<script src="js/fileSaver.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+ 	<script src="js/blockedUsers.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/Notification.js"></script>
+	<script>
+	notificationsAdmin();
+	</script>
+</body>
+
+</html>

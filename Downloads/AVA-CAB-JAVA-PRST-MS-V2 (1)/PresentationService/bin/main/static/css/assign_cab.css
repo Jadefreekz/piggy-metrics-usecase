@@ -1,0 +1,17 @@
+.popup-form
+{
+    height: 40px;
+    border-color: #dbdbdb;
+}
+.btn-prime
+{
+    background-color: #562FD6;
+    color: #ffffff !important;
+    padding: 8px 16px;
+}
+.btn-second
+{
+    background-color: #F2F2F2;
+    color: #545454;
+    padding: 8px 16px;
+}

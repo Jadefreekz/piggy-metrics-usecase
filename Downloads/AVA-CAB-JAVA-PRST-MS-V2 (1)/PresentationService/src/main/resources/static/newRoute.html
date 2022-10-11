@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Destination</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/commonthemes.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/add_destination.css">
+    <link rel="stylesheet" type="text/css" href="css/adminstylesheet.css">
+	<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+	<link rel="stylesheet" type="text/css" href="css/adminroute.css">
+</head>
+<body>
+    <!-- top navigation starts here -->
+   <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="float-start">
+					<a class="cab-logo" href="/admin/dashboard"><img
+						src="images/cab-logo.png" class="cabapp-logo" alt="logo"></a>
+				</div>
+				<div class="float-start">
+					<ul class="list-group list-group-horizontal">
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/dashboard">Requests And Cabs</a></li>
+						<li class="list-group-item nav-menu"><a class="link nav-align-tabs" href="/admin/history">History
+														of Trips</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/complaints">Complaints</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link nav-align-tabs" href="/admin/blockedusers">Blocked
+								Users</a></li>
+						<li class="list-group-item nav-menu"><a
+							class="link  requests requests-tabactive "
+							href="/admin/newroute">Route Management</a></li>
+						<a href="/user/bookacab" class="btn btn-primary btn-sm book-a-ride">Book a Ride</a>
+
+
+					</ul>
+				</div>
+				<div class="float-end">
+					<!-- kumar's code starts -->
+					<!--notification starts-->
+					<div class="float-start">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+								<img class="navnotify-icons cursor"
+									src="images/notification.svg" alt="notify-icon"
+									title="notifications" data-toggle="dropdown"
+									aria-expanded="true" id="notificationId">
+									<span class="icon-button-badge" id="totalCount"></span>
+
+								<div class="dropdown-menu m-0 py-3 notification-popover">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 topnav-border w-100 mb-3">
+												<div class="text-style-title filter-titlenotification">
+													Notification</div>
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="notify-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12" id="parentDiv">
+												<span id="noRecord" class="noRecordFound"></span>
+												<div id="notification-wrapper"></div>
+
+
+												<div>
+													<div class=" col-md-12 mt-3 ">
+														<div class="col-md-6 float-start notify-space">
+															<p id="notification-count"></p>
+														</div>
+														<div class="col-md-6 float-end notify-space1"
+															id="js-markasread"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--notification here-->
+					<!-- kumar's code ends -->
+
+					<!--user profile starts-->
+					<div class="float-end">
+						<div class="header-right">
+							<div class="dropdown col-md-12 float-start">
+
+								<span
+									class="navuserprofile-icons cursor navuserprofile-icon-text"
+									id="userprofile-icon" data-toggle="dropdown"
+									aria-expanded="true"></span>
+
+
+								<div class="dropdown-menu m-0 p-3 user-filter">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-12 pb-2 border-0 mb-3">
+												<button type="button"
+													class="btn-close float-end close-filter"
+													data-dismiss="user-filter" aria-label="Close"></button>
+											</div>
+
+											<div class="col-md-12">
+
+												<div class="col-md-4 float-start">
+
+													<span class="user-profile-icon  userprofile-icon-text"
+														data-toggle="dropdown" aria-expanded="true"> <span
+														class="user-profile-icon " id="userprofile-icon2">
+													</span>
+													</span>
+												</div>
+												<div class="col-md-4 float-start">
+
+													<h5 class="userprofile-content pt-2" id="employeeName"></h5>
+													<h5 class="userprofile-content1  pt-2 mailIdContent"
+														id="mailId"></h5>
+													<button type="button" class="btnlogoutbtn mb-3 "
+														id="logout">Logout</button>
+
+												</div>
+
+
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--user profile ends-->
+<div class="float-start">
+                                    <div class="header-right">
+                                      <div class="dropdown col-md-12 float-start">
+                                        
+                                          <img src="images/notification.svg" class="navnotify-icons cursor remove-img" alt="filter-icon" title="Notification"  data-bs-toggle="dropdown" aria-expanded="true"/><span class="icon-button-badge-mob-trip" id="totalCountMobile"></span>
+                                        
+                                      <div class="dropdown-menu m-0 py-3 notification-popover" >
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12 pb-2 topnav-border w-100 mb-3 "><span class="text-style-title filter-titlenotification">Notification</span>
+                                                  <button type="button" class="btn-close float-end close-filter" data-dismiss="advanced-filter" aria-label="Close">
+                                                </button>
+                                                </div>
+                                                
+                                                <div class="col-md-12" id="parentDivMob"><!-- newly added code -->
+                      <span id="noRecordMob"></span>
+                      	<div id="notification-wrapper-mob">
+                      	</div>
+                        	
+
+                        <div>
+                          <div class=" col-md-12 mt-3 ">
+                            <div class="col-md-6 float-start notify-space">
+                              <p id="notification-count-mob"></p>
+                            </div>
+                            <div class="col-md-6 float-end notify-space1" id="js-markasread-mob">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+	<!--nav ends-->
+      <!-- top navigation ends here -->
+
+      <!-- body content starts here  -->
+       <div class="container md-spacing">
+        <div class="row mx-auto mt-5">
+        <div class="col-md-12">
+             <div class="row mx-auto">
+                    <!-- add destination details  -->
+                    <div class="col-12 col-md-12 col-lg-12 mb-5">
+                        <h4 class="font-24 font-semibold mb-4" ><span class="me-2"> <a href="routedetails"><img src="images/backTrip.svg" alt="back" title="Back" onclick="routeDetails()"></a></span>Add Destination</h4>
+                       <!-- <div class="w-75 float-start saveButton" style="margin-left: 73%">
+				<label id="saveBtn" class="clear" >
+				<button type="button" class="border-filter-style clear change-save-icon-color" id="saveButton" style="text-align: center">Save</button>
+			
+				</label>
+				
+				</div>-->
+				<div class = "saveButton">
+				
+				<button type="button" class="border-filter-style clear change-save-icon-color" id="saveButton" style="text-align: center">Save</button>
+			
+				
+				
+				</div>
+                        <div class="row">
+                        
+                            <!-- destination starts here -->
+                            <div class="col-12 col-md-12 col-lg-3 mb-4">
+                                <label class=" font-semibold font-16 md-font pb-2" for="destination">Destination</label>
+                                <input type="text" class="form-control custom-form" id="destination" onblur="destinationBlurFunction()"
+								onchange="destinationBlurFunction()">
+								<p id="destinationEmpty"></p>
+                            </div>
+                             <!-- destination ends here -->
+
+                              <!-- drop point starts here -->
+                          <div class="col-12 col-md-12 col-lg-3 mb-4">
+                                <label class=" font-semibold font-16 md-font pb-2" for="dropPoint">Drop Point</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded custom-form" id="dropPoint" onchange="dropPointBlurFunction()">
+                                    <a href="#"><img src="images/add_button.svg" alt="add" title="Add" data-toggle="modal" data-target="#dest-pop1" class="pt-1 ps-2" onclick="dropPoint()"></a>
+                               
+                                  </div>
+                                  <p id="dropPointEmpty" class="dropPointEmptySpacing"></p>
+                                  <br>
+								  
+						          <p id="dis"></p>
+                                  <!--<div class="input-group mt-3">
+                                    <input type="text" class="form-control rounded" value="Koyambedu" disabled >
+                                    <a href="#"><img src="images/close.svg" alt="close" class="ms-3 p-2"></a>
+                                  </div>
+                                  <div class="input-group mt-3">
+                                    <input type="text" class="form-control rounded" value="Koyambedu" disabled >
+                                    <a href="#"><img src="images/close.svg" alt="close" class="ms-3 p-2"></a>
+                                  </div>-->
+                            </div> 
+                             <!-- drop point ends here -->
+                              <!-- Pickup Time Slot starts here -->
+                            <div class="col-12 col-md-12 col-lg-3 mb-4">
+                                <label class=" font-semibold font-16 md-font pb-2" for="pickupTimeSlot">Pickup Time Slot</label>
+                                <div class="input-group">
+                                    <input type="time" class="form-control rounded custom-form" id="pickupTimeSlot" onchange="pickupTimeSlotBlurFunction()">
+                                    <a href="#"><img src="images/add_button.svg" alt="add" title="Add" class="pt-1 ps-2" data-toggle="modal" data-target="#dest-pop1" onclick="pickupTimeSlot()"></a>
+                                  </div>
+                                  <p id="pickupTimeSlotEmpty" class=" dropPointEmptySpacing"></p>
+								  <br>
+								  
+							   	  <p id="disPickup"></p>
+                                  <!--<div class="input-group mt-3">
+                                    <input type="text" class="form-control rounded" value="10:00 PM" disabled >
+                                    <a href="#"><img src="images/close.svg" alt="close" class="ms-3 p-2"></a>
+                                  </div>-->
+                            </div> 
+                                 <!-- Pickup Time Slot starts here -->
+
+                                <!-- Drop Time Slot starts here -->   
+                            <div class="col-12 col-md-12 col-lg-3 mb-4">
+                                <label class=" font-semibold font-16 md-font pb-2" for="DropTimeSlot">Drop Time Slot</label>
+                                <div class="input-group">
+                                    <input type="time" class="form-control rounded custom-form" id="dropTimeSlot" onchange="dropTimeSlotBlurFunction()">
+                                    <a href="#"><img src="images/add_button.svg" alt="add" title="Add" class="pt-1 ps-2" data-toggle="modal" data-target="#dest-pop1" onclick="dropTimeSlot()"></a>
+                                  </div>
+                                  <p id="dropTimeSlotEmpty" class=" dropPointEmptySpacing"></p>
+								  <br>
+								  
+							   	  <p id="disDrop"></p>
+                                  <!--<div class="input-group mt-3">
+                                    <input type="text" class="form-control rounded" value="10:00 AM" disabled >
+                                    <a href="#"><img src="images/close.svg" alt="close" class="ms-3 p-2"></a>
+                                  </div>-->
+                            </div> 
+                                   <!-- Drop Time Slot starts here -->  
+                            
+                        </div>
+                    </div>
+                          <!-- add destination details  -->
+                     </div>
+               </div>
+       </div>
+       </div>
+       
+       <!--route management popup starts here-->
+	<div class="modal fade" id="route-pop" tabindex="-1" role="dialog"
+		aria-labelledby="route-pop" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered " role="document">
+			<div class="modal-content bor-pop ">
+				<div class="modal-header border-0 pb-0">
+					<div class="col-md-12 col-12">
+			   	<button type="button" class="close closeicon float-end"
+							data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+				</div>
+				</div>
+				<div class="modal-body pt-2 pb-3 ">
+					<div class="row justify-content-center">
+
+						<p class="style-label text-center">Are you sure you want to
+							delete this route?</p>
+
+					</div>
+				</div>
+				<div class="row justify-content-center mb-5 mt-2">
+					<div class="col-md-8 text-center">
+						<button type="button" class="cancel-btn2" data-bs-dismiss="modal">No</button>
+						<button type="button" class="button11">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--route management popup ends here-->
+	
+	<!--route save starts here-->
+	<div class="modal fade" id="save-route-popup" tabindex="-1"
+		role="dialog" aria-labelledby="save-route-popup" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered " role="document">
+			<div class="modal-content bor-pop ">
+				<div class="modal-header border-0 pb-0">
+					<div class="col-md-12 col-12">
+						<button type="button" class="close closeicon float-end"
+							data-bs-dismiss="modal" aria-label="Close">
+						</button>
+					</div>
+				</div>
+				<div class="modal-body pt-2 pb-3 ">
+					<div class="row justify-content-center">
+
+						<p class="style-label text-center">Route details saved
+							successfully</p>
+
+					</div>
+				</div>
+				<div class="row justify-content-center mb-5 mt-2">
+					<div class="col-md-8 text-center">
+
+						<button type="button" class="button11" data-bs-dismiss="modal"
+							id="addedSuccess">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--route save popup ends here-->
+	
+      <!-- body content starts here  -->
+	<script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	<script src="js/fileSaver.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/timeFormatter.js"></script>
+	  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>-->
+ 	<script src="js/newRoute.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/Notification.js"></script>
+	<script>
+	notificationsAdmin();
+	</script>
+	<!--<script>
+		$(document)
+				.ready(
+						function() {
+							var maxField = 10; //Input fields increment limitation
+							var addButton = $('.add_button'); //Add button selector
+							var wrapper = $('.field_wrapper'); //Input field wrapper
+							var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img  src="images/cancel.svg" alt="add-icon" data-toggle="modal" data-target="#dest-pop1" id="addDropPoint"  onclick="add()"></a></div>'; //New input field html 
+							var x = 1; //Initial field counter is 1
+
+							//Once add button is clicked
+							$(addButton).click(function() {
+								//Check maximum number of input fields
+								if (x < maxField) {
+									x++; //Increment field counter
+									$(wrapper).append(fieldHTML); //Add field html
+								}
+							});
+
+							//Once remove button is clicked
+							$(wrapper).on('click', '.remove_button',
+									function(e) {
+										e.preventDefault();
+										$(this).parent('div').remove(); //Remove field html
+										x--; //Decrement field counter
+									});
+						});
+	</script>-->
+</body>
+</html>

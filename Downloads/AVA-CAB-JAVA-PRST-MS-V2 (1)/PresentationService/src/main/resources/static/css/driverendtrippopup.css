@@ -1,0 +1,38 @@
+.card-look
+{
+    text-align: center;
+}
+.back-colr
+{
+    background-color: #EDEDEF;
+}
+.btn-grad-login {
+    background: linear-gradient(to bottom, #B6B8F9 0%, #8662D0 100%) !important;
+    text-align: center !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 3px;
+    display: block !important;
+    border: none;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    width: 120px;
+    height: 50px;
+}
+.img-size
+{
+    width: 35%;
+    margin-bottom: 30px;
+}
+.bor-rads
+{
+    border-radius: 10px;
+}
+.start-button
+{
+    padding: 9px 45px;
+    background-color: #5507FB;
+    border: none;
+}

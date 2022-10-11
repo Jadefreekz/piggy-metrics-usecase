@@ -1,0 +1,81 @@
+.pad-botm
+{
+    padding-bottom: 15px;
+}
+.picktodrop
+{
+    width: 87%;
+}
+.droptopick
+{
+    width: 92%;
+}
+
+.top-placing
+{
+    margin-top: -28px;
+    padding-bottom: 25px;
+}
+.btn-grad-starttrip {
+    background: linear-gradient(to bottom, #B9BCFB 0%, #835BCD 51%, #835BCD  100%) !important;
+    text-align: center !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px;
+    display: block !important;
+    border: none;
+    border-radius: 3px;
+}
+.btn-grad-location:hover {
+    background-position: top center !important; /* change the direction of the change here */
+    color: #fff !important;
+    text-decoration: none !important;
+}
+/* .side-heading */
+/* { */
+/*     font-family: 'FontsFree-Net-Proxima-Nova-Sbold'; */
+/* } */
+.persons
+{
+    width: 20%;
+}
+.start-button
+{
+    padding: 9px 19px;
+    background: linear-gradient(to bottom, #B9BCFB 0%, #835BCD 51%, #835BCD  100%) !important;
+    border: none;
+}
+.DropDown{
+	margin-left: 225px;
+    margin-top: -28px;
+    width: 47% !important;
+}
+.dropIcon{
+	background: linear-gradient(to bottom, #92dcfd 0%, #0AACFE 51%, #0AACFE 100%) !important;
+}
+.user-profile-icon{
+	width: 90px !important;
+	height: 69px;
+}
+.logout-button {
+    background: linear-gradient(to bottom, #B6B8F9 0%, #8662D0 100%) !important;
+    text-align: center !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 3px;
+    display: block !important;
+    border: none;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    width: 120px;
+    height: 50px;
+}
+.filter-dropdown{
+	padding: 0.35px 8px !important;
+    border-radius: 0px !important;
+    border: 1px solid #5E5E5E !important;
+}

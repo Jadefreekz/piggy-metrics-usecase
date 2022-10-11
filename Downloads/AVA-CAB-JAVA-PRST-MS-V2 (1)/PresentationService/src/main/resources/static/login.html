@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Login</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/commontheme.css">
+	<link rel="stylesheet" type="text/css" href="css/userstylesheet.css">
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<!--login starts-->
+
+			<div class="col-md-12 p-0">
+				<div class="vid-container">
+					<video class="bgvid" autoplay="autoplay" muted="muted"
+						preload="auto" loop>
+						<source src="Videos/landing-screen-animations.mp4"
+							type="video/mp4">
+
+					</video>
+					<div class="inner-container">
+						<video class="bgvid inner" autoplay="autoplay" muted="muted"
+							preload="auto" loop>
+							<source src="Videos/landing-screen-animations.mp4"
+								type="video/mp4">
+						</video>
+						<div class="box">
+							<div class="text-center">
+								<img src="images/avasoft-logo.svg" alt="" class="avasoft-logo">
+							</div>
+							<h1 class="color-changing-text">Welcome to AVA Cab!</h1>
+							<button id="loginBut" class="loginButtonHomePage">Login</button>
+							<div class="p-3 info-text-login mt-5">
+
+
+								<!-- button -->
+
+
+								<!--action block popup starts-->
+								<div class="modal fade" id="actionblock" tabindex="-1"
+									role="dialog" aria-labelledby="actionblocklabel"
+									aria-hidden="true">
+									<div
+										class="modal-dialog modal-dialog-centered modal-customise-width"
+										role="document">
+										<div class="modal-content ">
+											<div class="modal-header border-0 pb-0">
+												<h4 class=" action-blocked-title text-center "
+													id="actionblocklabel">Action Blocked!</h4>
+<!-- 												<button type="button" class="close closeicon" -->
+<!-- 													data-dismiss="modal" aria-label="Close"> -->
+<!-- 													<span aria-hidden="true">&times;</span> -->
+<!-- 												</button> -->
+
+											</div>
+											<div class="modal-body pt-4 ">
+												<div class="actionblocked-content text-center">
+													<p>Your account has been blocked since you haven't
+														showed up on your previous trip. Please contact the admin
+														to have it unblocked.</p>
+												</div>
+											</div>
+											<div class="row justify-content-center mb-3 mt-2">
+												<div class="col-md-12 text-center">
+													<button type="button" class="btnokbtn" data-bs-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--action block popup ends-->
+
+								<!--action block popup starts-->
+								<div class="modal fade" id="contactHr" tabindex="-1"
+									role="dialog" aria-labelledby="actionblocklabel"
+									aria-hidden="true">
+									<div
+										class="modal-dialog modal-dialog-centered modal-customise-width"
+										role="document">
+										<div class="modal-content ">
+											<div class="modal-header border-0 pb-0">
+												<h4 class=" action-blocked-title text-center "
+													id="actionblocklabel">Oops!</h4>
+
+											</div>
+											<div class="modal-body pt-4 ">
+												<div class="actionblocked-content text-center">
+													<p>We are unable to sign you at this time. Please
+														contact HR team.</p>
+												</div>
+											</div>
+											<div class="row justify-content-center mb-3 mt-2">
+												<div class="col-md-12 text-center">
+													<button type="button" class="btnokbtn" data-bs-dismiss="modal">OK</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p class="font-size">If you are experiencing technical
+									difficulties, please contact the Helpdesk at below contact
+									numbers:</p>
+								<p class="font-size-bold">Operations - 9150029798</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--login starts-->
+
+		</div>
+
+	</div>
+
+
+	<!--action block popup ends-->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>	
+	<script src="js/login.js"></script>
+	<script src="js/commonScript.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script type="text/javascript" src="js/JsExceptionHandler.js"></script>
+	<script>
+		$('.advanced-filter').click(function (event) {
+			event.stopPropagation();
+
+		});
+		$('#close-filter').click(function () {
+			$('.advanced-filter').removeClass('show');
+		})
+	</script>
+</body>
+
+</html>

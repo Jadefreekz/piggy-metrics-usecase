@@ -1,0 +1,45 @@
+.top-bar
+{
+    background-color: #FFFFFF;
+}
+.user-profile
+{
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+    border: #030082;
+    background-color: #030082;
+    color: #ffffff;
+    padding-top: 6px;
+    font-size: 14px;
+}
+.back-colr
+{
+    background-color: #EDEDEF;
+}
+.top-space
+{
+    padding-top: 5px;
+}
+.body{
+    background-color: #EDEDEF;
+}
+.tabs
+{
+    border: unset !important;
+    border-bottom: none !important;
+    color: #A3A3A3;
+    font-weight:500;
+}
+.tabs.active
+{
+border-bottom: 3px solid #5507FB !important ;
+background-color: unset !important;
+color: #5507FB !important;
+font-weight: bold;
+}
+.tabs-look
+{
+    font-size: 14px;
+    background: #FFFFFF;
+}

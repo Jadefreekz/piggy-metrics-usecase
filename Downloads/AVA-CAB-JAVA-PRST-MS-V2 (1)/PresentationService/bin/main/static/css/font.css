@@ -1,0 +1,55 @@
+@font-face {
+	font-family: 'proximanova-regular';
+	 src: url('../fonts/proximanova-regular.woff') format('woff');
+  }
+  
+  @font-face {
+	font-family: 'proximanova-semibold';
+	 src: url('../fonts/proximanova-semibold.woff') format('woff');
+  }
+  @font-face {
+	font-family: 'proximanova-bold';
+	 src: url('../fonts/proximanova-bold.woff') format('woff');
+  }
+  @font-face {
+	font-family: 'proximanova-medium';
+	 src: url('../fonts/proximanova-medium.woff') format('woff');
+  }
+  @font-face {
+	font-family: 'proximanova-italic';
+	 src: url('../fonts/proximanova-italic.woff') format('woff');
+  }
+
+.font-bold{
+    font-family: 'nunitosans-bold';
+}
+.font-semibold{
+    font-family: 'nunitosans-bold';
+} 
+.font-regular{
+    font-family: 'nunitosans-regular';
+}  
+.font-medium{
+    font-family: 'nunitosans-medium';
+} 
+.font-24{
+    font-size: 24px;
+}   
+.font-20{
+    font-size: 20px;
+}
+.font-18{
+    font-size: 18px;
+}
+.font-16{
+    font-size: 15px;
+}
+.theme-color{
+    color: #441BC3;
+}
+.theme-color-bg{
+    background-color: #F3F9FF;
+}
+.required{
+    color: #FF6060;
+}

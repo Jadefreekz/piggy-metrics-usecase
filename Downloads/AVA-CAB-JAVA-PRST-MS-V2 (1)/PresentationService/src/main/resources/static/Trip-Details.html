@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Details</title>
+<link rel="stylesheet" href="css/commontheme.css">
+<link rel="stylesheet" href="css/driverstylesheet.css">
+<link rel="shortcut icon" href="#">
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Tablet Navigation Part Starts Here -->
+			<div class="col-md-12">
+				<div class="col-md-4 float-start">
+				<a href = "/driver/dashboard">
+					<img src="images/cab-logo.png" alt="icon" class="logo">
+				</a>	
+				</div>
+				<div
+					class="col-md-4 float-start text-center p-1 status-bar justify-content-center assigned">
+					<p class="status">Assigned Trip</p>
+				</div>
+				<div class="col-md-4 float-start icon-part ">
+
+					<!-- Admin Contact Part Starts Here -->
+					<div class="dropdown float-start">
+						<a data-toggle="dropdown" aria-expanded="false"
+							id="adminContactsBtn"> <img class="cursor mt-1 navphone-icons"
+							src="images/phone-call.png" alt="filter-icon"
+							title="Advanced Filter" /></a>
+						<div class="dropdown-menu m-0 admin-contact">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 pb-2 border-0 mt-2 close-filter">
+										<span class="text-style-title filter-title">Admin
+											Contacts</span>
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12">
+										<div class="row mb-3">
+											<div id="adminContacts"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Admin Contact Part Ends Here -->
+
+
+
+					<!-- Notifications Part Starts Here -->
+					<div class="dropdown float-start">
+<!-- 						 <img -->
+<!-- 							class="cursor ms-4" src="images/Bell-icon.svg" alt="filter-icon" -->
+<!-- 							title="Advanced Filter" /> -->
+
+
+
+					</div>
+					<!-- Notifications Part Ends Here -->
+
+
+
+
+
+					<!-- profile Starts Here -->
+
+					<div class="dropdown float-start">
+						<a href="#" data-toggle="dropdown" aria-expanded="false"> <span
+							class="dot11 ms-4" id="nameicon" onclick="driverProfile()"></span></a>
+						<div class="dropdown-menu m-0 sign-out">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 border-0 mt-2 close-filter">
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12 mx-2 log-content">
+										<div class="row mb-3">
+											<div>
+												<img src="images/user-profile-icon.png" class="ps-4 user-profile-icon" alt="user-icon">
+												<h6 id="driver-profile1"></h6>
+												<h6 id="driver-profile2"></h6>
+												<button type="button" class="btn btn-primary btn-lg pe-4"
+													id="driverlogout">Log Out</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Log Out Ends Here -->
+
+				</div>
+			</div>
+			<!-- Tablet Navigation Part Ends Here -->
+
+			<!-- Trip Details and Start-Trip Button Starts Here-->
+
+
+			<div class="col-md-12 p-3">
+				<div class="row">
+					<div class="col-md-12 ps-4">
+						<div class="col-md-6 float-start">
+							<ul class="trip-settings p-0" id="uldetails">
+								<li class="trip-settings"><a class="footer-link"><img
+										src="images/Line-Icon.svg" alt="icon" class="line-icon p-0 "><span
+										class="Head"></a>Trip Details</span></li>
+
+							</ul>
+						</div>
+						<div class="col-md-6 float-start button-div">
+							<button 
+								class="btn btn-primary btn-sm button1" id="canceltrip" onclick="startTripForShow()">
+								No one Showed</button>
+
+							<button id="starttripb" type="button" style="visibility: hidden"
+								data-toggle="modal" data-target="#starttrip"
+								class="btn btn-primary btn-sm  change-color">Start
+								Trip</button>
+						</div>
+
+
+
+
+					</div>
+
+
+
+
+				</div>
+			</div>
+
+
+
+
+
+			<!-- Trip Details and Start-Trip Button Ends Here-->
+
+
+
+			<!--Table Starts Here-->
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-4 mx-1 left-col float-start">
+						<h5 class="fw-bold">Employee Details</h5>
+					</div>
+					<div class="col-md-6 show-header">
+						<h5 class="float-start no-show fw-bold">
+							<span class="footer-link1"><img src="images/No-Show.svg"
+								alt="icon" class="map-icon">No Show</span>
+						</h5>
+						<h5 class=" table-head show-head show float-start fw-bold">
+							<span class="footer-link2"><img src="images/Show.svg"
+								alt="icon" class="map-icon">Show</span>
+						</h5>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="divid"></div>
+		<div id=bookId></div>
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="starttrip" tabindex="-1"
+			aria-labelledby="starttrip" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header text-center mx-3">
+						<a>
+						<img src="images/comp-red.svg" alt="tick-icon"
+							class="mx-2">
+							Please ensure that all the employees are present</a>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close" onclick="cancelPopUp()"></button>
+					</div>
+					<div id="wrongTimeSlot"></div>
+
+					<div class="modal-footer mb-3 me-3">
+						<button type="button" class="btn btn-secondary Close-button pe-4"
+							data-bs-dismiss="modal" onclick="cancelPopUp()">Cancel</button>
+
+						<button type="button" class="btn btn-secondary Ok-button"
+							id="submitBtn" onclick="startTripForShow()">Start</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Script Starts Here-->
+	<script src="js/commonScript.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/TripDetails.js"></script>
+	<script src="js/commonScript.js"></script>
+	<script src="js/JsExceptionHandler.js"></script>
+	<script src="js/logout.js"></script>
+	<script src="js/assignedTripDriver.js"></script>
+	<script src="js/jquerys.min.js"></script>
+	<script src="js/poppers.js"></script>
+	<script src="js/bootstraps.min.js"></script>
+	<script type="text/javascript" src ="js/timeFormatter.js"></script>
+	<!-- 	<script src="js/disableInspect.js"></script> -->
+
+
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
+
+		});
+		$('.btn-close').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+		$('.nav-1').click(function(event) {
+			$('.nav-1-toggle').show();
+			$('.nav-2-toggle').hide();
+
+		});
+		$('.nav-2').click(function(event) {
+			$('.nav-2-toggle').show();
+			$('.nav-1-toggle').hide();
+
+		});
+		$('.nav-link1').addClass('active');
+		$('.nav-link1').click(function() {
+			$('.nav-link1').addClass('active');
+			$('.nav-link2').removeClass('active');
+
+		})
+		$('.nav-link2').click(function() {
+			$('.nav-link2').addClass('active');
+			$('.nav-link1').removeClass('active');
+
+		})
+	</script>
+
+
+
+	<!--Script Ends Here-->
+</body>
+
+
+</html>

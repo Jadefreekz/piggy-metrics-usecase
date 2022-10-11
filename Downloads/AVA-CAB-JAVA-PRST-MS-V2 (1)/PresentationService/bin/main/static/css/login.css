@@ -1,0 +1,67 @@
+
+
+.posi-fix
+{
+    margin-top: 45px;
+
+}
+.color-black
+{
+    color:#616161;  
+}
+.input-box
+{
+    font-family: 'ProximaNova-Regular';
+    padding: 13px 0px 13px 10px;
+    border-radius: 5px;
+    border-color: #D4DBE0;
+    position: relative;
+    color: #8f8f8f !important;
+}
+.box-top
+{
+    margin-top: 5px;
+}
+.img-fix
+{
+    top: 41px;
+    right: 28px;
+}
+.btn-look
+{
+    text-align: center;
+}
+.btn-grad-login {           
+    border-radius: 5px;
+    background-color: #370CC1;
+    border: none;
+    padding: 13px 4px;
+
+}
+.btn-grad-login:hover
+{
+    background-color: #370CC1; 
+}
+
+.colr
+{
+    margin-top: 15px;
+    color: red;
+}
+.place-fix
+{
+    text-align: center;
+}
+.text-deco-none
+{
+    text-decoration: none;
+}
+.text-color
+{
+    color: #6d6d6d;
+    font-family: 'ProximaNova-Regular';
+}
+.logo-size
+{
+    width: 40%;
+}

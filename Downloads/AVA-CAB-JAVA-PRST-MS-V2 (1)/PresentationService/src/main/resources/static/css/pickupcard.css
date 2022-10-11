@@ -1,0 +1,139 @@
+.btn-grad-location {
+    background: linear-gradient(to bottom, #92dcfd 0%, #0AACFE 51%, #0AACFE  100%) !important;
+    margin: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px !important;
+    display: block !important;
+    border: none;
+}
+.btn-grad-location:hover {
+    background-position: top center !important; 
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.btn-grad-call {
+    background: linear-gradient(to bottom, #9DF4A7 0%, #43BB8B 51%, #43BB8B  100%) !important;
+    margin: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px !important;
+    display: block !important;
+    border: none;
+}
+.btn-grad-call:hover {
+    background-position: top center !important; 
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.btn-grad-pickup {
+    background: linear-gradient(to bottom, #B9BCFB 0%, #835BCD 51%, #835BCD  100%) !important;
+    margin: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px !important;
+    display: block !important;
+    border: none;
+}
+.btn-grad-pickup:hover {
+    background-position: top center !important; 
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.btn-grad-message {
+    background: linear-gradient(to bottom, #FBE8DC 0%, #FFB475 51%, #FFB475  100%) !important;
+    margin: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px !important;
+    display: block !important;
+    border: none;
+}
+.btn-grad-message:hover {
+    background-position: top center !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.btn-grad-block {
+    background: linear-gradient(to bottom, #FFBAC5 0%, #FB6071 51%, #FB6071  100%) !important;
+    margin: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px !important;
+    display: block !important;
+    border: none;
+}
+.btn-grad-block:hover {
+    background-position: top center !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+         
+         
+.btn-grad-back {
+    background: linear-gradient(to bottom, #FFEAA1 0%, #FFB74C 51%, #FFB74C 100%) !important;
+    margin: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    transition: 0.5s !important;
+    background-size: 200% auto !important;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee !important;
+    border-radius: 10px !important;
+    display: block !important;
+    border: none;
+}
+  .btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+ 
+.back-colr
+{
+    background-color: #EDEDEF;
+}
+.bor-rads
+{
+
+     border-radius: 10px !important;
+     box-shadow: 0 4px 8px 0 rgba(67, 67, 67, 0.2), 0 6px 20px 0 rgba(57, 57, 57, 0.19);
+     border: 0px;
+}
+.float-right
+{
+    float: right;
+}
